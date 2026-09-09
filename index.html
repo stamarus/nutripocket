@@ -187,9 +187,15 @@
           <!-- ================= TAB: COMPARADOR ================= -->
           <section id="view-compare" class="hidden space-y-6">
             <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
-              <div class="border-b border-slate-100 pb-5 mb-6">
-                <h2 class="text-xl font-black text-slate-900">Comparador Nutricional Lado a Lado</h2>
-                <p class="text-xs text-slate-500">Selecione 2 alimentos para confrontar calorias, macronutrientes e micronutrientes.</p>
+              <div class="flex items-center justify-between border-b border-slate-100 pb-5 mb-6">
+                <div>
+                  <h2 class="text-xl font-black text-slate-900">Comparador Nutricional Lado a Lado</h2>
+                  <p class="text-xs text-slate-500">Selecione 2 alimentos para confrontar calorias, macronutrientes e micronutrientes.</p>
+                </div>
+                <button onclick="clearComparison()" class="px-3 py-1.5 text-xs font-bold text-slate-600 hover:text-rose-600 bg-slate-100 hover:bg-rose-50 rounded-xl transition-all flex items-center gap-1.5 shadow-xs">
+                  <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                  <span>Limpar Comparação</span>
+                </button>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
@@ -856,12 +862,30 @@
       }
     }
 
+    function clearComparison() {
+      const inpA = document.getElementById('searchCompA');
+      const inpB = document.getElementById('searchCompB');
+      const selA = document.getElementById('compareSelectA');
+      const selB = document.getElementById('compareSelectB');
+      if (inpA) inpA.value = '';
+      if (inpB) inpB.value = '';
+      if (selA) {
+        selA.innerHTML = '<option value="">-- Selecione o alimento A --</option>' + getCompareOptionsHtml('');
+        selA.value = '';
+      }
+      if (selB) {
+        selB.innerHTML = '<option value="">-- Selecione o alimento B --</option>' + getCompareOptionsHtml('');
+        selB.value = '';
+      }
+      renderComparison();
+    }
+
     function populateCompareSelects() {
       const selA = document.getElementById('compareSelectA');
       const selB = document.getElementById('compareSelectB');
       if (selA && selB) {
-        selA.innerHTML = getCompareOptionsHtml('');
-        selB.innerHTML = getCompareOptionsHtml('');
+        selA.innerHTML = '<option value="">-- Selecione o alimento A --</option>' + getCompareOptionsHtml('');
+        selB.innerHTML = '<option value="">-- Selecione o alimento B --</option>' + getCompareOptionsHtml('');
         
         // Default: Arroz integral vs Arroz tipo 1
         const taco1 = ALL_FOODS.find(f => f.id === 'taco_001');
