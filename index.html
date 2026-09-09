@@ -98,6 +98,12 @@
 
         <!-- TOP RIGHT ACTIONS -->
         <div class="flex items-center gap-2">
+          <!-- Sobre o App Modal Trigger -->
+          <button onclick="openAboutModal()" title="Sobre o Nutri Pocket" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-700 text-xs font-bold transition-all shadow-xs">
+            <i data-lucide="info" class="w-4 h-4 text-brand-600"></i>
+            <span class="hidden md:inline">Sobre o App</span>
+          </button>
+
           <!-- Quick Print / Export PDF -->
           <button onclick="window.print()" title="Imprimir / Exportar PDF" class="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all">
             <i data-lucide="printer" class="w-4 h-4"></i>
@@ -266,12 +272,14 @@
         </div>
 
         <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium">
+          <button onclick="openAboutModal()" class="text-brand-700 font-bold hover:underline cursor-pointer flex items-center gap-1 transition">
+            <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500 inline fill-rose-500"></i>
+            <span>Sobre o Nutri Pocket</span>
+          </button>
+          <span class="text-slate-300 hidden sm:inline">•</span>
           <span class="flex items-center gap-1">
             <span>Desenvolvido por</span>
-            <span class="text-brand-700 font-bold hover:underline cursor-pointer flex items-center gap-0.5">
-              Stamarus
-              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-600 inline"></i>
-            </span>
+            <span class="text-slate-800 font-bold">Stamarus</span>
           </span>
           <span class="text-slate-300 hidden sm:inline">•</span>
           <span class="text-slate-400">16.029 Alimentos Consolidados</span>
@@ -335,6 +343,77 @@
         <button id="modalAddMealBtn" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-xs shadow-md shadow-brand-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2">
           <i data-lucide="plus-circle" class="w-4 h-4"></i>
           <span>Adicionar ao Prato</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SOBRE O NUTRI POCKET MODAL (BRIEFING & DEDICATÓRIA GABI) -->
+    <div id="aboutModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150 space-y-6">
+        
+        <!-- Modal Header -->
+        <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 bg-gradient-to-br from-brand-500 to-brand-700 text-white rounded-2xl flex items-center justify-center shadow-md shadow-brand-500/25">
+              <i data-lucide="apple" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-black text-slate-900 leading-tight">Sobre o Nutri Pocket PRO</h3>
+              <p class="text-xs text-slate-500 font-medium">Bases Oficiais & Calculadora Nutricional</p>
+            </div>
+          </div>
+          <button onclick="closeAboutModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-xl hover:bg-slate-100 transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Briefing do App -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-black uppercase text-brand-700 tracking-wider flex items-center gap-1.5">
+            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+            <span>Briefing & Propósito</span>
+          </h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            O <b>Nutri Pocket</b> nasceu com a missão de transformar o acesso a dados nutricionais em uma experiência ágil, moderna e profissional. Em vez de consultar planilhas densas ou PDFs desatualizados, estudantes e nutricionistas contam com um ecossistema completo no bolso e no computador:
+          </p>
+          <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside bg-slate-50 p-3.5 rounded-2xl border border-slate-100 font-medium">
+            <li><b>16.029 Alimentos Consolidados</b>: Unificação das 4 principais tabelas oficiais (TACO/UNICAMP, TBCA/USP, IBGE/POF e USDA).</li>
+            <li><b>Montador de Prato Interativo</b>: Cálculo automático de calorias, macros e micronutrientes com ajuste de porção em gramas.</li>
+            <li><b>Comparador Lado a Lado</b>: Confronto analítico direto entre alimentos para substituições inteligentes na dieta.</li>
+            <li><b>Layout Inteligente Adaptativo</b>: Split-view para telas desktop e interface app nativa para celulares.</li>
+          </ul>
+        </div>
+
+        <!-- Dedicatória Especial para a Gabi -->
+        <div class="bg-gradient-to-br from-rose-50 via-pink-50/50 to-amber-50 border border-rose-200/70 rounded-3xl p-5 relative overflow-hidden">
+          <div class="absolute -right-3 -bottom-3 text-rose-200/40 pointer-events-none">
+            <i data-lucide="heart" class="w-24 h-24"></i>
+          </div>
+          
+          <div class="relative z-10 space-y-2.5">
+            <div class="inline-flex items-center gap-1.5 bg-rose-100 text-rose-800 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+              <i data-lucide="heart" class="w-3 h-3 text-rose-600 fill-rose-600"></i>
+              <span>Dedicatória Especial</span>
+            </div>
+            
+            <h4 class="text-sm font-black text-rose-950">
+              Para a Gabi, com todo o meu amor ❤️
+            </h4>
+            
+            <p class="text-xs text-slate-700 leading-relaxed italic">
+              "Este projeto é dedicado à <b>Gabi</b> — minha linda, amada e essencial esposa. Obrigado por ser o coração do nosso lar e a mãe mais extraordinária e amorosa que o <b>Miguel</b> e o <b>Gael</b> poderiam ter no mundo. Cada linha deste app carrega o orgulho imenso de ter você ao meu lado em cada passo da vida."
+            </p>
+
+            <div class="pt-2 flex items-center justify-between text-[11px] text-rose-800 font-bold border-t border-rose-200/50">
+              <span>Com carinho eterno,</span>
+              <span>Rafa & Família</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Button -->
+        <button onclick="closeAboutModal()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs shadow-md transition-all">
+          Fechar
         </button>
       </div>
     </div>
@@ -609,6 +688,19 @@
     function closeModal() {
       document.getElementById('detailModal').classList.add('hidden');
       currentModalFood = null;
+    }
+
+    function openAboutModal() {
+      const modal = document.getElementById('aboutModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        lucide.createIcons({ root: modal });
+      }
+    }
+
+    function closeAboutModal() {
+      const modal = document.getElementById('aboutModal');
+      if (modal) modal.classList.add('hidden');
     }
 
     function updateModalNutrients() {
