@@ -174,6 +174,14 @@
             <div id="foodGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               <!-- Populated by JS -->
             </div>
+
+            <!-- Load More Pagination Button -->
+            <div id="loadMoreContainer" class="pt-4 text-center hidden">
+              <button onclick="loadMoreFoods()" class="px-6 py-2.5 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 hover:text-slate-900 font-bold text-xs rounded-xl shadow-xs transition-all inline-flex items-center gap-2">
+                <i data-lucide="chevron-down" class="w-4 h-4 text-brand-600"></i>
+                <span id="loadMoreBtnText">Carregar Mais Alimentos</span>
+              </button>
+            </div>
           </section>
 
           <!-- ================= TAB: COMPARADOR ================= -->
@@ -430,13 +438,69 @@
       'USDA': 'bg-purple-600 text-white'
     };
 
-    function filterFoods() {
+    let currentDisplayLimit = 90;
+    let currentFilteredList = [];
+
+    function renderFoodCard(f) {
+      const kcal = ((f.energy_kcal ?? f.energia_kcal) !== null && (f.energy_kcal ?? f.energia_kcal) !== 'NA' && (f.energy_kcal ?? f.energia_kcal) !== 'Tr') ? Math.round((f.energy_kcal ?? f.energia_kcal)) : '-';
+      const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? (f.protein_g ?? f.proteina).toFixed(1) : ((f.protein_g ?? f.proteina) || '-');
+      const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? (f.carbohydrates_g ?? f.carboidrato).toFixed(1) : ((f.carbohydrates_g ?? f.carboidrato) || '-');
+      const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? (f.lipids_g ?? f.lipideos).toFixed(1) : ((f.lipids_g ?? f.lipideos) || '-');
+
+      return `
+        <div class="bg-white rounded-2xl p-4 border border-slate-200/80 hover:border-brand-500/50 hover:shadow-md transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-start justify-between gap-2 mb-1.5">
+              <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md ${SOURCE_COLORS[f.source] || 'bg-slate-800 text-white'}">${f.source || 'TACO'}</span>
+              <span class="text-[10px] font-mono text-slate-400">#${f.id}</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-brand-700 transition-colors leading-snug cursor-pointer line-clamp-2" onclick="openModal('${f.id}')">
+              ${f.name || f.nome}
+            </h3>
+          </div>
+
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <div class="grid grid-cols-4 gap-1.5 text-center text-[10px] mb-3">
+              <div class="bg-amber-50/70 p-1.5 rounded-lg">
+                <span class="text-amber-800 font-bold block">${kcal}</span>
+                <span class="text-slate-400 text-[8px] uppercase">kcal</span>
+              </div>
+              <div class="bg-emerald-50/70 p-1.5 rounded-lg">
+                <span class="text-emerald-800 font-bold block">${prot}g</span>
+                <span class="text-slate-400 text-[8px] uppercase">Prot</span>
+              </div>
+              <div class="bg-sky-50/70 p-1.5 rounded-lg">
+                <span class="text-sky-800 font-bold block">${carb}g</span>
+                <span class="text-slate-400 text-[8px] uppercase">Carb</span>
+              </div>
+              <div class="bg-rose-50/70 p-1.5 rounded-lg">
+                <span class="text-rose-800 font-bold block">${fat}g</span>
+                <span class="text-slate-400 text-[8px] uppercase">Gord</span>
+              </div>
+            </div>
+
+            <div class="flex gap-1.5">
+              <button onclick="openModal('${f.id}')" class="flex-1 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] rounded-lg transition-colors">
+                Ficha Completa
+              </button>
+              <button onclick="addToMealQuick('${f.id}')" title="Adicionar 100g ao Prato" class="p-1.5 bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white rounded-lg transition-colors flex items-center justify-center">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function filterFoods(resetLimit = true) {
+      if (resetLimit) currentDisplayLimit = 90;
       const rawQuery = (document.getElementById('searchInput')?.value || '').trim();
       const normQuery = normalizeSearchStr(rawQuery);
       const queryTokens = normQuery ? normQuery.split(/\s+/).filter(t => t.length > 0) : [];
       const grid = document.getElementById('foodGrid');
+      const loadMoreContainer = document.getElementById('loadMoreContainer');
       
-      const filtered = ALL_FOODS.filter(f => {
+      currentFilteredList = ALL_FOODS.filter(f => {
         const matchSrc = currentSource === 'ALL' || f.source === currentSource;
         if (!matchSrc) return false;
         if (queryTokens.length === 0) return true;
@@ -445,10 +509,12 @@
         return queryTokens.every(tok => target.includes(tok));
       });
 
-      const toShow = filtered.slice(0, 90);
-      document.getElementById('resultsCount').innerText = `Mostrando ${toShow.length} de ${filtered.length.toLocaleString('pt-BR')} alimentos`;
+      const toShow = currentFilteredList.slice(0, currentDisplayLimit);
+      document.getElementById('resultsCount').innerText = (toShow.length === currentFilteredList.length)
+        ? `Exibindo todos os ${currentFilteredList.length.toLocaleString('pt-BR')} alimentos encontrados`
+        : `Mostrando ${toShow.length} de ${currentFilteredList.length.toLocaleString('pt-BR')} alimentos`;
 
-      if (filtered.length === 0) {
+      if (currentFilteredList.length === 0) {
         grid.innerHTML = `
           <div class="col-span-full py-16 text-center text-slate-400">
             <i data-lucide="search-x" class="w-10 h-10 mx-auto mb-2 opacity-50"></i>
@@ -456,62 +522,29 @@
             <p class="text-xs mt-1">Tente pesquisar por outros termos.</p>
           </div>
         `;
+        if (loadMoreContainer) loadMoreContainer.classList.add('hidden');
         lucide.createIcons();
         return;
       }
 
-      grid.innerHTML = toShow.map(f => {
-        const kcal = ((f.energy_kcal ?? f.energia_kcal) !== null && (f.energy_kcal ?? f.energia_kcal) !== 'NA' && (f.energy_kcal ?? f.energia_kcal) !== 'Tr') ? Math.round((f.energy_kcal ?? f.energia_kcal)) : '-';
-        const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? (f.protein_g ?? f.proteina).toFixed(1) : ((f.protein_g ?? f.proteina) || '-');
-        const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? (f.carbohydrates_g ?? f.carboidrato).toFixed(1) : ((f.carbohydrates_g ?? f.carboidrato) || '-');
-        const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? (f.lipids_g ?? f.lipideos).toFixed(1) : ((f.lipids_g ?? f.lipideos) || '-');
+      grid.innerHTML = toShow.map(f => renderFoodCard(f)).join('');
 
-        return `
-          <div class="bg-white rounded-2xl p-4 border border-slate-200/80 hover:border-brand-500/50 hover:shadow-md transition-all flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-2 mb-1.5">
-                <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md ${SOURCE_COLORS[f.source] || 'bg-slate-800 text-white'}">${f.source || 'TACO'}</span>
-                <span class="text-[10px] font-mono text-slate-400">#${f.id}</span>
-              </div>
-              <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-brand-700 transition-colors leading-snug cursor-pointer line-clamp-2" onclick="openModal('${f.id}')">
-                ${f.name || f.nome}
-              </h3>
-            </div>
-
-            <div class="mt-3 pt-3 border-t border-slate-100">
-              <div class="grid grid-cols-4 gap-1.5 text-center text-[10px] mb-3">
-                <div class="bg-amber-50/70 p-1.5 rounded-lg">
-                  <span class="text-amber-800 font-bold block">${kcal}</span>
-                  <span class="text-slate-400 text-[8px] uppercase">kcal</span>
-                </div>
-                <div class="bg-emerald-50/70 p-1.5 rounded-lg">
-                  <span class="text-emerald-800 font-bold block">${prot}g</span>
-                  <span class="text-slate-400 text-[8px] uppercase">Prot</span>
-                </div>
-                <div class="bg-sky-50/70 p-1.5 rounded-lg">
-                  <span class="text-sky-800 font-bold block">${carb}g</span>
-                  <span class="text-slate-400 text-[8px] uppercase">Carb</span>
-                </div>
-                <div class="bg-rose-50/70 p-1.5 rounded-lg">
-                  <span class="text-rose-800 font-bold block">${fat}g</span>
-                  <span class="text-slate-400 text-[8px] uppercase">Gord</span>
-                </div>
-              </div>
-
-              <div class="flex gap-1.5">
-                <button onclick="openModal('${f.id}')" class="flex-1 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] rounded-lg transition-colors">
-                  Ficha Completa
-                </button>
-                <button onclick="addToMealQuick('${f.id}')" title="Adicionar 100g ao Prato" class="p-1.5 bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white rounded-lg transition-colors flex items-center justify-center">
-                  <i data-lucide="plus" class="w-4 h-4"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
+      if (loadMoreContainer) {
+        if (toShow.length < currentFilteredList.length) {
+          loadMoreContainer.classList.remove('hidden');
+          const remaining = currentFilteredList.length - toShow.length;
+          document.getElementById('loadMoreBtnText').innerText = `Carregar Mais (${remaining.toLocaleString('pt-BR')} restantes)`;
+        } else {
+          loadMoreContainer.classList.add('hidden');
+        }
+      }
 
       lucide.createIcons();
+    }
+
+    function loadMoreFoods() {
+      currentDisplayLimit += 90;
+      filterFoods(false);
     }
 
     function openModal(foodId) {
