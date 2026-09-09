@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Nutri Pocket — Tabela UNICAMP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981',
+              600: '#059669', 700: '#047857', 800: '#065f46', 900: '#064e3b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { -webkit-tap-highlight-color: transparent; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans pb-24 md:pb-8 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- AUTH MODAL / GATE -->
+  <div id="authOverlay" class="fixed inset-0 bg-slate-900/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-slate-100 text-center animate-in fade-in zoom-in duration-200">
+      <div class="w-16 h-16 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-inner">
+        <i data-lucide="shield-check" class="w-8 h-8"></i>
+      </div>
+      <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-1">Nutri Pocket</h2>
+      <p class="text-xs text-slate-500 font-medium mb-6">Tabela Oficial UNICAMP (4ª Edição)<br><span class="text-brand-600 font-semibold">Acesso Exclusivo</span></p>
+
+      <form id="authForm" class="space-y-4" onsubmit="event.preventDefault(); handleLogin();">
+        <div class="relative text-left">
+          <label class="text-[11px] font-bold tracking-wider text-slate-500 uppercase ml-1 mb-1 block">Chave de Acesso / Senha</label>
+          <div class="relative">
+            <input type="password" id="accessKeyInput" placeholder="Digite sua senha..." autocomplete="current-password"
+                   class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all text-sm">
+            <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3.5 top-3.5 text-slate-400 hover:text-slate-600">
+              <i data-lucide="eye" id="eyeIcon" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm shadow-lg shadow-brand-500/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+          <span>Entrar no App</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <p id="authError" class="text-xs text-rose-500 font-semibold hidden">Senha incorreta. Tente novamente!</p>
+      </form>
+
+      <div class="mt-6 pt-5 border-t border-slate-100 text-[11px] text-slate-400">
+        Desenvolvido para estudantes & profissionais de Nutrição.
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <div id="appContainer" class="flex-1 flex flex-col hidden">
+    <!-- TOP HEADER -->
+    <header class="bg-white border-b border-slate-200/80 sticky top-0 z-30 shadow-xs">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+            <i data-lucide="apple" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-base font-extrabold text-slate-900 tracking-tight leading-tight">Nutri Pocket</h1>
+              <span class="text-[10px] uppercase font-black bg-brand-100 text-brand-700 px-2 py-0.5 rounded-full">4ª Edição</span>
+            </div>
+            <p class="text-[11px] text-slate-500 font-medium">16.029 Alimentos (TACO • TBCA • IBGE • USDA)</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="switchTab('meal')" id="headerMealBtn" class="relative px-3.5 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-brand-50 hover:text-brand-700 transition-all flex items-center gap-1.5">
+            <i data-lucide="utensils" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Montador de Prato</span>
+            <span id="mealBadge" class="bg-brand-600 text-white text-[10px] font-black rounded-full px-1.5 py-0.2 min-w-4 text-center">0</span>
+          </button>
+          
+          <button onclick="handleLogout()" title="Sair / Bloquear" class="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- TABS BAR -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 flex gap-6 text-sm font-semibold border-t border-slate-100">
+        <button onclick="switchTab('search')" id="tabBtn-search" class="py-3 border-b-2 border-brand-600 text-brand-700 flex items-center gap-2 transition-colors">
+          <i data-lucide="search" class="w-4 h-4"></i>
+          <span>Consultar Tabela</span>
+        </button>
+        <button onclick="switchTab('meal')" id="tabBtn-meal" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+          <span>Montador & Calculadora</span>
+        </button>
+        <button onclick="switchTab('compare')" id="tabBtn-compare" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
+          <i data-lucide="scale" class="w-4 h-4"></i>
+          <span>Comparador de Alimentos</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6">
+
+      <!-- ================= TAB: CONSULTA ================= -->
+      <section id="view-search" class="space-y-6">
+        <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+          <div class="relative">
+            <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-4 top-3.5"></i>
+            <input type="text" id="searchInput" placeholder="Buscar por alimento (ex: frango, arroz, aveia, leite...)"
+                   class="w-full pl-12 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+            <button onclick="clearSearch()" id="clearSearchBtn" class="absolute right-3 top-3.5 text-slate-400 hover:text-slate-600 hidden">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="flex gap-2 overflow-x-auto pb-1 hide-scrollbar" id="sourceChips">
+  <button onclick="filterSource('ALL')" class="source-chip active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-brand-600 text-white shadow-xs" data-source="ALL">Todas as Fontes (16.029)</button>
+  <button onclick="filterSource('TACO')" class="source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200" data-source="TACO">TACO (597)</button>
+  <button onclick="filterSource('TBCA')" class="source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200" data-source="TBCA">TBCA / USP (5.668)</button>
+  <button onclick="filterSource('IBGE')" class="source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200" data-source="IBGE">IBGE / POF (1.971)</button>
+  <button onclick="filterSource('USDA')" class="source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200" data-source="USDA">USDA (7.793)</button>
+</div>
+
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-slate-500 font-medium px-1">
+          <span id="resultsCount">Mostrando todos os 597 alimentos</span>
+          <span class="text-[11px] text-slate-400">Valores padrão por 100g</span>
+        </div>
+
+        <div id="foodGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- ================= TAB: MONTADOR / REFEIÇÃO ================= -->
+      <section id="view-meal" class="hidden space-y-6">
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6">
+            <div>
+              <h2 class="text-xl font-black text-slate-900">Montador de Refeição</h2>
+              <p class="text-xs text-slate-500">Adicione alimentos da tabela, ajuste a porção exata em gramas e calcule o total.</p>
+            </div>
+            <button onclick="clearMeal()" class="px-3 py-1.5 text-xs font-bold text-rose-600 bg-rose-50 hover:bg-rose-100 rounded-lg transition-colors self-start sm:self-auto flex items-center gap-1.5">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              Limpar Prato
+            </button>
+          </div>
+
+          <!-- Totals Dashboard Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 p-4 rounded-2xl">
+              <span class="text-[10px] font-black uppercase tracking-wider text-amber-700 block">Calorias Totais</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span id="totalKcal" class="text-2xl font-black text-amber-900">0</span>
+                <span class="text-xs font-bold text-amber-700">kcal</span>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60 p-4 rounded-2xl">
+              <span class="text-[10px] font-black uppercase tracking-wider text-emerald-700 block">Proteínas</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span id="totalProt" class="text-2xl font-black text-emerald-900">0.0</span>
+                <span class="text-xs font-bold text-emerald-700">g</span>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-200/60 p-4 rounded-2xl">
+              <span class="text-[10px] font-black uppercase tracking-wider text-sky-700 block">Carboidratos</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span id="totalCarb" class="text-2xl font-black text-sky-900">0.0</span>
+                <span class="text-xs font-bold text-sky-700">g</span>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-200/60 p-4 rounded-2xl">
+              <span class="text-[10px] font-black uppercase tracking-wider text-rose-700 block">Lipídios / Gordura</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span id="totalFat" class="text-2xl font-black text-rose-900">0.0</span>
+                <span class="text-xs font-bold text-rose-700">g</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Micronutrients Summary Row -->
+          <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 mb-6">
+            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Micronutrientes & Fibras Totais</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+              <div>
+                <span class="text-slate-500">Fibra Alimentar:</span>
+                <span id="totalFibra" class="font-bold text-slate-800 ml-1">0.0g</span>
+              </div>
+              <div>
+                <span class="text-slate-500">Sódio:</span>
+                <span id="totalSodio" class="font-bold text-slate-800 ml-1">0.0mg</span>
+              </div>
+              <div>
+                <span class="text-slate-500">Cálcio:</span>
+                <span id="totalCalcio" class="font-bold text-slate-800 ml-1">0.0mg</span>
+              </div>
+              <div>
+                <span class="text-slate-500">Ferro:</span>
+                <span id="totalFerro" class="font-bold text-slate-800 ml-1">0.0mg</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3" id="mealItemsContainer">
+            <!-- Meal items injected here -->
+          </div>
+
+          <div id="emptyMealState" class="text-center py-12 border-2 border-dashed border-slate-200 rounded-2xl">
+            <div class="w-12 h-12 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="soup" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-sm font-bold text-slate-800">Seu prato está vazio</h3>
+            <p class="text-xs text-slate-500 max-w-xs mx-auto mt-1 mb-4">Volte na busca de alimentos e clique no botão <span class="font-semibold text-brand-600">+ Adicionar ao Prato</span>.</p>
+            <button onclick="switchTab('search')" class="px-4 py-2 bg-brand-600 text-white font-bold text-xs rounded-xl shadow-sm hover:bg-brand-700 transition-colors">
+              Ir para a busca de alimentos
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB: COMPARADOR ================= -->
+      <section id="view-compare" class="hidden space-y-6">
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
+          <div class="border-b border-slate-100 pb-5 mb-6">
+            <h2 class="text-xl font-black text-slate-900">Comparador Nutricional Lado a Lado</h2>
+            <p class="text-xs text-slate-500">Selecione 2 alimentos para comparar a composição centesimal e micronutrientes.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+            <!-- Coluna Alimento A -->
+            <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-2xl space-y-2">
+              <label class="text-xs font-black uppercase text-emerald-800 tracking-wider flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                Alimento A (100g)
+              </label>
+              <input type="text" id="searchCompA" placeholder="Filtrar alimento A (ex: arroz, patinho...)"
+                     oninput="filterCompareOptions('A', this.value)"
+                     class="w-full px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+              <select id="compareSelectA" onchange="renderComparison()"
+                      class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-xs">
+                <option value="">Carregando alimentos...</option>
+              </select>
+            </div>
+
+            <!-- Coluna Alimento B -->
+            <div class="bg-slate-50 border border-slate-200/80 p-4 rounded-2xl space-y-2">
+              <label class="text-xs font-black uppercase text-sky-800 tracking-wider flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-sky-500 inline-block"></span>
+                Alimento B (100g)
+              </label>
+              <input type="text" id="searchCompB" placeholder="Filtrar alimento B (ex: feijao, alcatra...)"
+                     oninput="filterCompareOptions('B', this.value)"
+                     class="w-full px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <select id="compareSelectB" onchange="renderComparison()"
+                      class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
+                <option value="">Carregando alimentos...</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="comparisonTableContainer" class="overflow-x-auto">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOD DETAIL MODAL -->
+    <div id="detailModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+      <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150">
+        <div class="flex items-start justify-between gap-4 mb-4">
+          <div>
+            <span id="modalCat" class="text-[10px] font-black uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full">Categoria</span>
+            <h3 id="modalName" class="text-lg font-extrabold text-slate-900 mt-1.5 leading-snug">Nome do Alimento</h3>
+            <p class="text-xs text-slate-400 font-medium">Tabela TACO UNICAMP 4ª Edição</p>
+          </div>
+          <button onclick="closeModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-xl hover:bg-slate-100 transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 mb-5 flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-700">Porção calculada:</span>
+          <div class="flex items-center gap-2">
+            <input type="number" id="modalGramInput" value="100" min="1" step="5" oninput="updateModalNutrients()"
+                   class="w-20 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-black text-center text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <span class="text-xs font-black text-slate-500">gramas</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 mb-5 text-center">
+          <div class="bg-amber-50 border border-amber-200/50 p-2.5 rounded-xl">
+            <span class="text-[9px] font-bold text-amber-700 block uppercase">Calorias</span>
+            <span id="modalKcal" class="text-base font-black text-amber-900">0</span>
+            <span class="text-[9px] text-amber-700 block">kcal</span>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200/50 p-2.5 rounded-xl">
+            <span class="text-[9px] font-bold text-emerald-700 block uppercase">Proteína</span>
+            <span id="modalProt" class="text-base font-black text-emerald-900">0</span>
+            <span class="text-[9px] text-emerald-700 block">g</span>
+          </div>
+          <div class="bg-sky-50 border border-sky-200/50 p-2.5 rounded-xl">
+            <span class="text-[9px] font-bold text-sky-700 block uppercase">Carboidrato</span>
+            <span id="modalCarb" class="text-base font-black text-sky-900">0</span>
+            <span class="text-[9px] text-sky-700 block">g</span>
+          </div>
+          <div class="bg-rose-50 border border-rose-200/50 p-2.5 rounded-xl">
+            <span class="text-[9px] font-bold text-rose-700 block uppercase">Lipídios</span>
+            <span id="modalFat" class="text-base font-black text-rose-900">0</span>
+            <span class="text-[9px] text-rose-700 block">g</span>
+          </div>
+        </div>
+
+        <div class="space-y-1.5 border-t border-slate-100 pt-3 text-xs mb-6 max-h-56 overflow-y-auto pr-1" id="modalMicrosList">
+        </div>
+
+        <button id="modalAddMealBtn" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-xs shadow-md shadow-brand-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>Adicionar ao Prato</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- BOTTOM NAVIGATION (Mobile) -->
+    <nav class="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 px-6 py-2 flex justify-between items-center shadow-lg">
+      <button onclick="switchTab('search')" id="mobNav-search" class="flex flex-col items-center gap-1 text-brand-600 font-bold text-[11px]">
+        <i data-lucide="search" class="w-5 h-5"></i>
+        <span>Tabela</span>
+      </button>
+      <button onclick="switchTab('meal')" id="mobNav-meal" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[11px] relative">
+        <i data-lucide="calculator" class="w-5 h-5"></i>
+        <span>Prato</span>
+        <span id="mobMealBadge" class="absolute -top-1 right-1 bg-brand-600 text-white text-[9px] font-black rounded-full px-1 min-w-3.5 text-center">0</span>
+      </button>
+      <button onclick="switchTab('compare')" id="mobNav-compare" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[11px]">
+        <i data-lucide="scale" class="w-5 h-5"></i>
+        <span>Comparar</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="nutripocket_data.js"></script>
+
+  <script>
+    const VALID_KEYS = ["gabi2026", "taco2026", "nutripro", "rafa123"];
+    const AUTH_STORAGE_KEY = "nutripocket_auth_v1";
+
+    function checkAuth() {
+      const stored = localStorage.getItem(AUTH_STORAGE_KEY);
+      if (stored && VALID_KEYS.includes(stored)) {
+        document.getElementById('authOverlay').classList.add('hidden');
+        document.getElementById('appContainer').classList.remove('hidden');
+        lucide.createIcons();
+        initApp();
+      } else {
+        document.getElementById('authOverlay').classList.remove('hidden');
+        document.getElementById('appContainer').classList.add('hidden');
+        setTimeout(() => document.getElementById('accessKeyInput')?.focus(), 150);
+      }
+    }
+
+    function handleLogin() {
+      const input = document.getElementById('accessKeyInput').value.trim().toLowerCase();
+      const err = document.getElementById('authError');
+      if (VALID_KEYS.includes(input)) {
+        localStorage.setItem(AUTH_STORAGE_KEY, input);
+        err.classList.add('hidden');
+        checkAuth();
+      } else {
+        err.classList.remove('hidden');
+      }
+    }
+
+    function handleLogout() {
+      if (confirm("Deseja bloquear o app com senha?")) {
+        localStorage.removeItem(AUTH_STORAGE_KEY);
+        checkAuth();
+      }
+    }
+
+    function togglePasswordVisibility() {
+      const inp = document.getElementById('accessKeyInput');
+      inp.type = inp.type === 'password' ? 'text' : 'password';
+    }
+
+    let ALL_FOODS = [];
+    let currentCategory = 'ALL';
+    let currentModalFood = null;
+    let currentTab = 'search';
+    let myMeal = JSON.parse(localStorage.getItem('nutripocket_user_meal_v1') || '[]');
+
+    function initApp() {
+      ALL_FOODS = window.NUTRIPOCKET_DATABASE || [];
+      renderCategoryChips();
+      populateCompareSelects();
+      filterFoods();
+      renderMeal();
+      lucide.createIcons();
+    }
+
+    function switchTab(tabId) {
+      currentTab = tabId;
+      ['search', 'meal', 'compare'].forEach(t => {
+        document.getElementById(`view-${t}`).classList.toggle('hidden', t !== tabId);
+        const btn = document.getElementById(`tabBtn-${t}`);
+        if (btn) {
+          btn.className = (t === tabId) 
+            ? "py-3 border-b-2 border-brand-600 text-brand-700 flex items-center gap-2 font-bold"
+            : "py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 font-medium";
+        }
+        const mob = document.getElementById(`mobNav-${t}`);
+        if (mob) {
+          mob.className = (t === tabId)
+            ? "flex flex-col items-center gap-1 text-brand-600 font-bold text-[11px]"
+            : "flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[11px]";
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderCategoryChips() {
+      const cats = Array.from(new Set(ALL_FOODS.map(f => (f.category || f.categoria || 'Geral')))).sort();
+      const container = document.getElementById('categoryChips');
+      let html = `<button onclick="filterCategory('ALL')" class="category-chip active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-brand-600 text-white transition-all shadow-xs" data-cat="ALL">Todos (${ALL_FOODS.length})</button>`;
+      cats.forEach(c => {
+        const count = ALL_FOODS.filter(f => (f.category || f.categoria || 'Geral') === c).length;
+        html += `<button onclick="filterCategory('${c}')" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all" data-cat="${c}">${c} (${count})</button>`;
+      });
+      container.innerHTML = html;
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.category-chip').forEach(btn => {
+        btn.className = (btn.getAttribute('data-cat') === cat)
+          ? "category-chip active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-brand-600 text-white transition-all shadow-xs"
+          : "category-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all";
+      });
+      filterFoods();
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      filterFoods();
+    }
+
+    document.getElementById('searchInput')?.addEventListener('input', (e) => {
+      document.getElementById('clearSearchBtn').classList.toggle('hidden', !e.target.value.trim());
+      filterFoods();
+    });
+
+    let currentSource = 'ALL';
+
+    function filterSource(src) {
+      currentSource = src;
+      document.querySelectorAll('.source-chip').forEach(btn => {
+        btn.className = (btn.getAttribute('data-source') === src)
+          ? "source-chip active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-brand-600 text-white shadow-xs"
+          : "source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200";
+      });
+      filterFoods();
+    }
+
+    const SOURCE_COLORS = {
+      'TACO': 'bg-emerald-600 text-white',
+      'TBCA': 'bg-blue-600 text-white',
+      'IBGE': 'bg-amber-600 text-white',
+      'USDA': 'bg-purple-600 text-white'
+    };
+
+    function filterFoods() {
+      const query = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+      const grid = document.getElementById('foodGrid');
+      
+      const filtered = ALL_FOODS.filter(f => {
+        const matchSrc = currentSource === 'ALL' || f.source === currentSource;
+        if (!matchSrc) return false;
+        if (!query) return true;
+        const name = (f.name || (f.name || f.nome) || '').toLowerCase();
+        const orig = (f.name_original || '').toLowerCase();
+        const cat = (f.category || (f.category || f.categoria || 'Geral') || '').toLowerCase();
+        return name.includes(query) || orig.includes(query) || cat.includes(query);
+      });
+
+      const toShow = filtered.slice(0, 90);
+      document.getElementById('resultsCount').innerText = `Mostrando ${toShow.length} de ${filtered.length.toLocaleString('pt-BR')} alimentos`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-slate-400">
+            <i data-lucide="search-x" class="w-10 h-10 mx-auto mb-2 opacity-50"></i>
+            <p class="text-sm font-bold text-slate-600">Nenhum alimento encontrado</p>
+            <p class="text-xs mt-1">Tente pesquisar por outros termos.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      grid.innerHTML = toShow.map(f => {
+        const kcal = ((f.energy_kcal ?? f.energia_kcal) !== null && (f.energy_kcal ?? f.energia_kcal) !== 'NA' && (f.energy_kcal ?? f.energia_kcal) !== 'Tr') ? Math.round((f.energy_kcal ?? f.energia_kcal)) : '-';
+        const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? (f.protein_g ?? f.proteina).toFixed(1) : ((f.protein_g ?? f.proteina) || '-');
+        const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? (f.carbohydrates_g ?? f.carboidrato).toFixed(1) : ((f.carbohydrates_g ?? f.carboidrato) || '-');
+        const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? (f.lipids_g ?? f.lipideos).toFixed(1) : ((f.lipids_g ?? f.lipideos) || '-');
+
+        return `
+          <div class="bg-white rounded-2xl p-4 border border-slate-200/80 hover:border-brand-500/50 hover:shadow-md transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-1.5">
+                <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md ${SOURCE_COLORS[f.source] || 'bg-slate-800 text-white'}">${f.source || 'TACO'}</span>
+                <span class="text-[10px] font-mono text-slate-400">#${f.id}</span>
+              </div>
+              <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-brand-700 transition-colors leading-snug cursor-pointer" onclick="openModal('${f.id}')">
+                ${f.name || (f.name || f.nome)}
+              </h3>
+            </div>
+
+            <div class="mt-3 pt-3 border-t border-slate-100">
+              <div class="grid grid-cols-4 gap-1.5 text-center text-[10px] mb-3">
+                <div class="bg-amber-50/70 p-1.5 rounded-lg">
+                  <span class="text-amber-800 font-bold block">${kcal}</span>
+                  <span class="text-slate-400 text-[8px] uppercase">kcal</span>
+                </div>
+                <div class="bg-emerald-50/70 p-1.5 rounded-lg">
+                  <span class="text-emerald-800 font-bold block">${prot}g</span>
+                  <span class="text-slate-400 text-[8px] uppercase">Prot</span>
+                </div>
+                <div class="bg-sky-50/70 p-1.5 rounded-lg">
+                  <span class="text-sky-800 font-bold block">${carb}g</span>
+                  <span class="text-slate-400 text-[8px] uppercase">Carb</span>
+                </div>
+                <div class="bg-rose-50/70 p-1.5 rounded-lg">
+                  <span class="text-rose-800 font-bold block">${fat}g</span>
+                  <span class="text-slate-400 text-[8px] uppercase">Gord</span>
+                </div>
+              </div>
+
+              <div class="flex gap-1.5">
+                <button onclick="openModal('${f.id}')" class="flex-1 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] rounded-lg transition-colors">
+                  Ficha Completa
+                </button>
+                <button onclick="addToMealQuick('${f.id}')" title="Adicionar 100g ao Prato" class="p-1.5 bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white rounded-lg transition-colors flex items-center justify-center">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function openModal(foodId) {
+      const food = ALL_FOODS.find(f => f.id === foodId);
+      if (!food) return;
+      currentModalFood = food;
+
+      document.getElementById('modalCat').innerText = food.category || food.categoria || 'Geral';
+      document.getElementById('modalName').innerText = food.name || food.nome;
+      document.getElementById('modalGramInput').value = 100;
+      updateModalNutrients();
+
+      document.getElementById('modalAddMealBtn').onclick = () => {
+        const grams = parseFloat(document.getElementById('modalGramInput').value) || 100;
+        addToMeal(food.id, grams);
+        closeModal();
+      };
+
+      document.getElementById('detailModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('detailModal').classList.add('hidden');
+      currentModalFood = null;
+    }
+
+    function updateModalNutrients() {
+      if (!currentModalFood) return;
+      const grams = parseFloat(document.getElementById('modalGramInput').value) || 0;
+      const factor = grams / 100;
+      const f = currentModalFood;
+
+      document.getElementById('modalKcal').innerText = typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : '-';
+      document.getElementById('modalProt').innerText = typeof (f.protein_g ?? f.proteina) === 'number' ? ((f.protein_g ?? f.proteina) * factor).toFixed(1) : '-';
+      document.getElementById('modalCarb').innerText = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? ((f.carbohydrates_g ?? f.carboidrato) * factor).toFixed(1) : '-';
+      document.getElementById('modalFat').innerText = typeof (f.lipids_g ?? f.lipideos) === 'number' ? ((f.lipids_g ?? f.lipideos) * factor).toFixed(1) : '-';
+
+      const list = document.getElementById('modalMicrosList');
+      const micros = [
+        { label: 'Fibra Alimentar', val: f.fiber_g ?? f.fibra, unit: 'g' },
+        { label: 'Sódio', val: f.sodium_mg ?? f.sodio, unit: 'mg' },
+        { label: 'Cálcio', val: f.calcium_mg ?? f.calcio, unit: 'mg' },
+        { label: 'Ferro', val: f.iron_mg ?? f.ferro, unit: 'mg' },
+        { label: 'Potássio', val: f.potassio, unit: 'mg' },
+        { label: 'Magnésio', val: f.magnesio, unit: 'mg' },
+        { label: 'Colesterol', val: f.colesterol, unit: 'mg' },
+        { label: 'Vitamina C', val: f.vitamina_c, unit: 'mg' }
+      ];
+
+      list.innerHTML = micros.map(m => {
+        let display = m.val;
+        if (typeof m.val === 'number') display = (m.val * factor).toFixed(2) + m.unit;
+        else if (m.val === 'Tr') display = 'Traços';
+        else if (m.val === 'NA' || !m.val) display = 'Não Analisado';
+        return `
+          <div class="flex justify-between py-1 border-b border-slate-100 last:border-0">
+            <span class="text-slate-600 font-medium">${m.label}</span>
+            <span class="font-bold text-slate-800">${display}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addToMealQuick(foodId) {
+      addToMeal(foodId, 100);
+    }
+
+    function showToast(msg) {
+      let toast = document.getElementById('appToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'appToast';
+        toast.className = 'fixed bottom-20 sm:bottom-6 right-6 z-50 bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 transition-all transform translate-y-12 opacity-0 pointer-events-none';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span>${msg}</span>`;
+      lucide.createIcons({ root: toast });
+      toast.classList.remove('translate-y-12', 'opacity-0');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-12', 'opacity-0');
+      }, 2500);
+    }
+
+    function addToMeal(foodId, grams) {
+      const food = ALL_FOODS.find(f => f.id === foodId);
+      if (!food) return;
+
+      const existingIndex = myMeal.findIndex(item => item.food.id === foodId);
+      if (existingIndex >= 0) {
+        myMeal[existingIndex].grams += grams;
+      } else {
+        myMeal.push({ food, grams });
+      }
+
+      saveMeal();
+      renderMeal();
+      showToast(`Adicionado: ${grams}g de ${(food.name || food.nome).substring(0, 30)}...`);
+    }
+
+    function updateMealGrams(index, newGrams) {
+      const g = parseFloat(newGrams) || 0;
+      if (g <= 0) { removeMealItem(index); return; }
+      myMeal[index].grams = g;
+      saveMeal();
+      renderMeal();
+    }
+
+    function removeMealItem(index) {
+      myMeal.splice(index, 1);
+      saveMeal();
+      renderMeal();
+    }
+
+    function clearMeal() {
+      if (myMeal.length === 0) return;
+      if (confirm("Deseja realmente esvaziar todo o prato?")) {
+        myMeal = [];
+        saveMeal();
+        renderMeal();
+      }
+    }
+
+    function saveMeal() {
+      localStorage.setItem('nutripocket_user_meal_v1', JSON.stringify(myMeal));
+      const badge = document.getElementById('mealBadge');
+      const mobBadge = document.getElementById('mobMealBadge');
+      if (badge) badge.innerText = myMeal.length;
+      if (mobBadge) mobBadge.innerText = myMeal.length;
+    }
+
+    function renderMeal() {
+      saveMeal();
+      const container = document.getElementById('mealItemsContainer');
+      const emptyState = document.getElementById('emptyMealState');
+
+      if (myMeal.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        document.getElementById('totalKcal').innerText = '0';
+        document.getElementById('totalProt').innerText = '0.0';
+        document.getElementById('totalCarb').innerText = '0.0';
+        document.getElementById('totalFat').innerText = '0.0';
+        document.getElementById('totalFibra').innerText = '0.0g';
+        document.getElementById('totalSodio').innerText = '0.0mg';
+        document.getElementById('totalCalcio').innerText = '0.0mg';
+        document.getElementById('totalFerro').innerText = '0.0mg';
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      let tKcal = 0, tProt = 0, tCarb = 0, tFat = 0, tFibra = 0, tSodio = 0, tCalcio = 0, tFerro = 0;
+
+      container.innerHTML = myMeal.map((item, idx) => {
+        const factor = item.grams / 100;
+        const f = item.food;
+        const kcal = typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : 0;
+        const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? ((f.protein_g ?? f.proteina) * factor) : 0;
+        const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? ((f.carbohydrates_g ?? f.carboidrato) * factor) : 0;
+        const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? ((f.lipids_g ?? f.lipideos) * factor) : 0;
+
+        tKcal += kcal; tProt += prot; tCarb += carb; tFat += fat;
+        if (typeof f.fibra === 'number') tFibra += f.fibra * factor;
+        if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
+        if (typeof f.calcio === 'number') tCalcio += f.calcio * factor;
+        if (typeof f.ferro === 'number') tFerro += f.ferro * factor;
+
+        return `
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex-1">
+              <span class="text-[9px] font-black uppercase tracking-wider text-brand-700 bg-brand-100/60 px-2 py-0.5 rounded">${(f.category || f.categoria || 'Geral')}</span>
+              <h4 class="text-sm font-bold text-slate-900 mt-1">${f.name || (f.name || f.nome)}</h4>
+              <div class="flex gap-3 text-xs text-slate-500 font-semibold mt-1">
+                <span>${kcal} kcal</span>
+                <span>• P: ${prot.toFixed(1)}g</span>
+                <span>• C: ${carb.toFixed(1)}g</span>
+                <span>• G: ${fat.toFixed(1)}g</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 self-end sm:self-auto">
+              <div class="flex items-center gap-1.5 bg-white border border-slate-200 rounded-xl px-2.5 py-1">
+                <input type="number" min="1" step="5" value="${item.grams}" onchange="updateMealGrams(${idx}, this.value)"
+                       class="w-16 text-center font-extrabold text-xs text-slate-900 focus:outline-none">
+                <span class="text-[10px] font-bold text-slate-400">g</span>
+              </div>
+              <button onclick="removeMealItem(${idx})" class="text-slate-400 hover:text-rose-600 p-2 hover:bg-rose-50 rounded-xl transition-colors">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('totalKcal').innerText = Math.round(tKcal);
+      document.getElementById('totalProt').innerText = tProt.toFixed(1);
+      document.getElementById('totalCarb').innerText = tCarb.toFixed(1);
+      document.getElementById('totalFat').innerText = tFat.toFixed(1);
+      document.getElementById('totalFibra').innerText = tFibra.toFixed(1) + 'g';
+      document.getElementById('totalSodio').innerText = tSodio.toFixed(1) + 'mg';
+      document.getElementById('totalCalcio').innerText = tCalcio.toFixed(1) + 'mg';
+      document.getElementById('totalFerro').innerText = tFerro.toFixed(1) + 'mg';
+
+      lucide.createIcons();
+    }
+
+    function getCompareOptionsHtml(filterText = '') {
+      const norm = normalizeSearchStr(filterText);
+      const tokens = norm ? norm.split(/\s+/).filter(t => t.length > 0) : [];
+      
+      const filtered = ALL_FOODS.filter(f => {
+        if (tokens.length === 0) return true;
+        const target = normalizeSearchStr(`${f.source} ${f.name || f.nome || ''} ${f.name_original || ''} ${f.category || f.categoria || ''}`);
+        return tokens.every(tok => target.includes(tok));
+      }).slice(0, 150);
+
+      if (filtered.length === 0) {
+        return '<option value="">Nenhum alimento encontrado com esse termo...</option>';
+      }
+
+      return filtered.map(f => {
+        const name = (f.name || f.nome || '').substring(0, 50);
+        return `<option value="${f.id}">[${f.source}] ${name}</option>`;
+      }).join('');
+    }
+
+    function filterCompareOptions(side, text) {
+      const sel = document.getElementById(side === 'A' ? 'compareSelectA' : 'compareSelectB');
+      if (sel) {
+        const currentVal = sel.value;
+        sel.innerHTML = getCompareOptionsHtml(text);
+        if (currentVal && sel.querySelector(`option[value="${currentVal}"]`)) {
+          sel.value = currentVal;
+        } else if (sel.options.length > 0) {
+          sel.selectedIndex = 0;
+        }
+        renderComparison();
+      }
+    }
+
+    function populateCompareSelects() {
+      const selA = document.getElementById('compareSelectA');
+      const selB = document.getElementById('compareSelectB');
+      if (selA && selB) {
+        selA.innerHTML = getCompareOptionsHtml('');
+        selB.innerHTML = getCompareOptionsHtml('');
+        
+        // Default: Arroz integral vs Arroz tipo 1
+        const taco1 = ALL_FOODS.find(f => f.id === 'taco_001');
+        const taco3 = ALL_FOODS.find(f => f.id === 'taco_003');
+        if (taco1) selA.value = 'taco_001';
+        if (taco3) selB.value = 'taco_003';
+        
+        renderComparison();
+      }
+    }
+
+    function renderComparison() {
+      const idA = document.getElementById('compareSelectA')?.value;
+      const idB = document.getElementById('compareSelectB')?.value;
+      const container = document.getElementById('comparisonTableContainer');
+
+      const foodA = ALL_FOODS.find(f => f.id === idA);
+      const foodB = ALL_FOODS.find(f => f.id === idB);
+
+      if (!foodA || !foodB) {
+        container.innerHTML = `<p class="text-xs text-slate-400 text-center py-8">Selecione dois alimentos acima para comparar.</p>`;
+        return;
+      }
+
+      const getKcal = f => f.energy_kcal ?? f.energia_kcal;
+      const getProt = f => f.protein_g ?? f.proteina;
+      const getCarb = f => f.carbohydrates_g ?? f.carboidrato;
+      const getFat = f => f.lipids_g ?? f.lipideos;
+      const getFibra = f => f.fiber_g ?? f.fibra;
+      const getCalcio = f => f.calcium_mg ?? f.calcio;
+      const getFerro = f => f.iron_mg ?? f.ferro;
+      const getSodio = f => f.sodium_mg ?? f.sodio;
+
+      const rows = [
+        { label: 'Calorias (Energia)', a: getKcal(foodA), b: getKcal(foodB), unit: 'kcal' },
+        { label: 'Proteína', a: getProt(foodA), b: getProt(foodB), unit: 'g' },
+        { label: 'Carboidratos', a: getCarb(foodA), b: getCarb(foodB), unit: 'g' },
+        { label: 'Lipídios / Gordura', a: getFat(foodA), b: getFat(foodB), unit: 'g' },
+        { label: 'Fibra Alimentar', a: getFibra(foodA), b: getFibra(foodB), unit: 'g' },
+        { label: 'Cálcio', a: getCalcio(foodA), b: getCalcio(foodB), unit: 'mg' },
+        { label: 'Ferro', a: getFerro(foodA), b: getFerro(foodB), unit: 'mg' },
+        { label: 'Sódio', a: getSodio(foodA), b: getSodio(foodB), unit: 'mg' }
+      ];
+
+      function formatVal(v, unit) {
+        if (typeof v === 'number') return `<b>${v.toFixed(1)}</b> <span class="text-[10px] text-slate-400">${unit}</span>`;
+        if (v === 'Tr' || v === 0) return '<b>0.0</b> <span class="text-[10px] text-slate-400">' + unit + '</span>';
+        if (v === 'NA' || !v) return '<span class="text-slate-400">-</span>';
+        return v;
+      }
+
+      let html = `
+        <div class="border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead>
+              <tr class="border-b-2 border-slate-200 bg-slate-50">
+                <th class="py-3 px-4 text-slate-500 font-extrabold uppercase text-[10px]">Nutriente (100g)</th>
+                <th class="py-3 px-4 text-emerald-900 bg-emerald-100/50 font-black">
+                  <span class="text-[9px] uppercase px-1.5 py-0.5 rounded bg-emerald-600 text-white mr-1">${foodA.source}</span>
+                  ${foodA.name || foodA.nome}
+                </th>
+                <th class="py-3 px-4 text-sky-900 bg-sky-100/50 font-black">
+                  <span class="text-[9px] uppercase px-1.5 py-0.5 rounded bg-sky-600 text-white mr-1">${foodB.source}</span>
+                  ${foodB.name || foodB.nome}
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 bg-white">
+      `;
+
+      rows.forEach(r => {
+        html += `
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="py-3 px-4 font-bold text-slate-700">${r.label}</td>
+            <td class="py-3 px-4 bg-emerald-50/20 text-slate-900">${formatVal(r.a, r.unit)}</td>
+            <td class="py-3 px-4 bg-sky-50/20 text-slate-900">${formatVal(r.b, r.unit)}</td>
+          </tr>
+        `;
+      });
+      html += `</tbody></table></div>`;
+      container.innerHTML = html;
+    }
+
+    window.addEventListener('DOMContentLoaded', checkAuth);
+  </script>
+</body>
+</html>
