@@ -400,6 +400,15 @@
       inp.type = inp.type === 'password' ? 'text' : 'password';
     }
 
+        function normalizeSearchStr(str) {
+      if (!str) return '';
+      return String(str).toLowerCase()
+                .normalize('NFD')
+                .replace(/[̀-ͯ]/g, '')
+                .replace(/[,;\(\)\/\-\+\.]/g, ' ')
+                .trim();
+    }
+
     let ALL_FOODS = [];
     let currentCategory = 'ALL';
     let currentModalFood = null;
@@ -408,7 +417,7 @@
 
     function initApp() {
       ALL_FOODS = window.NUTRIPOCKET_DATABASE || [];
-      renderCategoryChips();
+      
       populateCompareSelects();
       filterFoods();
       renderMeal();
@@ -446,15 +455,7 @@
       container.innerHTML = html;
     }
 
-    function filterCategory(cat) {
-      currentCategory = cat;
-      document.querySelectorAll('.category-chip').forEach(btn => {
-        btn.className = (btn.getAttribute('data-cat') === cat)
-          ? "category-chip active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-brand-600 text-white transition-all shadow-xs"
-          : "category-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all";
-      });
-      filterFoods();
-    }
+
 
     function clearSearch() {
       document.getElementById('searchInput').value = '';
@@ -487,17 +488,18 @@
     };
 
     function filterFoods() {
-      const query = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+      const rawQuery = (document.getElementById('searchInput')?.value || '').trim();
+      const normQuery = normalizeSearchStr(rawQuery);
+      const queryTokens = normQuery ? normQuery.split(/\s+/).filter(t => t.length > 0) : [];
       const grid = document.getElementById('foodGrid');
       
       const filtered = ALL_FOODS.filter(f => {
         const matchSrc = currentSource === 'ALL' || f.source === currentSource;
         if (!matchSrc) return false;
-        if (!query) return true;
-        const name = (f.name || (f.name || f.nome) || '').toLowerCase();
-        const orig = (f.name_original || '').toLowerCase();
-        const cat = (f.category || (f.category || f.categoria || 'Geral') || '').toLowerCase();
-        return name.includes(query) || orig.includes(query) || cat.includes(query);
+        if (queryTokens.length === 0) return true;
+        
+        const target = normalizeSearchStr(`${f.name || ''} ${f.name_original || ''} ${f.category || ''}`);
+        return queryTokens.every(tok => target.includes(tok));
       });
 
       const toShow = filtered.slice(0, 90);
