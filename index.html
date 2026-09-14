@@ -124,18 +124,23 @@
       </div>
 
       <!-- TABS BAR -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-6 text-sm font-semibold border-t border-slate-100">
-        <button onclick="switchTab('search')" id="tabBtn-search" class="py-3 border-b-2 border-brand-600 text-brand-700 flex items-center gap-2 transition-colors">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-6 text-sm font-semibold border-t border-slate-100 overflow-x-auto hide-scrollbar">
+        <button onclick="switchTab('search')" id="tabBtn-search" class="py-3 border-b-2 border-brand-600 text-brand-700 flex items-center gap-2 transition-colors whitespace-nowrap">
           <i data-lucide="search" class="w-4 h-4"></i>
           <span>Consultar Tabela</span>
         </button>
-        <button onclick="switchTab('meal')" id="tabBtn-meal" class="lg:hidden py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
+        <button onclick="switchTab('meal')" id="tabBtn-meal" class="lg:hidden py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors whitespace-nowrap">
           <i data-lucide="calculator" class="w-4 h-4"></i>
           <span>Montador & Calculadora</span>
         </button>
-        <button onclick="switchTab('compare')" id="tabBtn-compare" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
+        <button onclick="switchTab('compare')" id="tabBtn-compare" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors whitespace-nowrap">
           <i data-lucide="scale" class="w-4 h-4"></i>
-          <span>Comparador de Alimentos</span>
+          <span>Comparador</span>
+        </button>
+        <button onclick="switchTab('audit')" id="tabBtn-audit" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors whitespace-nowrap">
+          <i data-lucide="clipboard-check" class="w-4 h-4 text-amber-500"></i>
+          <span>Auditoria & Qualidade</span>
+          <span class="text-[9px] uppercase font-extrabold bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full">PRO</span>
         </button>
       </div>
     </header>
@@ -245,6 +250,167 @@
           <!-- ================= TAB: MONTADOR (Mobile View Only) ================= -->
           <section id="view-meal" class="hidden lg:hidden space-y-6">
             <div id="mobileMealWrapper"></div>
+          </section>
+
+          <!-- ================= TAB: AUDITORIA & QUALIDADE ================= -->
+          <section id="view-audit" class="hidden space-y-6">
+            <!-- Header de Auditoria -->
+            <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-amber-950 text-white p-6 rounded-3xl shadow-xl relative overflow-hidden">
+              <div class="relative z-10 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 font-extrabold text-[10px] uppercase tracking-wider border border-amber-500/30 flex items-center gap-1.5">
+                      <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i> Padrão RDC 216 • CVS 5 • SMS 2619 • Michelin
+                    </span>
+                    <span class="text-xs text-slate-300">Auditoria Sanitária PRO</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button onclick="resetAuditForm()" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 text-slate-200">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                      <span>Reiniciar</span>
+                    </button>
+                    <button onclick="exportAuditReport()" class="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5">
+                      <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+                      <span>Compartilhar / PDF</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <h2 class="text-2xl font-black tracking-tight text-white flex items-center gap-2">
+                    Auditoria de Conformidade Sanitária & Alta Gastronomia
+                  </h2>
+                  <p class="text-xs text-slate-300 max-w-2xl mt-1 leading-relaxed">
+                    Checklist técnico para nutricionistas com cálculo automático de índice de conformidade, classificação de risco, registro fotográfico de não-conformidades e upload para Drive.
+                  </p>
+                </div>
+
+                <!-- Dados do Estabelecimento -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                  <div class="bg-white/10 backdrop-blur-xs p-3 rounded-2xl border border-white/10">
+                    <label class="block text-[10px] uppercase font-bold text-amber-300 tracking-wider mb-1">Estabelecimento</label>
+                    <input type="text" id="auditEstablishment" value="Restaurante & Cozinha Modelo" 
+                           class="w-full bg-transparent border-none text-white text-xs font-bold focus:outline-none focus:ring-0 placeholder-slate-400" placeholder="Nome do local">
+                  </div>
+                  <div class="bg-white/10 backdrop-blur-xs p-3 rounded-2xl border border-white/10">
+                    <label class="block text-[10px] uppercase font-bold text-amber-300 tracking-wider mb-1">Responsável Técnico (RT)</label>
+                    <input type="text" id="auditAuditor" value="Dra. Gabriela Stamarus (CRN-3)" 
+                           class="w-full bg-transparent border-none text-white text-xs font-bold focus:outline-none focus:ring-0 placeholder-slate-400" placeholder="Nome do auditor">
+                  </div>
+                  <div class="bg-white/10 backdrop-blur-xs p-3 rounded-2xl border border-white/10">
+                    <label class="block text-[10px] uppercase font-bold text-amber-300 tracking-wider mb-1">Perfil / Segmento</label>
+                    <select id="auditType" onchange="updateAuditScore()" 
+                            class="w-full bg-transparent border-none text-white text-xs font-bold focus:outline-none focus:ring-0 [&>option]:text-slate-900">
+                      <option value="michelin">Alta Gastronomia / Michelin (Rigor Máximo)</option>
+                      <option value="hotel">Rede Hoteleira Internacional / Resort</option>
+                      <option value="restaurant">Restaurante Comercial / Buffet</option>
+                      <option value="supermarket">Varejo / Supermercado / Padaria</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scorecard & Métricas em Tempo Real -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+              <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between">
+                <span class="text-[10px] font-bold uppercase text-slate-400">Conformidade</span>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span id="auditScorePct" class="text-3xl font-black text-emerald-600">100%</span>
+                  <span class="text-xs font-bold text-slate-400">dos itens</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-2 overflow-hidden">
+                  <div id="auditScoreBar" class="bg-emerald-500 h-full rounded-full transition-all duration-300" style="width: 100%"></div>
+                </div>
+              </div>
+
+              <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between">
+                <span class="text-[10px] font-bold uppercase text-slate-400">Classificação</span>
+                <div class="mt-1">
+                  <span id="auditBadgeClass" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800">
+                    GRUPO 1 (Excelente)
+                  </span>
+                </div>
+                <span class="text-[10px] text-slate-400 mt-2">Critério Portaria CVS 5</span>
+              </div>
+
+              <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between">
+                <span class="text-[10px] font-bold uppercase text-slate-400">Não-Conformidades</span>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span id="auditCountNC" class="text-3xl font-black text-rose-600">0</span>
+                  <span class="text-xs font-bold text-slate-400">críticas</span>
+                </div>
+                <span class="text-[10px] text-rose-500 font-semibold mt-2" id="auditActionRequired">Operação Regular</span>
+              </div>
+
+              <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col justify-between">
+                <span class="text-[10px] font-bold uppercase text-slate-400">Diferencial Michelin</span>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span id="auditMichelinStars" class="text-xl font-black text-amber-500">★★★</span>
+                </div>
+                <span class="text-[10px] text-amber-600 font-bold mt-2">Zero Compromise</span>
+              </div>
+            </div>
+
+            <!-- Lista de Pilares do Checklist -->
+            <div id="auditPillarsContainer" class="space-y-4">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Seção de Registro Fotográfico & Google Drive Mock -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-4">
+                <div>
+                  <h3 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+                    <i data-lucide="camera" class="w-5 h-5 text-brand-600"></i>
+                    Evidências Fotográficas & Integração Cloud Drive
+                  </h3>
+                  <p class="text-xs text-slate-500 mt-0.5">
+                    Anexe fotos de não-conformidades durante a vistoria em campo para laudo pericial.
+                  </p>
+                </div>
+                <label class="cursor-pointer px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl shadow-sm transition flex items-center gap-2">
+                  <i data-lucide="upload" class="w-4 h-4"></i>
+                  <span>Tirar / Selecionar Foto</span>
+                  <input type="file" accept="image/*" class="hidden" id="auditPhotoInput" onchange="handleAuditPhotoUpload(event)">
+                </label>
+              </div>
+
+              <!-- Mini galeria de fotos -->
+              <div id="auditPhotoGallery" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="border-2 border-dashed border-slate-200 rounded-2xl p-4 text-center text-slate-400 text-xs flex flex-col items-center justify-center min-h-[110px]">
+                  <i data-lucide="image" class="w-6 h-6 mb-1 text-slate-300"></i>
+                  <span>Nenhuma evidência anexada</span>
+                </div>
+              </div>
+
+              <div class="bg-slate-50 border border-slate-200/80 p-3.5 rounded-2xl flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                    <i data-lucide="cloud-check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold text-slate-800">Sincronização com Google Drive</p>
+                    <p class="text-[10px] text-slate-400">Pasta: <code class="font-mono bg-white px-1.5 py-0.5 rounded border border-slate-200">NutriPocket/Auditorias/2026</code></p>
+                  </div>
+                </div>
+                <button onclick="syncDriveMock()" id="btnSyncDrive" class="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition flex items-center gap-1.5 shadow-xs">
+                  <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+                  <span>Sincronizar Fotos</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Observações & Parecer Conclusivo da RT -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-3">
+              <h3 class="text-sm font-extrabold text-slate-900 flex items-center gap-2">
+                <i data-lucide="file-text" class="w-4 h-4 text-brand-600"></i>
+                Parecer Conclusivo da Nutricionista (RT)
+              </h3>
+              <textarea id="auditFinalNotes" rows="3" 
+                        class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 leading-relaxed"
+                        placeholder="Insira as recomendações técnicas, prazos de adequação sanitária e considerações sobre a auditoria..."></textarea>
+            </div>
           </section>
 
         </div>
@@ -419,19 +585,23 @@
     </div>
 
     <!-- BOTTOM NAVIGATION (Mobile Only: hidden on lg screens) -->
-    <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 px-6 py-2 flex justify-between items-center shadow-lg">
-      <button onclick="switchTab('search')" id="mobNav-search" class="flex flex-col items-center gap-1 text-brand-600 font-bold text-[11px]">
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 px-4 py-2 flex justify-between items-center shadow-lg">
+      <button onclick="switchTab('search')" id="mobNav-search" class="flex flex-col items-center gap-1 text-brand-600 font-bold text-[10px]">
         <i data-lucide="search" class="w-5 h-5"></i>
         <span>Tabela</span>
       </button>
-      <button onclick="switchTab('meal')" id="mobNav-meal" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[11px] relative">
+      <button onclick="switchTab('meal')" id="mobNav-meal" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[10px] relative">
         <i data-lucide="calculator" class="w-5 h-5"></i>
         <span>Prato</span>
-        <span id="mobMealBadge" class="absolute -top-1 right-1 bg-brand-600 text-white text-[9px] font-black rounded-full px-1 min-w-3.5 text-center">0</span>
+        <span id="mobMealBadge" class="absolute -top-1 right-0 bg-brand-600 text-white text-[9px] font-black rounded-full px-1 min-w-3.5 text-center">0</span>
       </button>
-      <button onclick="switchTab('compare')" id="mobNav-compare" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[11px]">
+      <button onclick="switchTab('compare')" id="mobNav-compare" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[10px]">
         <i data-lucide="scale" class="w-5 h-5"></i>
         <span>Comparar</span>
+      </button>
+      <button onclick="switchTab('audit')" id="mobNav-audit" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[10px]">
+        <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+        <span>Auditoria</span>
       </button>
     </nav>
   </div>
@@ -505,14 +675,14 @@
 
     function switchTab(tabId) {
       currentTab = tabId;
-      ['search', 'meal', 'compare'].forEach(t => {
+      ['search', 'meal', 'compare', 'audit'].forEach(t => {
         const view = document.getElementById(`view-${t}`);
         if (view) view.classList.toggle('hidden', t !== tabId);
         
         const btn = document.getElementById(`tabBtn-${t}`);
         if (btn) {
           const isMeal = (t === 'meal');
-          const baseClasses = isMeal ? "py-3 border-b-2 flex items-center gap-2 lg:hidden " : "py-3 border-b-2 flex items-center gap-2 ";
+          const baseClasses = isMeal ? "py-3 border-b-2 flex items-center gap-2 lg:hidden whitespace-nowrap " : "py-3 border-b-2 flex items-center gap-2 whitespace-nowrap ";
           btn.className = (t === tabId) 
             ? baseClasses + "border-brand-600 text-brand-700 font-bold"
             : baseClasses + "border-transparent text-slate-500 hover:text-slate-900 font-medium";
@@ -520,10 +690,14 @@
         const mob = document.getElementById(`mobNav-${t}`);
         if (mob) {
           mob.className = (t === tabId)
-            ? "flex flex-col items-center gap-1 text-brand-600 font-bold text-[11px]"
-            : "flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[11px]";
+            ? "flex flex-col items-center gap-1 text-brand-600 font-bold text-[10px]"
+            : "flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 font-medium text-[10px]";
         }
       });
+      if (tabId === 'audit') {
+        renderAuditPillars();
+      }
+      lucide.createIcons();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1089,6 +1263,340 @@
       });
       html += `</tbody></table></div>`;
       container.innerHTML = html;
+    }
+
+    // ==========================================
+    // SISTEMA DE AUDITORIA SANITÁRIA & MICHELIN
+    // ==========================================
+    const AUDIT_PILLARS = [
+      {
+        id: "fluxo",
+        title: "1. Edificação, Instalações e Fluxo Operacional",
+        law: "RDC 216 Item 4.1 | CVS 5 Art. 6 a 12 | SMS 2619 Cap. II",
+        items: [
+          { id: "fl_1", text: "Fluxo linear contínuo, sem cruzamento entre áreas limpas e sujas (recebimento -> lixo)" },
+          { id: "fl_2", text: "Pisos, paredes e tetos lisos, laváveis, impermeáveis e sem rachaduras" },
+          { id: "fl_3", text: "Portas com fechamento automático (molas) e janelas com telas milimétricas removíveis" },
+          { id: "fl_4", text: "Lixeiras com acionamento por pedal sem contato manual e sacos plásticos íntegros" }
+        ]
+      },
+      {
+        id: "agua_residuos",
+        title: "2. Abastecimento de Água e Esgotamento",
+        law: "RDC 216 Item 4.2 | CVS 5 Art. 13 a 17",
+        items: [
+          { id: "ag_1", text: "Caixa d'água higienizada semestralmente com laudo potabilidade arquivado (máx 6 meses)" },
+          { id: "ag_2", text: "Ralos sifonados com tampa escamoteável (abre/fecha) e caixas de gordura fora da produção" }
+        ]
+      },
+      {
+        id: "higienizacao",
+        title: "3. Higienização de Instalações, Equipamentos e Pragas (MIP)",
+        law: "RDC 216 Itens 4.3 e 4.4 | CVS 5 Art. 18 a 27",
+        items: [
+          { id: "hg_1", text: "Produtos saneantes notificados/registrados na ANVISA e guardados em armário exclusivo trancado" },
+          { id: "hg_2", text: "Controle Integrado de Vetores e Pragas (MIP) com empresa especializada e laudo vigente" },
+          { id: "hg_3", text: "POP de higienização de superfícies e utensílios visível e cumprido pelos operadores" }
+        ]
+      },
+      {
+        id: "recebimento",
+        title: "4. Recebimento e Controle de Matérias-Primas",
+        law: "RDC 216 Item 4.7 | CVS 5 Art. 28 a 37 | SMS 2619 Cap. V",
+        items: [
+          { id: "rc_1", text: "Conferência térmica na entrega (Congelados <= -12°C, Carnes resfriadas <= 4°C)" },
+          { id: "rc_2", text: "Origem inspecionada obrigatória: SIF, SISP ou SIM presentes em todas as proteínas de origem animal" },
+          { id: "rc_3", text: "Planilha diária de registro de recebimento preenchida e assinada pelo RT/auditor" }
+        ]
+      },
+      {
+        id: "armazenamento",
+        title: "5. Armazenamento e Estoque (Critério PVPS)",
+        law: "RDC 216 Item 4.8 | CVS 5 Art. 38 a 46",
+        items: [
+          { id: "ar_1", text: "Rotulagem completa de abertos/fracionados: Nome, data de manipulação e validade conforme CVS 5" },
+          { id: "ar_2", text: "Sistema PVPS (Primeiro que Vence, Primeiro que Sai) rigorosamente aplicado" },
+          { id: "ar_3", text: "Alimentos afastados do piso (paletes >= 25cm), paredes e teto; sem papelão na câmara fria" }
+        ]
+      },
+      {
+        id: "processamento",
+        title: "6. Processamento Térmico e Resfriamento Rápido",
+        law: "RDC 216 Item 4.8.14 | CVS 5 Art. 47 a 53 | SMS 2619 Cap. VII",
+        items: [
+          { id: "pr_1", text: "Cocção atinge temperatura de segurança no centro geométrico: >= 70°C" },
+          { id: "pr_2", text: "Resfriamento seguro: 60°C para 10°C em até 2 horas (blast chiller ou banho de gelo)" },
+          { id: "pr_3", text: "Óleo de fritura monitorado: sem odor râncido, fumaça precoce ou fitas de ácidos graxos > 25%" }
+        ]
+      },
+      {
+        id: "hortifruti",
+        title: "7. Higienização de Hortifrutícolas para Consumo Cru",
+        law: "CVS 5 Art. 48 | SMS 2619 Item 7.8",
+        items: [
+          { id: "hf_1", text: "Lavagem mecânica folha a folha em água potável corrente" },
+          { id: "hf_2", text: "Imersão em solução clorada de 100 a 250 ppm de cloro ativo por 10 a 15 minutos" },
+          { id: "hf_3", text: "Enxágue final com água potável corrente para eliminação de resíduos de cloro" }
+        ]
+      },
+      {
+        id: "manipuladores",
+        title: "8. Manipuladores, ASO e Higiene Pessoal",
+        law: "RDC 216 Item 4.6 | CVS 5 Art. 54 a 61 | SMS 2619 Cap. VI",
+        items: [
+          { id: "mn_1", text: "Uniforme completo claro e exclusivo, sapatos fechados antiderrapantes e touca cobrindo todo o cabelo" },
+          { id: "mn_2", text: "Ausência total de adornos (anéis, brincos, relógios, alianças) e esmaltes nas unhas" },
+          { id: "mn_3", text: "Atestado de Saúde Ocupacional (ASO) e exames coprológicos vigentes para toda a brigada" }
+        ]
+      },
+      {
+        id: "amostras_doc",
+        title: "9. Documentação, Manual de BPF e Coleta de Amostras",
+        law: "RDC 216 Item 4.11 | CVS 5 Art. 67 a 70 | SMS 2619 Art. 101",
+        items: [
+          { id: "dc_1", text: "Coleta diária de amostras de todas as preparações (mínimo 100g) mantidas sob congelamento por 72h" },
+          { id: "dc_2", text: "Manual de Boas Práticas e 4 POPs obrigatórios atualizados e rubricados pelo RT" }
+        ]
+      },
+      {
+        id: "michelin",
+        title: "10. Padrão 3 Estrelas Michelin & Redes Hoteleiras de Luxo",
+        law: "Excelência Operacional & Alta Gastronomia Internacional (HACCP Elite)",
+        items: [
+          { id: "mc_1", text: "Tábua e facas codificadas por cor (Branco: Laticínios | Vermelho: Carne Crua | Verde: Vegetais | Azul: Pescados | Amarelo: Aves)" },
+          { id: "mc_2", text: "Uso de abatedor ultra-rápido (-40°C) garantindo micro-cristalização celular sem perda de textura e sucos" },
+          { id: "mc_3", text: "Termocircolador Sous-Vide calibrado a ±0.1°C com selagem a vácuo estrita (<10 mbar)" },
+          { id: "mc_4", text: "Rastreabilidade Farm-to-Table de fornecedores artesanais e zero desperdício com ficha técnica de rendimento" }
+        ]
+      }
+    ];
+
+    let auditState = JSON.parse(localStorage.getItem('nutripocket_audit_state_v1') || '{}');
+    let auditPhotos = JSON.parse(localStorage.getItem('nutripocket_audit_photos_v1') || '[]');
+
+    function saveAuditData() {
+      localStorage.setItem('nutripocket_audit_state_v1', JSON.stringify(auditState));
+      localStorage.setItem('nutripocket_audit_photos_v1', JSON.stringify(auditPhotos));
+    }
+
+    function renderAuditPillars() {
+      const container = document.getElementById('auditPillarsContainer');
+      if (!container) return;
+
+      let html = '';
+      AUDIT_PILLARS.forEach((pillar, pIdx) => {
+        let itemsHtml = '';
+        pillar.items.forEach(it => {
+          const val = auditState[it.id] || 'C'; // 'C' (Conforme), 'NC' (Não Conforme), 'NA' (Não Aplicável)
+          
+          const isC = val === 'C';
+          const isNC = val === 'NC';
+          const isNA = val === 'NA';
+
+          itemsHtml += `
+            <div class="py-3 px-3.5 sm:px-4 rounded-xl transition flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${isNC ? 'bg-rose-50/70 border border-rose-200/60' : 'bg-slate-50/70 hover:bg-slate-100/70 border border-slate-200/40'}">
+              <div class="flex items-start gap-2.5 flex-1">
+                <div class="mt-0.5 w-5 h-5 rounded-md flex items-center justify-center text-xs font-black ${isNC ? 'bg-rose-600 text-white' : (isC ? 'bg-emerald-600 text-white' : 'bg-slate-400 text-white')}">
+                  ${isNC ? '!' : (isC ? '✓' : '-')}
+                </div>
+                <div>
+                  <p class="text-xs font-bold ${isNC ? 'text-rose-950' : 'text-slate-800'} leading-relaxed">${it.text}</p>
+                </div>
+              </div>
+
+              <!-- Radio Buttons C / NC / NA -->
+              <div class="flex items-center gap-1.5 self-end sm:self-center shrink-0">
+                <button onclick="setAuditItem('${it.id}', 'C')" 
+                        class="px-2.5 py-1 text-[11px] font-extrabold rounded-lg transition-all ${isC ? 'bg-emerald-600 text-white shadow-xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-emerald-50'}">
+                  Conforme (C)
+                </button>
+                <button onclick="setAuditItem('${it.id}', 'NC')" 
+                        class="px-2.5 py-1 text-[11px] font-extrabold rounded-lg transition-all ${isNC ? 'bg-rose-600 text-white shadow-xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-rose-50'}">
+                  Não Conforme (NC)
+                </button>
+                <button onclick="setAuditItem('${it.id}', 'NA')" 
+                        class="px-2 py-1 text-[11px] font-bold rounded-lg transition-all ${isNA ? 'bg-slate-600 text-white shadow-xs' : 'bg-white text-slate-400 border border-slate-200 hover:bg-slate-100'}">
+                  N/A
+                </button>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+          <div class="bg-white rounded-3xl border border-slate-200/80 shadow-xs overflow-hidden">
+            <div class="p-4 sm:p-5 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white flex items-start justify-between gap-3">
+              <div>
+                <h4 class="text-sm font-black text-slate-900 leading-snug">${pillar.title}</h4>
+                <p class="text-[11px] font-semibold text-amber-800/80 mt-0.5">${pillar.law}</p>
+              </div>
+            </div>
+            <div class="p-3 sm:p-4 space-y-2.5">
+              ${itemsHtml}
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      updateAuditScore();
+      renderAuditPhotos();
+    }
+
+    function setAuditItem(itemId, status) {
+      auditState[itemId] = status;
+      saveAuditData();
+      renderAuditPillars();
+    }
+
+    function updateAuditScore() {
+      let total = 0;
+      let cCount = 0;
+      let ncCount = 0;
+
+      AUDIT_PILLARS.forEach(pillar => {
+        pillar.items.forEach(it => {
+          const val = auditState[it.id] || 'C';
+          if (val !== 'NA') {
+            total++;
+            if (val === 'C') cCount++;
+            if (val === 'NC') ncCount++;
+          }
+        });
+      });
+
+      const scorePct = total > 0 ? Math.round((cCount / total) * 100) : 100;
+
+      const scoreEl = document.getElementById('auditScorePct');
+      const barEl = document.getElementById('auditScoreBar');
+      const badgeEl = document.getElementById('auditBadgeClass');
+      const ncCountEl = document.getElementById('auditCountNC');
+      const actionEl = document.getElementById('auditActionRequired');
+      const starsEl = document.getElementById('auditMichelinStars');
+
+      if (scoreEl) scoreEl.innerText = `${scorePct}%`;
+      if (barEl) {
+        barEl.style.width = `${scorePct}%`;
+        if (scorePct >= 90) barEl.className = 'bg-emerald-500 h-full rounded-full transition-all duration-300';
+        else if (scorePct >= 70) barEl.className = 'bg-amber-500 h-full rounded-full transition-all duration-300';
+        else barEl.className = 'bg-rose-500 h-full rounded-full transition-all duration-300';
+      }
+
+      if (ncCountEl) ncCountEl.innerText = ncCount;
+
+      if (badgeEl) {
+        if (scorePct >= 90) {
+          badgeEl.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800';
+          badgeEl.innerText = 'GRUPO 1 (Excelente - 90-100%)';
+          if (actionEl) actionEl.innerText = 'Operação Sanitária Aprovada';
+        } else if (scorePct >= 70) {
+          badgeEl.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-black bg-amber-100 text-amber-800';
+          badgeEl.innerText = 'GRUPO 2 (Regular - 70-89%)';
+          if (actionEl) actionEl.innerText = 'Requer Plano de Ação em 30d';
+        } else {
+          badgeEl.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-black bg-rose-100 text-rose-800';
+          badgeEl.innerText = 'GRUPO 3 (Crítico - <70%)';
+          if (actionEl) actionEl.innerText = 'Interdição / Risco Iminente';
+        }
+      }
+
+      if (starsEl) {
+        const michelinItems = AUDIT_PILLARS.find(p => p.id === 'michelin')?.items || [];
+        const michelinNC = michelinItems.filter(it => (auditState[it.id] || 'C') === 'NC').length;
+        if (scorePct >= 95 && michelinNC === 0) starsEl.innerText = '★★★ (3 Estrelas)';
+        else if (scorePct >= 85) starsEl.innerText = '★★☆ (2 Estrelas)';
+        else if (scorePct >= 75) starsEl.innerText = '★☆☆ (1 Estrela)';
+        else starsEl.innerText = '☆☆☆ (Desclassificado)';
+      }
+    }
+
+    function handleAuditPhotoUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const photoObj = {
+          id: 'photo_' + Date.now(),
+          url: e.target.result,
+          timestamp: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
+          note: 'Não-conformidade detectada na vistoria'
+        };
+        auditPhotos.push(photoObj);
+        saveAuditData();
+        renderAuditPhotos();
+        showToast('Foto anexada à auditoria!');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function renderAuditPhotos() {
+      const gallery = document.getElementById('auditPhotoGallery');
+      if (!gallery) return;
+
+      if (auditPhotos.length === 0) {
+        gallery.innerHTML = `
+          <div class="col-span-full border-2 border-dashed border-slate-200 rounded-2xl p-4 text-center text-slate-400 text-xs flex flex-col items-center justify-center min-h-[110px]">
+            <i data-lucide="image" class="w-6 h-6 mb-1 text-slate-300"></i>
+            <span>Nenhuma evidência anexada ainda</span>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      let html = '';
+      auditPhotos.forEach((ph, idx) => {
+        html += `
+          <div class="relative group rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 aspect-video shadow-xs">
+            <img src="${ph.url}" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+              <button onclick="removeAuditPhoto(${idx})" class="p-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs font-bold" title="Excluir Foto">
+                <i data-lucide="trash-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <span class="absolute bottom-1 right-1 bg-slate-900/80 text-white text-[9px] px-1.5 py-0.5 rounded font-mono">${ph.timestamp}</span>
+          </div>
+        `;
+      });
+      gallery.innerHTML = html;
+      lucide.createIcons();
+    }
+
+    function removeAuditPhoto(idx) {
+      auditPhotos.splice(idx, 1);
+      saveAuditData();
+      renderAuditPhotos();
+      showToast('Foto removida.');
+    }
+
+    function syncDriveMock() {
+      const btn = document.getElementById('btnSyncDrive');
+      if (btn) {
+        btn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i><span>Sincronizando...</span>`;
+        lucide.createIcons();
+      }
+      setTimeout(() => {
+        if (btn) {
+          btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i><span>Sincronizado</span>`;
+          lucide.createIcons();
+        }
+        showToast('Fotos e laudo salvos na pasta Google Drive com sucesso!');
+      }, 1200);
+    }
+
+    function resetAuditForm() {
+      if (confirm('Deseja zerar todas as marcações da auditoria e fotos?')) {
+        auditState = {};
+        auditPhotos = [];
+        saveAuditData();
+        renderAuditPillars();
+        showToast('Auditoria reiniciada com sucesso.');
+      }
+    }
+
+    function exportAuditReport() {
+      window.print();
     }
 
     window.addEventListener('DOMContentLoaded', checkAuth);
