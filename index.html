@@ -134,12 +134,13 @@
           <i data-lucide="search" class="w-4 h-4"></i>
           <span>Consultar Tabela</span>
         </button>
-        <button onclick="switchTab('meal')" id="tabBtn-meal" class="lg:hidden py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors whitespace-nowrap">
-          <i data-lucide="calculator" class="w-4 h-4"></i>
+        <button onclick="switchTab('meal')" id="tabBtn-meal" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors whitespace-nowrap">
+          <i data-lucide="calculator" class="w-4 h-4 text-emerald-600"></i>
           <span>Montador & Calculadora</span>
+          <span id="mealMenuBadge" class="text-[10px] font-extrabold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded-full">0</span>
         </button>
         <button onclick="switchTab('compare')" id="tabBtn-compare" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors whitespace-nowrap">
-          <i data-lucide="scale" class="w-4 h-4"></i>
+          <i data-lucide="scale" class="w-4 h-4 text-sky-600"></i>
           <span>Comparador</span>
         </button>
         <button onclick="switchTab('audit')" id="tabBtn-audit" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors whitespace-nowrap">
@@ -154,16 +155,12 @@
       </div>
     </header>
 
-    <!-- CONTENT AREA WITH ADAPTIVE RESPONSIVE GRID -->
+    <!-- CONTENT AREA -->
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
       
-      <!-- DESKTOP CONTAINER: 12 COLS (8 COLS WORKSPACE + 4 COLS LIVE SIDEBAR) -->
-      <div id="mainGridContainer" class="lg:grid lg:grid-cols-12 lg:gap-8 items-start">
+      <div id="mainWorkspaceCol" class="w-full space-y-6">
         
-        <!-- LEFT WORKSPACE (8 COLS ON DESKTOP, FULL ON MOBILE) -->
-        <div id="mainWorkspaceCol" class="lg:col-span-8 space-y-6">
-          
-          <!-- ================= TAB: CONSULTA ================= -->
+        <!-- ================= TAB: CONSULTA ================= -->
           <section id="view-search" class="space-y-6">
             <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
               <div class="relative">
@@ -182,6 +179,19 @@
                 <button onclick="filterSource('TBCA')" class="source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200" data-source="TBCA">TBCA / USP (5.668)</button>
                 <button onclick="filterSource('IBGE')" class="source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200" data-source="IBGE">IBGE / POF (1.971)</button>
                 <button onclick="filterSource('USDA')" class="source-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 text-slate-600 hover:bg-slate-200" data-source="USDA">USDA (7.793)</button>
+              </div>
+
+              <!-- Atalho Rápido para Montador & Calculadora -->
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="text-xs font-bold text-slate-700">Seu Prato em Andamento:</span>
+                  <span id="searchMealCounterBadge" class="text-xs font-black text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">0 alimentos</span>
+                </div>
+                <button onclick="switchTab('meal')" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition-all shadow-xs flex items-center gap-1.5">
+                  <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+                  <span>Abrir Montador de Prato &rarr;</span>
+                </button>
               </div>
             </div>
 
@@ -256,9 +266,11 @@
             </div>
           </section>
 
-          <!-- ================= TAB: MONTADOR (Mobile View Only) ================= -->
-          <section id="view-meal" class="hidden lg:hidden space-y-6">
-            <div id="mobileMealWrapper"></div>
+          <!-- ================= TAB: MONTADOR & CALCULADORA (TELA DEDICADA DESKTOP & MOBILE) ================= -->
+          <section id="view-meal" class="hidden space-y-6">
+            <div id="dedicatedMealWrapper" class="max-w-4xl mx-auto space-y-6">
+              <!-- Rendered via JS -->
+            </div>
           </section>
 
           <!-- ================= TAB: AUDITORIA & QUALIDADE ================= -->
@@ -581,20 +593,10 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </section>
 
         </div>
-
-        <!-- RIGHT SIDEBAR (4 COLS ON DESKTOP, HIDDEN ON MOBILE) -->
-        <div id="desktopMealSidebarWrapper" class="hidden lg:block lg:col-span-4 sticky top-24 space-y-6">
-          <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-md" id="desktopMealSidebar">
-            <!-- Rendered by renderMeal() -->
-          </div>
-        </div>
-
-      </div>
     </main>
 
     <!-- FOOTER -->
@@ -877,11 +879,9 @@
         
         const btn = document.getElementById(`tabBtn-${t}`);
         if (btn) {
-          const isMeal = (t === 'meal');
-          const baseClasses = isMeal ? "py-3 border-b-2 flex items-center gap-2 lg:hidden whitespace-nowrap " : "py-3 border-b-2 flex items-center gap-2 whitespace-nowrap ";
           btn.className = (t === tabId) 
-            ? baseClasses + "border-brand-600 text-brand-700 font-bold"
-            : baseClasses + "border-transparent text-slate-500 hover:text-slate-900 font-medium";
+            ? "py-3 border-b-2 flex items-center gap-2 whitespace-nowrap border-brand-600 text-brand-700 font-bold"
+            : "py-3 border-b-2 flex items-center gap-2 whitespace-nowrap border-transparent text-slate-500 hover:text-slate-900 font-medium";
         }
         const mob = document.getElementById(`mobNav-${t}`);
         if (mob) {
@@ -891,25 +891,9 @@
         }
       });
 
-      // Se for Auditoria ou Cadastros, esconde o Montador de Prato na tela desktop e expande para 12 cols
-      const isFullWidthTab = (tabId === 'audit' || tabId === 'cadastros');
-      const desktopSidebar = document.getElementById('desktopMealSidebarWrapper');
-      const workspaceCol = document.getElementById('mainWorkspaceCol');
-
-      if (desktopSidebar) {
-        desktopSidebar.classList.toggle('hidden', isFullWidthTab);
-      }
-      if (workspaceCol) {
-        if (isFullWidthTab) {
-          workspaceCol.classList.remove('lg:col-span-8');
-          workspaceCol.classList.add('lg:col-span-12');
-        } else {
-          workspaceCol.classList.remove('lg:col-span-12');
-          workspaceCol.classList.add('lg:col-span-8');
-        }
-      }
-
-      if (tabId === 'audit') {
+      if (tabId === 'meal') {
+        renderMeal();
+      } else if (tabId === 'audit') {
         loadAuditorsAndEstablishments();
         renderAuditPillars();
       } else if (tabId === 'cadastros') {
@@ -1258,30 +1242,45 @@
       localStorage.setItem('nutripocket_user_meal_v1', JSON.stringify(myMeal));
       const badge = document.getElementById('mealBadge');
       const mobBadge = document.getElementById('mobMealBadge');
+      const menuBadge = document.getElementById('mealMenuBadge');
+      const searchBadge = document.getElementById('searchMealCounterBadge');
+
       if (badge) badge.innerText = myMeal.length;
       if (mobBadge) mobBadge.innerText = myMeal.length;
+      if (menuBadge) menuBadge.innerText = myMeal.length;
+      if (searchBadge) searchBadge.innerText = `${myMeal.length} ${myMeal.length === 1 ? 'alimento' : 'alimentos'}`;
     }
 
     function buildMealHtml() {
       if (myMeal.length === 0) {
         return `
-          <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-black text-xs">
-                <i data-lucide="utensils" class="w-4 h-4"></i>
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-5">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-sm">
+                  <i data-lucide="utensils" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-black text-slate-900">Montador & Calculadora Nutricional</h3>
+                  <p class="text-xs text-slate-500">Seu prato está vazio no momento</p>
+                </div>
               </div>
-              <div>
-                <h3 class="text-sm font-black text-slate-900">Montador de Prato</h3>
-                <p class="text-[11px] text-slate-500">0 itens selecionados</p>
+              <button onclick="switchTab('search')" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                <span>Adicionar Alimentos da Tabela</span>
+              </button>
+            </div>
+            <div class="text-center py-16 border-2 border-dashed border-slate-200 rounded-3xl">
+              <div class="w-14 h-14 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="soup" class="w-7 h-7"></i>
               </div>
+              <h4 class="text-base font-bold text-slate-800">Nenhum alimento selecionado</h4>
+              <p class="text-xs text-slate-400 max-w-sm mx-auto mt-1 mb-4">Vá até a aba "Consultar Tabela" e clique no botão <b>+</b> dos alimentos para compor o prato do seu paciente.</p>
+              <button onclick="switchTab('search')" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl shadow-md transition inline-flex items-center gap-2">
+                <i data-lucide="search" class="w-4 h-4"></i>
+                <span>Explorar 16.029 Alimentos</span>
+              </button>
             </div>
-          </div>
-          <div class="text-center py-10 border-2 border-dashed border-slate-200 rounded-2xl">
-            <div class="w-10 h-10 bg-slate-100 text-slate-400 rounded-xl flex items-center justify-center mx-auto mb-2">
-              <i data-lucide="soup" class="w-5 h-5"></i>
-            </div>
-            <h4 class="text-xs font-bold text-slate-800">Prato Vazio</h4>
-            <p class="text-[11px] text-slate-400 max-w-[200px] mx-auto mt-1">Clique no botão <b>+</b> dos alimentos para montar sua dieta.</p>
           </div>
         `;
       }
@@ -1306,9 +1305,12 @@
           const measures = findMedidasForFood(f);
           if (measures && measures.length > 0) {
             mcOptionsHtml = `
-              <div class="mt-1.5 pt-1 border-t border-slate-200/60 flex items-center gap-1.5">
-                <span class="text-[9px] font-black uppercase text-brand-700">Medida:</span>
-                <select onchange="updateMealGrams(${idx}, this.value)" class="flex-1 bg-white border border-slate-200 rounded px-1.5 py-0.5 text-[10px] font-semibold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500">
+              <div class="mt-2 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div class="flex items-center gap-1.5 text-xs text-brand-700 font-extrabold">
+                  <i data-lucide="scale" class="w-3.5 h-3.5"></i>
+                  <span>Medida Caseira:</span>
+                </div>
+                <select onchange="updateMealGrams(${idx}, this.value)" class="bg-white border border-slate-200 rounded-xl px-2.5 py-1 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
                   <option value="${item.grams}">Manual (${item.grams}g)</option>
                   ${measures.map(m => `<option value="${m.grams}" ${Math.abs(m.grams - item.grams) < 0.1 ? 'selected' : ''}>${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('')}
                 </select>
@@ -1318,29 +1320,29 @@
         }
 
         return `
-          <div class="bg-slate-50/80 border border-slate-200/80 rounded-xl p-2.5 space-y-1">
-            <div class="flex items-center justify-between gap-2">
+          <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs space-y-2">
+            <div class="flex items-center justify-between gap-3">
               <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-1.5">
-                  <h5 class="text-xs font-bold text-slate-900 truncate">${f.name || f.nome}</h5>
-                  ${isTaco ? '<span class="text-[8px] bg-brand-100 text-brand-800 font-extrabold px-1 rounded">TACO</span>' : ''}
+                <div class="flex items-center gap-2">
+                  <h5 class="text-sm font-black text-slate-900 truncate">${f.name || f.nome}</h5>
+                  <span class="text-[9px] ${isTaco ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'} font-extrabold px-2 py-0.5 rounded-full">${f.source || 'TACO'}</span>
                 </div>
-                <div class="flex gap-2 text-[10px] text-slate-500 font-semibold mt-0.5">
+                <div class="flex gap-3 text-xs text-slate-500 font-semibold mt-1">
                   <span class="text-amber-700 font-black">${kcal} kcal</span>
-                  <span>P: ${prot.toFixed(1)}g</span>
-                  <span>C: ${carb.toFixed(1)}g</span>
-                  <span>G: ${fat.toFixed(1)}g</span>
+                  <span>Proteína: <b>${prot.toFixed(1)}g</b></span>
+                  <span>Carboidratos: <b>${carb.toFixed(1)}g</b></span>
+                  <span>Gorduras: <b>${fat.toFixed(1)}g</b></span>
                 </div>
               </div>
 
-              <div class="flex items-center gap-1.5 shrink-0">
-                <div class="flex items-center bg-white border border-slate-200 rounded-lg px-2 py-0.5">
+              <div class="flex items-center gap-2 shrink-0">
+                <div class="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1">
                   <input type="number" min="1" step="5" value="${item.grams}" onchange="updateMealGrams(${idx}, this.value)"
-                         class="w-12 text-center font-extrabold text-xs text-slate-900 focus:outline-none">
-                  <span class="text-[9px] font-bold text-slate-400">g</span>
+                         class="w-14 text-center font-black text-xs text-slate-900 bg-transparent focus:outline-none">
+                  <span class="text-[10px] font-black text-slate-400">g</span>
                 </div>
-                <button onclick="removeMealItem(${idx})" class="text-slate-400 hover:text-rose-600 p-1 hover:bg-rose-50 rounded-lg transition-colors">
-                  <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                <button onclick="removeMealItem(${idx})" class="text-slate-400 hover:text-rose-600 p-1.5 hover:bg-rose-50 rounded-xl transition-colors" title="Remover">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
                 </button>
               </div>
             </div>
@@ -1350,80 +1352,87 @@
       }).join('');
 
       return `
-        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-black text-xs">
-              <i data-lucide="calculator" class="w-4 h-4"></i>
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black">
+                <i data-lucide="calculator" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-black text-slate-900">Montador & Calculadora Nutricional</h3>
+                <p class="text-xs text-slate-500">${myMeal.length} ${myMeal.length === 1 ? 'alimento montado no prato' : 'alimentos montados no prato'}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="text-sm font-black text-slate-900">Montador & Calculadora</h3>
-              <p class="text-[11px] text-slate-500">${myMeal.length} ${myMeal.length === 1 ? 'alimento' : 'alimentos'} no prato</p>
+            <div class="flex items-center gap-2">
+              <button onclick="switchTab('search')" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition flex items-center gap-1.5">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                <span>Adicionar Mais</span>
+              </button>
+              <button onclick="clearMeal()" class="px-3.5 py-2 text-xs text-rose-600 hover:text-rose-700 font-bold bg-rose-50 hover:bg-rose-100 rounded-xl flex items-center gap-1.5 transition">
+                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                <span>Esvaziar Prato</span>
+              </button>
             </div>
           </div>
-          <button onclick="clearMeal()" class="text-xs text-rose-600 hover:text-rose-700 font-bold bg-rose-50 px-2 py-1 rounded-lg flex items-center gap-1 transition-colors">
-            <i data-lucide="trash-2" class="w-3 h-3"></i>
-            <span>Limpar</span>
+
+          <!-- Totals Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/70 p-4 rounded-2xl text-center">
+              <span class="text-[10px] font-black uppercase text-amber-700 block">Total Calorias</span>
+              <div class="flex items-baseline justify-center gap-1 mt-1">
+                <span class="text-2xl font-black text-amber-950">${Math.round(tKcal)}</span>
+                <span class="text-xs font-bold text-amber-700">kcal</span>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/70 p-4 rounded-2xl text-center">
+              <span class="text-[10px] font-black uppercase text-emerald-700 block">Total Proteína</span>
+              <div class="flex items-baseline justify-center gap-1 mt-1">
+                <span class="text-2xl font-black text-emerald-950">${tProt.toFixed(1)}</span>
+                <span class="text-xs font-bold text-emerald-700">g</span>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-200/70 p-4 rounded-2xl text-center">
+              <span class="text-[10px] font-black uppercase text-sky-700 block">Total Carboidratos</span>
+              <div class="flex items-baseline justify-center gap-1 mt-1">
+                <span class="text-2xl font-black text-sky-950">${tCarb.toFixed(1)}</span>
+                <span class="text-xs font-bold text-sky-700">g</span>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-200/70 p-4 rounded-2xl text-center">
+              <span class="text-[10px] font-black uppercase text-rose-700 block">Total Gorduras</span>
+              <div class="flex items-baseline justify-center gap-1 mt-1">
+                <span class="text-2xl font-black text-rose-950">${tFat.toFixed(1)}</span>
+                <span class="text-xs font-bold text-rose-700">g</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between bg-slate-50 border border-slate-200/80 rounded-2xl px-4 py-2 text-xs">
+            <span class="text-slate-600">Fibra Alimentar Total: <b class="text-slate-900">${tFibra.toFixed(1)}g</b></span>
+            <span class="text-slate-300">•</span>
+            <span class="text-slate-600">Sódio Total: <b class="text-slate-900">${tSodio.toFixed(1)}mg</b></span>
+          </div>
+
+          <!-- Itens do Prato -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-black uppercase tracking-wider text-slate-500">Alimentos no Prato & Medidas Selecionadas</h4>
+            ${itemsHtml}
+          </div>
+
+          <button onclick="window.print()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span>Imprimir Dieta / Salvar em PDF</span>
           </button>
         </div>
-
-        <!-- Totals Cards -->
-        <div class="grid grid-cols-2 gap-2 mb-4">
-          <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 p-2.5 rounded-xl text-center">
-            <span class="text-[9px] font-black uppercase text-amber-700 block">Calorias</span>
-            <div class="flex items-baseline justify-center gap-0.5 mt-0.5">
-              <span class="text-xl font-black text-amber-900">${Math.round(tKcal)}</span>
-              <span class="text-[10px] font-bold text-amber-700">kcal</span>
-            </div>
-          </div>
-          <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60 p-2.5 rounded-xl text-center">
-            <span class="text-[9px] font-black uppercase text-emerald-700 block">Proteína</span>
-            <div class="flex items-baseline justify-center gap-0.5 mt-0.5">
-              <span class="text-xl font-black text-emerald-900">${tProt.toFixed(1)}</span>
-              <span class="text-[10px] font-bold text-emerald-700">g</span>
-            </div>
-          </div>
-          <div class="bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-200/60 p-2.5 rounded-xl text-center">
-            <span class="text-[9px] font-black uppercase text-sky-700 block">Carboidratos</span>
-            <div class="flex items-baseline justify-center gap-0.5 mt-0.5">
-              <span class="text-xl font-black text-sky-900">${tCarb.toFixed(1)}</span>
-              <span class="text-[10px] font-bold text-sky-700">g</span>
-            </div>
-          </div>
-          <div class="bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-200/60 p-2.5 rounded-xl text-center">
-            <span class="text-[9px] font-black uppercase text-rose-700 block">Gorduras</span>
-            <div class="flex items-baseline justify-center gap-0.5 mt-0.5">
-              <span class="text-xl font-black text-rose-900">${tFat.toFixed(1)}</span>
-              <span class="text-[10px] font-bold text-rose-700">g</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-between bg-slate-50 border border-slate-200/70 rounded-xl px-3 py-1.5 mb-3 text-[11px]">
-          <span class="text-slate-500">Fibra: <b>${tFibra.toFixed(1)}g</b></span>
-          <span class="text-slate-300">|</span>
-          <span class="text-slate-500">Sódio: <b>${tSodio.toFixed(1)}mg</b></span>
-        </div>
-
-        <div class="space-y-2 max-h-72 overflow-y-auto pr-1 mb-3 hide-scrollbar">
-          ${itemsHtml}
-        </div>
-
-        <button onclick="window.print()" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors">
-          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
-          <span>Imprimir / Salvar Dieta</span>
-        </button>
       `;
     }
 
     function renderMeal() {
       saveMeal();
-      const sidebar = document.getElementById('desktopMealSidebar');
-      const mobileWrap = document.getElementById('mobileMealWrapper');
-
-      const content = buildMealHtml();
-      if (sidebar) sidebar.innerHTML = content;
-      if (mobileWrap) mobileWrap.innerHTML = `<div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm">${content}</div>`;
-
+      const wrap = document.getElementById('dedicatedMealWrapper');
+      if (wrap) {
+        wrap.innerHTML = buildMealHtml();
+      }
       lucide.createIcons();
     }
 
