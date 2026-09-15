@@ -643,12 +643,30 @@
           </button>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 mb-5 flex items-center justify-between">
-          <span class="text-xs font-bold text-slate-700">Porção calculada:</span>
-          <div class="flex items-center gap-2">
-            <input type="number" id="modalGramInput" value="100" min="1" step="5" oninput="updateModalNutrients()"
-                   class="w-20 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-black text-center text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
-            <span class="text-xs font-black text-slate-500">gramas</span>
+        <!-- Seletor de Porção (Gramas e Medida Caseira Exclusiva para TACO) -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 mb-4 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">Porção calculada:</span>
+            <div class="flex items-center gap-2">
+              <input type="number" id="modalGramInput" value="100" min="1" step="5" oninput="onModalGramChange()"
+                     class="w-20 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-black text-center text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <span class="text-xs font-black text-slate-500">gramas</span>
+            </div>
+          </div>
+
+          <!-- Linha de Medida Caseira (Ativa somente para TACO) -->
+          <div id="modalMedidaCaseiraRow" class="pt-2 border-t border-slate-200/80 hidden space-y-1">
+            <div class="flex items-center justify-between">
+              <label class="text-[10px] uppercase font-black tracking-wider text-brand-700 flex items-center gap-1">
+                <i data-lucide="scale" class="w-3.5 h-3.5 text-brand-600"></i>
+                <span>Medida Caseira (Pinheiro et al.):</span>
+              </label>
+              <span class="text-[9px] text-slate-400 font-bold">Exclusivo Tabela TACO</span>
+            </div>
+            <select id="modalMedidaSelect" onchange="onModalMedidaSelect(this.value)"
+                    class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-xs">
+              <option value="">Selecione uma medida caseira...</option>
+            </select>
           </div>
         </div>
 
@@ -783,6 +801,7 @@
   </div>
 
   <script src="nutripocket_data.js"></script>
+  <script src="medidas_caseiras.js"></script>
 
   <script>
     const VALID_KEYS = ["gabi2026", "taco2026", "nutripro", "rafa123"];
@@ -1037,6 +1056,35 @@
       filterFoods(false);
     }
 
+    // Helper de Medidas Caseiras (Pinheiro et al. - Exclusivo TACO)
+    function findMedidasForFood(food) {
+      if (!food || food.source !== 'TACO' || typeof MEDIDAS_CASEIRAS === 'undefined') return [];
+      const fName = normalizeSearchStr(food.name || food.nome || '');
+      const db = MEDIDAS_CASEIRAS.alimentos || {};
+      
+      // Match exato ou token match com as chaves do livro
+      for (const [key, measures] of Object.entries(db)) {
+        const normKey = normalizeSearchStr(key);
+        if (fName.includes(normKey) || normKey.includes(fName)) {
+          return measures;
+        }
+      }
+      
+      // Token match por palavras chave principais (ex: arroz, feijao, frango, bife, aveia, leite...)
+      const tokens = fName.split(/\s+/).filter(t => t.length >= 4);
+      for (const tok of tokens) {
+        for (const [key, measures] of Object.entries(db)) {
+          const normKey = normalizeSearchStr(key);
+          if (normKey.split(/\s+/).includes(tok)) {
+            return measures;
+          }
+        }
+      }
+
+      // Fallback genérico padrão da literatura se for TACO
+      return MEDIDAS_CASEIRAS.genericas || [];
+    }
+
     function openModal(foodId) {
       const food = ALL_FOODS.find(f => f.id === foodId);
       if (!food) return;
@@ -1046,6 +1094,23 @@
       document.getElementById('modalName').innerText = food.name || food.nome;
       document.getElementById('modalSourceBadge').innerText = `Fonte Oficial: ${food.source || 'TACO'} (#${food.id})`;
       document.getElementById('modalGramInput').value = 100;
+
+      // Configuração de Medida Caseira: Exclusivo TACO
+      const mcRow = document.getElementById('modalMedidaCaseiraRow');
+      const mcSelect = document.getElementById('modalMedidaSelect');
+      if (food.source === 'TACO' && typeof MEDIDAS_CASEIRAS !== 'undefined') {
+        const measures = findMedidasForFood(food);
+        if (measures && measures.length > 0) {
+          mcSelect.innerHTML = `<option value="">-- Escolher Medida Caseira (Gabi & Pacientes) --</option>` +
+            measures.map(m => `<option value="${m.grams}">${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('');
+          mcRow.classList.remove('hidden');
+        } else {
+          mcRow.classList.add('hidden');
+        }
+      } else {
+        mcRow.classList.add('hidden');
+      }
+
       updateModalNutrients();
 
       document.getElementById('modalAddMealBtn').onclick = () => {
@@ -1056,6 +1121,22 @@
 
       document.getElementById('detailModal').classList.remove('hidden');
       lucide.createIcons();
+    }
+
+    function onModalMedidaSelect(val) {
+      if (!val) return;
+      const g = parseFloat(val);
+      if (g > 0) {
+        document.getElementById('modalGramInput').value = g;
+        updateModalNutrients();
+      }
+    }
+
+    function onModalGramChange() {
+      // Quando o usuário digita gramas diretamente, limpa o select de medida caseira
+      const mcSelect = document.getElementById('modalMedidaSelect');
+      if (mcSelect) mcSelect.value = "";
+      updateModalNutrients();
     }
 
     function closeModal() {
@@ -1219,28 +1300,51 @@
         if (typeof f.fibra === 'number') tFibra += f.fibra * factor;
         if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
 
-        return `
-          <div class="bg-slate-50/80 border border-slate-200/80 rounded-xl p-2.5 flex items-center justify-between gap-2">
-            <div class="flex-1 min-w-0">
-              <h5 class="text-xs font-bold text-slate-900 truncate">${f.name || f.nome}</h5>
-              <div class="flex gap-2 text-[10px] text-slate-500 font-semibold mt-0.5">
-                <span class="text-amber-700 font-black">${kcal} kcal</span>
-                <span>P: ${prot.toFixed(1)}g</span>
-                <span>C: ${carb.toFixed(1)}g</span>
-                <span>G: ${fat.toFixed(1)}g</span>
+        const isTaco = (f.source === 'TACO');
+        let mcOptionsHtml = '';
+        if (isTaco) {
+          const measures = findMedidasForFood(f);
+          if (measures && measures.length > 0) {
+            mcOptionsHtml = `
+              <div class="mt-1.5 pt-1 border-t border-slate-200/60 flex items-center gap-1.5">
+                <span class="text-[9px] font-black uppercase text-brand-700">Medida:</span>
+                <select onchange="updateMealGrams(${idx}, this.value)" class="flex-1 bg-white border border-slate-200 rounded px-1.5 py-0.5 text-[10px] font-semibold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                  <option value="${item.grams}">Manual (${item.grams}g)</option>
+                  ${measures.map(m => `<option value="${m.grams}" ${Math.abs(m.grams - item.grams) < 0.1 ? 'selected' : ''}>${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('')}
+                </select>
               </div>
-            </div>
+            `;
+          }
+        }
 
-            <div class="flex items-center gap-1.5 shrink-0">
-              <div class="flex items-center bg-white border border-slate-200 rounded-lg px-2 py-0.5">
-                <input type="number" min="1" step="5" value="${item.grams}" onchange="updateMealGrams(${idx}, this.value)"
-                       class="w-12 text-center font-extrabold text-xs text-slate-900 focus:outline-none">
-                <span class="text-[9px] font-bold text-slate-400">g</span>
+        return `
+          <div class="bg-slate-50/80 border border-slate-200/80 rounded-xl p-2.5 space-y-1">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <h5 class="text-xs font-bold text-slate-900 truncate">${f.name || f.nome}</h5>
+                  ${isTaco ? '<span class="text-[8px] bg-brand-100 text-brand-800 font-extrabold px-1 rounded">TACO</span>' : ''}
+                </div>
+                <div class="flex gap-2 text-[10px] text-slate-500 font-semibold mt-0.5">
+                  <span class="text-amber-700 font-black">${kcal} kcal</span>
+                  <span>P: ${prot.toFixed(1)}g</span>
+                  <span>C: ${carb.toFixed(1)}g</span>
+                  <span>G: ${fat.toFixed(1)}g</span>
+                </div>
               </div>
-              <button onclick="removeMealItem(${idx})" class="text-slate-400 hover:text-rose-600 p-1 hover:bg-rose-50 rounded-lg transition-colors">
-                <i data-lucide="x" class="w-3.5 h-3.5"></i>
-              </button>
+
+              <div class="flex items-center gap-1.5 shrink-0">
+                <div class="flex items-center bg-white border border-slate-200 rounded-lg px-2 py-0.5">
+                  <input type="number" min="1" step="5" value="${item.grams}" onchange="updateMealGrams(${idx}, this.value)"
+                         class="w-12 text-center font-extrabold text-xs text-slate-900 focus:outline-none">
+                  <span class="text-[9px] font-bold text-slate-400">g</span>
+                </div>
+                <button onclick="removeMealItem(${idx})" class="text-slate-400 hover:text-rose-600 p-1 hover:bg-rose-50 rounded-lg transition-colors">
+                  <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
             </div>
+            ${mcOptionsHtml}
           </div>
         `;
       }).join('');
