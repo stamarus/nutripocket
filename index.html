@@ -1069,6 +1069,88 @@
       return MEDIDAS_CASEIRAS.genericas || [];
     }
 
+    // Calcula a conversão inteligente mais natural para o paciente
+    // Ex: 200g de arroz -> 4 colheres de sopa cheias (50g cada)
+    // 50g de tomate -> 2 a 3 fatias médias
+    // 300g de carne -> 3 bifes médios / porções
+    function calculateBestMeasure(food, grams) {
+      if (!food || food.source !== 'TACO') return null;
+      const g = parseFloat(grams) || 0;
+      if (g <= 0) return null;
+
+      const measures = findMedidasForFood(food);
+      if (!measures || measures.length === 0) return null;
+
+      // Classifica medidas por afinidade com o alimento e por tamanho
+      // Se tiver fatias para tomate, unidades/bife para carne, conchas para feijão, colher para arroz
+      const fName = normalizeSearchStr(food.name || food.nome || '');
+      
+      let preferred = measures;
+      if (fName.includes('feijao') || fName.includes('sopa') || fName.includes('caldo')) {
+        const conchas = measures.filter(m => m.measure.toLowerCase().includes('concha'));
+        if (conchas.length > 0) preferred = conchas;
+      } else if (fName.includes('tomate') || fName.includes('queijo') || fName.includes('pao') || fName.includes('abacaxi') || fName.includes('melancia')) {
+        const fatias = measures.filter(m => m.measure.toLowerCase().includes('fatia') || m.measure.toLowerCase().includes('rodela'));
+        if (fatias.length > 0) preferred = fatias;
+      } else if (fName.includes('carne') || fName.includes('bife') || fName.includes('frango') || fName.includes('peixe') || fName.includes('hamburguer') || fName.includes('patinho')) {
+        const pedacos = measures.filter(m => m.measure.toLowerCase().includes('bife') || m.measure.toLowerCase().includes('pedaco') || m.measure.toLowerCase().includes('porcao') || m.measure.toLowerCase().includes('filé') || m.measure.toLowerCase().includes('unidade'));
+        if (pedacos.length > 0) preferred = pedacos;
+      } else if (fName.includes('sal') || fName.includes('acucar') || fName.includes('azeite') || fName.includes('oleo')) {
+        if (g <= 5) {
+          const chas = measures.filter(m => m.measure.toLowerCase().includes('chá') || m.measure.toLowerCase().includes('cafe') || m.measure.toLowerCase().includes('café'));
+          if (chas.length > 0) preferred = chas;
+        }
+      }
+
+      // Encontra a medida que resulta no número de porções mais amigável (próximo de inteiro ou meio)
+      let best = null;
+      let minScore = 99999;
+
+      preferred.forEach(m => {
+        const count = g / m.grams;
+        // Penaliza se o número de unidades for absurdo (ex: 25 colheres de café para 300g)
+        if (count < 0.2 || count > 12) return;
+
+        // Quão próximo de um número "bonito" (ex: 1, 1.5, 2, 2.5, 3, 4)
+        const remainder = Math.abs(count - Math.round(count * 2) / 2);
+        const countPenalty = Math.abs(count - 2.5); // favorece entre 1 e 4 medidas
+        const score = remainder * 10 + countPenalty * 0.5;
+
+        if (score < minScore) {
+          minScore = score;
+          best = {
+            measure: m.measure,
+            unitGrams: m.grams,
+            count: Math.round(count * 2) / 2 || 1,
+            label: m.label
+          };
+        }
+      });
+
+      if (!best && measures.length > 0) {
+        const first = measures[0];
+        const count = Math.max(1, Math.round(g / first.grams));
+        best = { measure: first.measure, unitGrams: first.grams, count };
+      }
+
+      if (best) {
+        let countDisplay = '';
+        if (best.count === 1) countDisplay = '1';
+        else if (best.count === 0.5) countDisplay = '1/2';
+        else if (best.count === 1.5) countDisplay = '1 e 1/2';
+        else if (best.count === 2.5) countDisplay = '2 e 1/2';
+        else countDisplay = String(best.count);
+
+        return {
+          text: `≈ ${countDisplay} ${best.measure.toLowerCase()}`,
+          unitGrams: best.unitGrams,
+          count: best.count,
+          rawMeasure: best.measure
+        };
+      }
+      return null;
+    }
+
     function openModal(foodId) {
       const food = ALL_FOODS.find(f => f.id === foodId);
       if (!food) return;
@@ -1300,32 +1382,44 @@
         if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
 
         const isTaco = (f.source === 'TACO');
+        const bestMeasure = isTaco ? calculateBestMeasure(f, item.grams) : null;
+
         let mcOptionsHtml = '';
         if (isTaco) {
           const measures = findMedidasForFood(f);
           if (measures && measures.length > 0) {
             mcOptionsHtml = `
-              <div class="mt-2 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <div class="flex items-center gap-1.5 text-xs text-brand-700 font-extrabold">
-                  <i data-lucide="scale" class="w-3.5 h-3.5"></i>
-                  <span>Medida Caseira:</span>
+              <div class="mt-2.5 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <!-- Visão do Paciente: Medida Amigável Automática -->
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60 flex items-center gap-1">
+                    <i data-lucide="utensils" class="w-3 h-3 text-emerald-600"></i>
+                    <span>Visão do Paciente:</span>
+                    <b class="text-emerald-950 font-black">${bestMeasure ? bestMeasure.text : 'Calculado'}</b>
+                  </span>
                 </div>
-                <select onchange="updateMealGrams(${idx}, this.value)" class="bg-white border border-slate-200 rounded-xl px-2.5 py-1 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
-                  <option value="${item.grams}">Manual (${item.grams}g)</option>
-                  ${measures.map(m => `<option value="${m.grams}" ${Math.abs(m.grams - item.grams) < 0.1 ? 'selected' : ''}>${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('')}
-                </select>
+
+                <!-- Seletor Alternativo de Medida -->
+                <div class="flex items-center gap-1.5 self-end sm:self-auto">
+                  <span class="text-[10px] text-slate-400 font-bold">Trocar Medida:</span>
+                  <select onchange="updateMealGrams(${idx}, this.value)" class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
+                    <option value="${item.grams}">Manual (${item.grams}g)</option>
+                    ${measures.map(m => `<option value="${m.grams}" ${Math.abs(m.grams - item.grams) < 0.1 ? 'selected' : ''}>${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('')}
+                  </select>
+                </div>
               </div>
             `;
           }
         }
 
         return `
-          <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs space-y-2">
+          <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs space-y-2 hover:border-brand-300 transition-colors">
             <div class="flex items-center justify-between gap-3">
               <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-2">
                   <h5 class="text-sm font-black text-slate-900 truncate">${f.name || f.nome}</h5>
                   <span class="text-[9px] ${isTaco ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'} font-extrabold px-2 py-0.5 rounded-full">${f.source || 'TACO'}</span>
+                  ${bestMeasure ? `<span class="hidden sm:inline-flex text-[11px] font-bold text-emerald-700 bg-emerald-50/80 px-2 py-0.5 rounded-md border border-emerald-100">${bestMeasure.text}</span>` : ''}
                 </div>
                 <div class="flex gap-3 text-xs text-slate-500 font-semibold mt-1">
                   <span class="text-amber-700 font-black">${kcal} kcal</span>
