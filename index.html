@@ -11,6 +11,9 @@
   <link rel="apple-touch-icon" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Export Libraries: SheetJS (Excel) & html2pdf.js (PDF com branding) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -631,6 +634,118 @@
       </div>
     </footer>
 
+    <!-- MODAL: VISÃO DO PACIENTE (Dieta Prática com Medidas Caseiras) -->
+    <div id="dietPatientModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden no-print">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150 space-y-5">
+        <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black">
+              <i data-lucide="smile" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">Guia do Paciente</span>
+              <h3 class="text-xl font-black text-slate-900 mt-1">Meu Plano de Refeição</h3>
+              <p class="text-xs text-slate-500">Instruções claras e práticas com medidas caseiras</p>
+            </div>
+          </div>
+          <button onclick="closeDietPatientModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-xl hover:bg-slate-100 transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Banner com Dica Amigável -->
+        <div class="bg-emerald-50/70 border border-emerald-200/70 rounded-2xl p-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
+            <i data-lucide="utensils" class="w-5 h-5"></i>
+          </div>
+          <p class="text-xs text-emerald-950 leading-relaxed font-semibold">
+            Você não precisa pesar grama por grama! Utilize as colheres, conchas, fatias e unidades sugeridas abaixo para compor o seu prato com facilidade.
+          </p>
+        </div>
+
+        <!-- Conteúdo dos Alimentos para o Paciente -->
+        <div id="patientDietModalContent" class="space-y-3">
+          <!-- Injetado dinamicamente -->
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+          <span class="text-xs text-slate-500 font-bold" id="patientDietCountBadge">0 alimentos</span>
+          <div class="flex items-center gap-2">
+            <button onclick="exportDietPDF()" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-black rounded-xl shadow-md transition flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>Baixar em PDF</span>
+            </button>
+            <button onclick="closeDietPatientModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: VISÃO TÉCNICA DO NUTRICIONISTA -->
+    <div id="dietNutriModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden no-print">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150 space-y-5">
+        <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-black">
+              <i data-lucide="stethoscope" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full">Prontuário & Prescrição</span>
+              <h3 class="text-xl font-black text-slate-900 mt-1">Quadro Clínico & Nutricional</h3>
+              <p class="text-xs text-slate-500">Discriminação técnica de macros, micronutrientes e equivalências</p>
+            </div>
+          </div>
+          <button onclick="closeDietNutriModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-xl hover:bg-slate-100 transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Totais Clínicos -->
+        <div id="nutriDietModalTotals" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+          <!-- Injetado dinamicamente -->
+        </div>
+
+        <!-- Tabela Técnica -->
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead class="bg-slate-50 text-slate-700 uppercase font-black text-[10px] border-b border-slate-200">
+              <tr>
+                <th class="p-3">Alimento / Origem</th>
+                <th class="p-3 text-center">Peso</th>
+                <th class="p-3 text-center">Medida Caseira</th>
+                <th class="p-3 text-center">Kcal</th>
+                <th class="p-3 text-center">Prot</th>
+                <th class="p-3 text-center">Carb</th>
+                <th class="p-3 text-center">Lip</th>
+              </tr>
+            </thead>
+            <tbody id="nutriDietModalTableBody" class="divide-y divide-slate-100 font-semibold text-slate-700">
+              <!-- Injetado dinamicamente -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+          <span class="text-xs text-slate-500 font-bold" id="nutriDietCountBadge">0 alimentos</span>
+          <div class="flex items-center gap-2">
+            <button onclick="exportDietExcel()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black rounded-xl shadow-md transition flex items-center gap-1.5">
+              <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+              <span>Exportar Excel (.xlsx)</span>
+            </button>
+            <button onclick="exportDietPDF()" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-black rounded-xl shadow-md transition flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>Exportar PDF</span>
+            </button>
+            <button onclick="closeDietNutriModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- FOOD DETAIL MODAL -->
     <div id="detailModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
       <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150">
@@ -656,14 +771,14 @@
             </div>
           </div>
 
-          <!-- Linha de Medida Caseira (Ativa somente para TACO) -->
+          <!-- Linha de Medida Caseira (Ativa para todas as tabelas) -->
           <div id="modalMedidaCaseiraRow" class="pt-2 border-t border-slate-200/80 hidden space-y-1">
             <div class="flex items-center justify-between">
               <label class="text-[10px] uppercase font-black tracking-wider text-brand-700 flex items-center gap-1">
                 <i data-lucide="scale" class="w-3.5 h-3.5 text-brand-600"></i>
-                <span>Medida Caseira (Pinheiro et al.):</span>
+                <span>Medida Caseira Sugerida:</span>
               </label>
-              <span class="text-[9px] text-slate-400 font-bold">Exclusivo Tabela TACO</span>
+              <span class="text-[9px] text-slate-400 font-bold">Porção Estimada</span>
             </div>
             <select id="modalMedidaSelect" onchange="onModalMedidaSelect(this.value)"
                     class="w-full px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-xs">
@@ -1040,9 +1155,9 @@
       filterFoods(false);
     }
 
-    // Helper de Medidas Caseiras (Pinheiro et al. - Exclusivo TACO)
+    // Helper de Medidas Caseiras (Pinheiro et al. - Para todas as tabelas)
     function findMedidasForFood(food) {
-      if (!food || food.source !== 'TACO' || typeof MEDIDAS_CASEIRAS === 'undefined') return [];
+      if (!food || typeof MEDIDAS_CASEIRAS === 'undefined') return [];
       const fName = normalizeSearchStr(food.name || food.nome || '');
       const db = MEDIDAS_CASEIRAS.alimentos || {};
       
@@ -1065,16 +1180,52 @@
         }
       }
 
-      // Fallback genérico padrão da literatura se for TACO
+      // Fallback inteligente para alimentos não encontrados diretamente:
+      // se for bebida/suco/leite, sugere copos/xícaras
+      if (fName.includes('suco') || fName.includes('leite') || fName.includes('cha') || fName.includes('cafe') || fName.includes('vitamina') || fName.includes('refrigerante') || fName.includes('agua')) {
+        return [
+          { label: 'Copo americano (200ml) (200g)', measure: 'Copo americano', grams: 200 },
+          { label: 'Copo duplo / grande (240ml) (240g)', measure: 'Copo duplo', grams: 240 },
+          { label: 'Xícara de chá (150ml) (150g)', measure: 'Xícara de chá', grams: 150 }
+        ];
+      }
+
+      // Fallback genérico padrão da literatura para qualquer tabela
       return MEDIDAS_CASEIRAS.genericas || [];
     }
 
-    // Calcula a conversão inteligente mais natural para o paciente
-    // Ex: 200g de arroz -> 4 colheres de sopa cheias (50g cada)
-    // 50g de tomate -> 2 a 3 fatias médias
+    // Formata o nome da medida tratando plural implicitamente e com elegância
+    function formatFriendlyMeasureName(rawMeasure, count) {
+      if (!rawMeasure) return '';
+      let m = rawMeasure.trim();
+
+      // Deixa a indicação de plural com clareza em português natural:
+      // ex: 2 colher(es) de sopa cheia(s), 3 fatia(s), 2 concha(s)
+      if (count > 1) {
+        m = m.replace(/\bColher\b/gi, 'colher(es)')
+             .replace(/\bConcha\b/gi, 'concha(es)')
+             .replace(/\bFatia\b/gi, 'fatia(s)')
+             .replace(/\bRodela\b/gi, 'rodela(s)')
+             .replace(/\bUnidade\b/gi, 'unidade(s)')
+             .replace(/\bPedaço\b/gi, 'pedaço(s)')
+             .replace(/\bEscumadeira\b/gi, 'escumadeira(s)')
+             .replace(/\bCopo\b/gi, 'copo(s)')
+             .replace(/\bXícara\b/gi, 'xícara(s)')
+             .replace(/\bPorção\b/gi, 'porção(ões)')
+             .replace(/\bBife\b/gi, 'bife(s)')
+             .replace(/\bPrato\b/gi, 'prato(s)');
+      } else {
+        m = m.toLowerCase();
+      }
+      return m;
+    }
+
+    // Calcula a conversão inteligente mais natural para o paciente (para qualquer tabela)
+    // Ex: 200g de arroz -> ≈ 2 colher(es) de sopa cheia (90g)
+    // 50g de tomate -> ≈ 2 a 3 fatias médias
     // 300g de carne -> 3 bifes médios / porções
     function calculateBestMeasure(food, grams) {
-      if (!food || food.source !== 'TACO') return null;
+      if (!food) return null;
       const g = parseFloat(grams) || 0;
       if (g <= 0) return null;
 
@@ -1141,11 +1292,14 @@
         else if (best.count === 2.5) countDisplay = '2 e 1/2';
         else countDisplay = String(best.count);
 
+        const friendlyName = formatFriendlyMeasureName(best.measure, best.count);
+
         return {
-          text: `≈ ${countDisplay} ${best.measure.toLowerCase()}`,
+          text: `≈ ${countDisplay} ${friendlyName}`,
           unitGrams: best.unitGrams,
           count: best.count,
-          rawMeasure: best.measure
+          rawMeasure: best.measure,
+          displayCount: countDisplay
         };
       }
       return null;
@@ -1161,10 +1315,10 @@
       document.getElementById('modalSourceBadge').innerText = `Fonte Oficial: ${food.source || 'TACO'} (#${food.id})`;
       document.getElementById('modalGramInput').value = 100;
 
-      // Configuração de Medida Caseira: Exclusivo TACO
+      // Configuração de Medida Caseira: Disponível para todas as tabelas
       const mcRow = document.getElementById('modalMedidaCaseiraRow');
       const mcSelect = document.getElementById('modalMedidaSelect');
-      if (food.source === 'TACO' && typeof MEDIDAS_CASEIRAS !== 'undefined') {
+      if (typeof MEDIDAS_CASEIRAS !== 'undefined') {
         const measures = findMedidasForFood(food);
         if (measures && measures.length > 0) {
           mcSelect.innerHTML = `<option value="">-- Escolher Medida Caseira (Gabi & Pacientes) --</option>` +
@@ -1381,47 +1535,44 @@
         if (typeof f.fibra === 'number') tFibra += f.fibra * factor;
         if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
 
-        const isTaco = (f.source === 'TACO');
-        const bestMeasure = isTaco ? calculateBestMeasure(f, item.grams) : null;
+        const bestMeasure = calculateBestMeasure(f, item.grams);
 
         let mcOptionsHtml = '';
-        if (isTaco) {
-          const measures = findMedidasForFood(f);
-          if (measures && measures.length > 0) {
-            mcOptionsHtml = `
-              <div class="mt-2.5 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <!-- Visão do Paciente: Medida Amigável Automática -->
-                <div class="flex items-center gap-2">
-                  <span class="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60 flex items-center gap-1">
-                    <i data-lucide="utensils" class="w-3 h-3 text-emerald-600"></i>
-                    <span>Visão do Paciente:</span>
-                    <b class="text-emerald-950 font-black">${bestMeasure ? bestMeasure.text : 'Calculado'}</b>
-                  </span>
-                </div>
-
-                <!-- Seletor Alternativo de Medida -->
-                <div class="flex items-center gap-1.5 self-end sm:self-auto">
-                  <span class="text-[10px] text-slate-400 font-bold">Trocar Medida:</span>
-                  <select onchange="updateMealGrams(${idx}, this.value)" class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
-                    <option value="${item.grams}">Manual (${item.grams}g)</option>
-                    ${measures.map(m => `<option value="${m.grams}" ${Math.abs(m.grams - item.grams) < 0.1 ? 'selected' : ''}>${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('')}
-                  </select>
-                </div>
+        const measures = findMedidasForFood(f);
+        if (measures && measures.length > 0) {
+          mcOptionsHtml = `
+            <div class="mt-2.5 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <!-- Visão do Paciente: Medida Amigável Automática com Plural Implícito -->
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/70 flex items-center gap-1.5 shadow-2xs">
+                  <i data-lucide="utensils" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Visão do Paciente:</span>
+                  <b class="text-emerald-950 font-black">${bestMeasure ? bestMeasure.text : 'Calculado'}</b>
+                </span>
               </div>
-            `;
-          }
+
+              <!-- Seletor Alternativo de Medida -->
+              <div class="flex items-center gap-1.5 self-end sm:self-auto">
+                <span class="text-[10px] text-slate-400 font-bold">Trocar Medida:</span>
+                <select onchange="updateMealGrams(${idx}, this.value)" class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
+                  <option value="${item.grams}">Manual (${item.grams}g)</option>
+                  ${measures.map(m => `<option value="${m.grams}" ${Math.abs(m.grams - item.grams) < 0.1 ? 'selected' : ''}>${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('')}
+                </select>
+              </div>
+            </div>
+          `;
         }
 
         return `
           <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs space-y-2 hover:border-brand-300 transition-colors">
             <div class="flex items-center justify-between gap-3">
               <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 flex-wrap">
                   <h5 class="text-sm font-black text-slate-900 truncate">${f.name || f.nome}</h5>
-                  <span class="text-[9px] ${isTaco ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'} font-extrabold px-2 py-0.5 rounded-full">${f.source || 'TACO'}</span>
-                  ${bestMeasure ? `<span class="hidden sm:inline-flex text-[11px] font-bold text-emerald-700 bg-emerald-50/80 px-2 py-0.5 rounded-md border border-emerald-100">${bestMeasure.text}</span>` : ''}
+                  <span class="text-[9px] ${f.source === 'TACO' ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'} font-extrabold px-2 py-0.5 rounded-full">${f.source || 'TACO'}</span>
+                  ${bestMeasure ? `<span class="hidden sm:inline-flex text-[11px] font-bold text-emerald-800 bg-emerald-50/90 px-2 py-0.5 rounded-md border border-emerald-200/60">${bestMeasure.text}</span>` : ''}
                 </div>
-                <div class="flex gap-3 text-xs text-slate-500 font-semibold mt-1">
+                <div class="flex gap-3 text-xs text-slate-500 font-semibold mt-1 flex-wrap">
                   <span class="text-amber-700 font-black">${kcal} kcal</span>
                   <span>Proteína: <b>${prot.toFixed(1)}g</b></span>
                   <span>Carboidratos: <b>${carb.toFixed(1)}g</b></span>
@@ -1469,7 +1620,7 @@
             </div>
           </div>
 
-          <!-- Totals Cards -->
+          <!-- Totais Cards -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/70 p-4 rounded-2xl text-center">
               <span class="text-[10px] font-black uppercase text-amber-700 block">Total Calorias</span>
@@ -1513,10 +1664,29 @@
             ${itemsHtml}
           </div>
 
-          <button onclick="window.print()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition">
-            <i data-lucide="printer" class="w-4 h-4"></i>
-            <span>Imprimir Dieta / Salvar em PDF</span>
-          </button>
+          <!-- Barra de Ações: Paciente, Nutri, Excel, PDF -->
+          <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 no-print">
+            <div class="flex items-center gap-2">
+              <button onclick="openDietPatientModal()" class="flex-1 sm:flex-none px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition">
+                <i data-lucide="smile" class="w-4 h-4"></i>
+                <span>Paciente</span>
+              </button>
+              <button onclick="openDietNutriModal()" class="flex-1 sm:flex-none px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition">
+                <i data-lucide="stethoscope" class="w-4 h-4"></i>
+                <span>Nutri</span>
+              </button>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="exportDietExcel()" class="flex-1 sm:flex-none px-4 py-3 bg-teal-600 hover:bg-teal-700 text-white font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition">
+                <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+                <span>Excel (.xlsx)</span>
+              </button>
+              <button onclick="exportDietPDF()" class="flex-1 sm:flex-none px-4 py-3 bg-slate-900 hover:bg-slate-800 text-white font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>PDF (2 Folhas)</span>
+              </button>
+            </div>
+          </div>
         </div>
       `;
     }
@@ -2187,6 +2357,474 @@
 
     function exportAuditReport() {
       window.print();
+    }
+
+    // ==========================================
+    // VISÃO PACIENTE, NUTRI, EXCEL & PDF EXPORT
+    // ==========================================
+
+    function openDietPatientModal() {
+      if (myMeal.length === 0) {
+        showToast('Monte alimentos no prato antes de visualizar a dieta.');
+        return;
+      }
+
+      const container = document.getElementById('patientDietModalContent');
+      const badge = document.getElementById('patientDietCountBadge');
+      if (badge) badge.innerText = `${myMeal.length} ${myMeal.length === 1 ? 'alimento prescrito' : 'alimentos prescritos'}`;
+
+      let totalKcal = 0;
+
+      const html = myMeal.map((item, idx) => {
+        const factor = item.grams / 100;
+        const f = item.food;
+        const kcal = typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : 0;
+        totalKcal += kcal;
+
+        const best = calculateBestMeasure(f, item.grams);
+        const measureDisplay = best ? best.text : `≈ ${item.grams}g (porção padrão)`;
+
+        return `
+          <div class="bg-slate-50/90 border border-slate-200/80 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs hover:border-emerald-300 transition-colors">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-black text-xs shrink-0">
+                ${idx + 1}
+              </div>
+              <div>
+                <h5 class="text-sm font-black text-slate-900 leading-snug">${f.name || f.nome}</h5>
+                <p class="text-[11px] text-slate-400 font-semibold mt-0.5">Equivalência indicada pelo nutricionista</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 self-end sm:self-auto">
+              <span class="text-xs font-black text-emerald-950 bg-emerald-100/90 border border-emerald-300/80 px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-2xs">
+                <i data-lucide="utensils" class="w-3.5 h-3.5 text-emerald-700"></i>
+                <span>${measureDisplay}</span>
+              </span>
+              <span class="text-[11px] font-bold text-slate-500 bg-white border border-slate-200 px-2.5 py-1.5 rounded-xl">
+                ${item.grams}g
+              </span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = html;
+
+      const modal = document.getElementById('dietPatientModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        lucide.createIcons({ root: modal });
+      }
+    }
+
+    function closeDietPatientModal() {
+      const modal = document.getElementById('dietPatientModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function openDietNutriModal() {
+      if (myMeal.length === 0) {
+        showToast('Monte alimentos no prato antes de visualizar a prescrição técnica.');
+        return;
+      }
+
+      const totalsContainer = document.getElementById('nutriDietModalTotals');
+      const tableBody = document.getElementById('nutriDietModalTableBody');
+      const badge = document.getElementById('nutriDietCountBadge');
+      if (badge) badge.innerText = `${myMeal.length} ${myMeal.length === 1 ? 'item analisado' : 'itens analisados'}`;
+
+      let tKcal = 0, tProt = 0, tCarb = 0, tFat = 0, tFibra = 0, tSodio = 0;
+
+      const rows = myMeal.map((item, idx) => {
+        const factor = item.grams / 100;
+        const f = item.food;
+        const kcal = typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : 0;
+        const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? ((f.protein_g ?? f.proteina) * factor) : 0;
+        const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? ((f.carbohydrates_g ?? f.carboidrato) * factor) : 0;
+        const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? ((f.lipids_g ?? f.lipideos) * factor) : 0;
+
+        tKcal += kcal; tProt += prot; tCarb += carb; tFat += fat;
+        if (typeof f.fibra === 'number') tFibra += f.fibra * factor;
+        if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
+
+        const best = calculateBestMeasure(f, item.grams);
+        const measureDisplay = best ? best.text : `${item.grams}g`;
+
+        return `
+          <tr class="hover:bg-slate-50/80 transition-colors">
+            <td class="p-3">
+              <div class="font-extrabold text-slate-900">${f.name || f.nome}</div>
+              <div class="text-[10px] text-slate-400 font-bold uppercase">${f.source || 'TACO'} • ID #${f.id}</div>
+            </td>
+            <td class="p-3 text-center font-black text-slate-900">${item.grams}g</td>
+            <td class="p-3 text-center font-bold text-emerald-800">${measureDisplay}</td>
+            <td class="p-3 text-center font-black text-amber-900">${kcal}</td>
+            <td class="p-3 text-center font-bold text-emerald-700">${prot.toFixed(1)}g</td>
+            <td class="p-3 text-center font-bold text-sky-700">${carb.toFixed(1)}g</td>
+            <td class="p-3 text-center font-bold text-rose-700">${fat.toFixed(1)}g</td>
+          </tr>
+        `;
+      }).join('');
+
+      tableBody.innerHTML = rows;
+
+      totalsContainer.innerHTML = `
+        <div class="bg-amber-50 border border-amber-200/80 p-3 rounded-2xl text-center">
+          <span class="text-[9px] font-black uppercase text-amber-700 block">VET (Energia)</span>
+          <span class="text-xl font-black text-amber-950">${Math.round(tKcal)} <small class="text-[11px]">kcal</small></span>
+        </div>
+        <div class="bg-emerald-50 border border-emerald-200/80 p-3 rounded-2xl text-center">
+          <span class="text-[9px] font-black uppercase text-emerald-700 block">Proteínas</span>
+          <span class="text-xl font-black text-emerald-950">${tProt.toFixed(1)} <small class="text-[11px]">g</small></span>
+        </div>
+        <div class="bg-sky-50 border border-sky-200/80 p-3 rounded-2xl text-center">
+          <span class="text-[9px] font-black uppercase text-sky-700 block">Carboidratos</span>
+          <span class="text-xl font-black text-sky-950">${tCarb.toFixed(1)} <small class="text-[11px]">g</small></span>
+        </div>
+        <div class="bg-rose-50 border border-rose-200/80 p-3 rounded-2xl text-center">
+          <span class="text-[9px] font-black uppercase text-rose-700 block">Lipídeos</span>
+          <span class="text-xl font-black text-rose-950">${tFat.toFixed(1)} <small class="text-[11px]">g</small></span>
+        </div>
+      `;
+
+      const modal = document.getElementById('dietNutriModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        lucide.createIcons({ root: modal });
+      }
+    }
+
+    function closeDietNutriModal() {
+      const modal = document.getElementById('dietNutriModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Exportação Excel (.xlsx) com duas abas: Paciente e Nutricionista
+    function exportDietExcel() {
+      if (myMeal.length === 0) {
+        showToast('Adicione alimentos ao prato antes de exportar o Excel.');
+        return;
+      }
+      if (typeof XLSX === 'undefined') {
+        alert('A biblioteca SheetJS ainda está carregando. Tente novamente em alguns segundos.');
+        return;
+      }
+
+      // Aba 1: Visão do Paciente (Prática)
+      const patientRows = [
+        ['NUTRIPOCKET PRO — PLANO DE REFEIÇÃO DO PACIENTE'],
+        ['Gerado em:', new Date().toLocaleString('pt-BR')],
+        ['Total de Alimentos:', myMeal.length],
+        [],
+        ['Item', 'Alimento', 'Como Medir (Medida Caseira)', 'Gramas (g)']
+      ];
+
+      myMeal.forEach((item, idx) => {
+        const best = calculateBestMeasure(item.food, item.grams);
+        const measure = best ? best.text : `${item.grams}g`;
+        patientRows.push([
+          idx + 1,
+          item.food.name || item.food.nome,
+          measure,
+          item.grams
+        ]);
+      });
+
+      // Aba 2: Visão do Nutricionista (Técnica Completa)
+      const nutriRows = [
+        ['NUTRIPOCKET PRO — PRESCRIÇÃO DIETÉTICA E CÁLCULO TÉCNICO'],
+        ['Gerado em:', new Date().toLocaleString('pt-BR')],
+        ['Total de Alimentos:', myMeal.length],
+        [],
+        ['Item', 'Alimento', 'Tabela de Origem', 'Peso (g)', 'Medida Caseira', 'Calorias (kcal)', 'Proteína (g)', 'Carboidratos (g)', 'Lipídeos (g)', 'Fibra (g)', 'Sódio (mg)']
+      ];
+
+      let totKcal = 0, totProt = 0, totCarb = 0, totFat = 0, totFibra = 0, totSodio = 0;
+
+      myMeal.forEach((item, idx) => {
+        const factor = item.grams / 100;
+        const f = item.food;
+        const kcal = typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : 0;
+        const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? ((f.protein_g ?? f.proteina) * factor) : 0;
+        const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? ((f.carbohydrates_g ?? f.carboidrato) * factor) : 0;
+        const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? ((f.lipids_g ?? f.lipideos) * factor) : 0;
+        const fibra = typeof f.fibra === 'number' ? (f.fibra * factor) : 0;
+        const sodio = typeof f.sodio === 'number' ? (f.sodio * factor) : 0;
+
+        totKcal += kcal; totProt += prot; totCarb += carb; totFat += fat; totFibra += fibra; totSodio += sodio;
+
+        const best = calculateBestMeasure(f, item.grams);
+        const measure = best ? best.text : `${item.grams}g`;
+
+        nutriRows.push([
+          idx + 1,
+          f.name || f.nome,
+          f.source || 'TACO',
+          item.grams,
+          measure,
+          kcal,
+          parseFloat(prot.toFixed(2)),
+          parseFloat(carb.toFixed(2)),
+          parseFloat(fat.toFixed(2)),
+          parseFloat(fibra.toFixed(2)),
+          parseFloat(sodio.toFixed(2))
+        ]);
+      });
+
+      nutriRows.push([]);
+      nutriRows.push([
+        'TOTAIS',
+        'VET TOTAL DA REFEIÇÃO',
+        '-',
+        myMeal.reduce((acc, it) => acc + it.grams, 0),
+        '-',
+        totKcal,
+        parseFloat(totProt.toFixed(2)),
+        parseFloat(totCarb.toFixed(2)),
+        parseFloat(totFat.toFixed(2)),
+        parseFloat(totFibra.toFixed(2)),
+        parseFloat(totSodio.toFixed(2))
+      ]);
+
+      const wb = XLSX.utils.book_new();
+      const wsPatient = XLSX.utils.aoa_to_sheet(patientRows);
+      const wsNutri = XLSX.utils.aoa_to_sheet(nutriRows);
+
+      // Largura de colunas
+      wsPatient['!cols'] = [{ wch: 6 }, { wch: 38 }, { wch: 34 }, { wch: 12 }];
+      wsNutri['!cols'] = [{ wch: 6 }, { wch: 38 }, { wch: 16 }, { wch: 10 }, { wch: 30 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 14 }, { wch: 12 }, { wch: 12 }];
+
+      XLSX.utils.book_append_sheet(wb, wsPatient, 'Visão do Paciente');
+      XLSX.utils.book_append_sheet(wb, wsNutri, 'Visão do Nutricionista');
+
+      const dateStr = new Date().toISOString().slice(0, 10);
+      XLSX.writeFile(wb, `NutriPocket_Dieta_${dateStr}.xlsx`);
+      showToast('Planilha Excel (.xlsx) exportada com sucesso!');
+    }
+
+    // Exportação PDF profissional com 2 páginas: Página 1 = Paciente, Página 2 = Nutricionista
+    function exportDietPDF() {
+      if (myMeal.length === 0) {
+        showToast('Monte o prato antes de exportar o PDF.');
+        return;
+      }
+
+      // Calcula totais
+      let tKcal = 0, tProt = 0, tCarb = 0, tFat = 0, tFibra = 0, tSodio = 0;
+      myMeal.forEach(item => {
+        const factor = item.grams / 100;
+        const f = item.food;
+        tKcal += typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : 0;
+        tProt += typeof (f.protein_g ?? f.proteina) === 'number' ? ((f.protein_g ?? f.proteina) * factor) : 0;
+        tCarb += typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? ((f.carbohydrates_g ?? f.carboidrato) * factor) : 0;
+        tFat += typeof (f.lipids_g ?? f.lipideos) === 'number' ? ((f.lipids_g ?? f.lipideos) * factor) : 0;
+        if (typeof f.fibra === 'number') tFibra += f.fibra * factor;
+        if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
+      });
+
+      const dateStr = new Date().toLocaleDateString('pt-BR');
+
+      // Itens para o Paciente
+      const patientItemsHtml = myMeal.map((item, idx) => {
+        const f = item.food;
+        const best = calculateBestMeasure(f, item.grams);
+        const measure = best ? best.text : `≈ ${item.grams}g`;
+        return `
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px 16px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="background:#059669; color:white; font-weight:800; border-radius:8px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; font-size:12px;">${idx + 1}</span>
+              <div>
+                <strong style="font-size:14px; color:#0f172a; display:block;">${f.name || f.nome}</strong>
+                <span style="font-size:11px; color:#64748b;">Como consumir no prato</span>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <div style="background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; font-weight:800; font-size:13px; padding:4px 12px; border-radius:8px; display:inline-block;">
+                ${measure}
+              </div>
+              <div style="font-size:11px; color:#94a3b8; margin-top:2px;">peso ref: ${item.grams}g</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Linhas da tabela para o Nutricionista
+      const nutriRowsHtml = myMeal.map((item, idx) => {
+        const factor = item.grams / 100;
+        const f = item.food;
+        const kcal = typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : 0;
+        const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? ((f.protein_g ?? f.proteina) * factor) : 0;
+        const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? ((f.carbohydrates_g ?? f.carboidrato) * factor) : 0;
+        const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? ((f.lipids_g ?? f.lipideos) * factor) : 0;
+        const best = calculateBestMeasure(f, item.grams);
+        const measure = best ? best.text : `${item.grams}g`;
+
+        return `
+          <tr style="border-bottom:1px solid #f1f5f9;">
+            <td style="padding:8px 10px; font-weight:700; color:#0f172a;">
+              ${f.name || f.nome}
+              <div style="font-size:9px; color:#94a3b8; font-weight:600;">${f.source || 'TACO'}</div>
+            </td>
+            <td style="padding:8px 10px; text-align:center; font-weight:800; color:#334155;">${item.grams}g</td>
+            <td style="padding:8px 10px; text-align:center; font-weight:700; color:#047857; font-size:11px;">${measure}</td>
+            <td style="padding:8px 10px; text-align:center; font-weight:800; color:#9a3412;">${kcal}</td>
+            <td style="padding:8px 10px; text-align:center; font-weight:700; color:#065f46;">${prot.toFixed(1)}g</td>
+            <td style="padding:8px 10px; text-align:center; font-weight:700; color:#0369a1;">${carb.toFixed(1)}g</td>
+            <td style="padding:8px 10px; text-align:center; font-weight:700; color:#be123c;">${fat.toFixed(1)}g</td>
+          </tr>
+        `;
+      }).join('');
+
+      // Container HTML especial para impressão / html2pdf
+      const printContainer = document.createElement('div');
+      printContainer.id = 'pdfExportRenderBox';
+      printContainer.style.cssText = 'position:fixed; left:-9999px; top:-9999px; width:794px; background:white; font-family:"Plus Jakarta Sans", sans-serif; color:#0f172a;';
+
+      printContainer.innerHTML = `
+        <!-- FOLHA 1: GUIA DO PACIENTE -->
+        <div style="padding:40px; min-height:1120px; box-sizing:border-box; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <!-- Header Paciente -->
+            <div style="border-bottom:3px solid #059669; padding-bottom:18px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:flex-end;">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div style="background:#059669; color:white; width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:22px;">🍎</div>
+                <div>
+                  <h1 style="margin:0; font-size:24px; font-weight:900; color:#064e3b; letter-spacing:-0.5px;">NutriPocket PRO</h1>
+                  <span style="font-size:11px; font-weight:800; color:#059669; text-transform:uppercase; letter-spacing:1px;">Guia Prático do Paciente • Refeição</span>
+                </div>
+              </div>
+              <div style="text-align:right; font-size:11px; color:#64748b;">
+                <div>Data: <b>${dateStr}</b></div>
+                <div style="color:#059669; font-weight:800; margin-top:2px;">Folha 1 de 2</div>
+              </div>
+            </div>
+
+            <!-- Banner Dica Paciente -->
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:14px; padding:14px 18px; margin-bottom:20px;">
+              <strong style="color:#166534; font-size:13px; display:block; margin-bottom:4px;">Como montar seu prato com facilidade:</strong>
+              <p style="margin:0; font-size:12px; color:#14532d; line-height:1.4;">
+                Siga as porções em medidas caseiras descritas abaixo (colheres, conchas, fatias). Não há necessidade de balança de precisão para seguir este plano.
+              </p>
+            </div>
+
+            <!-- Lista de Alimentos do Paciente -->
+            <div style="margin-bottom:24px;">
+              <h3 style="font-size:13px; text-transform:uppercase; font-weight:900; color:#475569; letter-spacing:0.5px; margin-bottom:12px;">Alimentos & Quantidades Caseiras</h3>
+              ${patientItemsHtml}
+            </div>
+          </div>
+
+          <!-- Rodapé Página 1 -->
+          <div style="border-top:1px solid #e2e8f0; padding-top:14px; font-size:11px; color:#94a3b8; display:flex; justify-content:space-between; align-items:center;">
+            <span>NutriPocket PRO — Sistema de Apoio Nutricional</span>
+            <span>Consulte sempre seu nutricionista responsável</span>
+          </div>
+        </div>
+
+        <!-- QUEBRA DE PÁGINA OBRIGATÓRIA -->
+        <div style="page-break-before:always; break-before:page; height:0;"></div>
+
+        <!-- FOLHA 2: VISÃO DO NUTRICIONISTA -->
+        <div style="padding:40px; min-height:1120px; box-sizing:border-box; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <!-- Header Nutricionista -->
+            <div style="border-bottom:3px solid #4f46e5; padding-bottom:18px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:flex-end;">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div style="background:#4f46e5; color:white; width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:20px;">🩺</div>
+                <div>
+                  <h1 style="margin:0; font-size:24px; font-weight:900; color:#312e81; letter-spacing:-0.5px;">NutriPocket PRO</h1>
+                  <span style="font-size:11px; font-weight:800; color:#4f46e5; text-transform:uppercase; letter-spacing:1px;">Prescrição Dietética & Avaliação Técnica (Nutricionista)</span>
+                </div>
+              </div>
+              <div style="text-align:right; font-size:11px; color:#64748b;">
+                <div>Data: <b>${dateStr}</b></div>
+                <div style="color:#4f46e5; font-weight:800; margin-top:2px;">Folha 2 de 2</div>
+              </div>
+            </div>
+
+            <!-- Resumo Nutricional Macro (Cards) -->
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin-bottom:24px;">
+              <div style="background:#fef3c7; border:1px solid #fde68a; border-radius:12px; padding:10px; text-align:center;">
+                <span style="font-size:10px; font-weight:800; color:#b45309; text-transform:uppercase; display:block;">Energia Total</span>
+                <strong style="font-size:18px; color:#78350f;">${Math.round(tKcal)} kcal</strong>
+              </div>
+              <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:12px; padding:10px; text-align:center;">
+                <span style="font-size:10px; font-weight:800; color:#047857; text-transform:uppercase; display:block;">Proteínas</span>
+                <strong style="font-size:18px; color:#064e3b;">${tProt.toFixed(1)} g</strong>
+              </div>
+              <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:12px; padding:10px; text-align:center;">
+                <span style="font-size:10px; font-weight:800; color:#0369a1; text-transform:uppercase; display:block;">Carboidratos</span>
+                <strong style="font-size:18px; color:#0c4a6e;">${tCarb.toFixed(1)} g</strong>
+              </div>
+              <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:12px; padding:10px; text-align:center;">
+                <span style="font-size:10px; font-weight:800; color:#be123c; text-transform:uppercase; display:block;">Lipídeos</span>
+                <strong style="font-size:18px; color:#881337;">${tFat.toFixed(1)} g</strong>
+              </div>
+            </div>
+
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:8px 16px; margin-bottom:18px; font-size:11px; display:flex; justify-content:space-between;">
+              <span>Fibra Total: <b style="color:#0f172a;">${tFibra.toFixed(1)}g</b></span>
+              <span>Sódio Total: <b style="color:#0f172a;">${tSodio.toFixed(1)}mg</b></span>
+              <span>Itens Analisados: <b style="color:#0f172a;">${myMeal.length}</b></span>
+            </div>
+
+            <!-- Tabela Técnica -->
+            <div style="border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; margin-bottom:24px;">
+              <table style="width:100%; border-collapse:collapse; font-size:11px; text-align:left;">
+                <thead>
+                  <tr style="background:#f8fafc; border-bottom:2px solid #cbd5e1; font-weight:900; color:#475569; text-transform:uppercase; font-size:9px;">
+                    <th style="padding:10px;">Alimento / Fonte</th>
+                    <th style="padding:10px; text-align:center;">Peso</th>
+                    <th style="padding:10px; text-align:center;">Equivalência</th>
+                    <th style="padding:10px; text-align:center;">Kcal</th>
+                    <th style="padding:10px; text-align:center;">Prot</th>
+                    <th style="padding:10px; text-align:center;">Carb</th>
+                    <th style="padding:10px; text-align:center;">Lip</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${nutriRowsHtml}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Rodapé Página 2 -->
+          <div style="border-top:1px solid #e2e8f0; padding-top:14px; font-size:11px; color:#94a3b8; display:flex; justify-content:space-between; align-items:center;">
+            <span>NutriPocket PRO — Prescrição Técnica Confidencial</span>
+            <span>Auditoria & Bases Oficiais TACO • TBCA • IBGE • USDA</span>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(printContainer);
+
+      // Se html2pdf estiver disponível, gera o arquivo diretamente com branding de alta qualidade
+      if (typeof html2pdf !== 'undefined') {
+        const opt = {
+          margin: 0,
+          filename: `NutriPocket_Dieta_Completa_${new Date().toISOString().slice(0,10)}.pdf`,
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+          pagebreak: { mode: ['css', 'legacy'] }
+        };
+
+        showToast('Gerando PDF profissional com 2 folhas...');
+        html2pdf().set(opt).from(printContainer).save().then(() => {
+          document.body.removeChild(printContainer);
+          showToast('PDF gerado e baixado com sucesso!');
+        }).catch(err => {
+          console.error(err);
+          document.body.removeChild(printContainer);
+          window.print();
+        });
+      } else {
+        // Fallback nativo
+        document.body.removeChild(printContainer);
+        window.print();
+      }
     }
 
     window.addEventListener('DOMContentLoaded', checkAuth);

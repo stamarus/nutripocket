@@ -159,8 +159,8 @@
         "grams": 30.0
       },
       {
-        "label": "Pt R R Picada (60g)",
-        "measure": "Pt R R Picada",
+        "label": "Prato raso R Picada (60g)",
+        "measure": "Prato raso R Picada",
         "grams": 60.0
       }
     ],
@@ -213,8 +213,8 @@
         "grams": 24.0
       },
       {
-        "label": "Colsr (15g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (15g)",
+        "measure": "Colher de sopa rasa",
         "grams": 15.0
       },
       {
@@ -223,8 +223,8 @@
         "grams": 16.0
       },
       {
-        "label": "Colsobr (90g)",
-        "measure": "Colsobr",
+        "label": "Colher de sobremesa rasa (90g)",
+        "measure": "Colher de sobremesa rasa",
         "grams": 90.0
       },
       {
@@ -270,8 +270,8 @@
         "grams": 19.0
       },
       {
-        "label": "Colsr (11g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (11g)",
+        "measure": "Colher de sopa rasa",
         "grams": 11.0
       },
       {
@@ -280,8 +280,8 @@
         "grams": 12.5
       },
       {
-        "label": "Colsobr (7g)",
-        "measure": "Colsobr",
+        "label": "Colher de sobremesa rasa (7g)",
+        "measure": "Colher de sobremesa rasa",
         "grams": 7.0
       },
       {
@@ -319,8 +319,8 @@
         "grams": 10.0
       },
       {
-        "label": "Pt Sob Ch Picado (20g)",
-        "measure": "Pt Sob Ch Picado",
+        "label": "Prato de sobremesa Ch Picado (20g)",
+        "measure": "Prato de sobremesa Ch Picado",
         "grams": 20.0
       },
       {
@@ -331,8 +331,8 @@
     ],
     "AGRIAO REFOGADO": [
       {
-        "label": "Colar (350g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (350g)",
+        "measure": "Colher de arroz rasa",
         "grams": 350.0
       },
       {
@@ -586,13 +586,13 @@
     ],
     "PEDP": [
       {
-        "label": "Pt F (500g)",
-        "measure": "Pt F",
+        "label": "Prato fundo (500g)",
+        "measure": "Prato fundo",
         "grams": 500.0
       },
       {
-        "label": "Ptr (300g)",
-        "measure": "Ptr",
+        "label": "Prato raso (300g)",
+        "measure": "Prato raso",
         "grams": 300.0
       }
     ],
@@ -608,8 +608,8 @@
         "grams": 250.0
       },
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       },
       {
@@ -618,8 +618,8 @@
         "grams": 85.0
       },
       {
-        "label": "Escmr (60g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (60g)",
+        "measure": "Escumadeira média rasa",
         "grams": 60.0
       }
     ],
@@ -630,8 +630,8 @@
         "grams": 450.0
       },
       {
-        "label": "Colar (30g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (30g)",
+        "measure": "Colher de arroz rasa",
         "grams": 30.0
       },
       {
@@ -640,13 +640,13 @@
         "grams": 250.0
       },
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       },
       {
-        "label": "Escmr (60g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (60g)",
+        "measure": "Escumadeira média rasa",
         "grams": 60.0
       },
       {
@@ -662,23 +662,23 @@
         "grams": 1400.0
       },
       {
-        "label": "Colach (90g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (90g)",
+        "measure": "Colher de arroz cheia",
         "grams": 90.0
       },
       {
-        "label": "Colar (50g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (50g)",
+        "measure": "Colher de arroz rasa",
         "grams": 50.0
       },
       {
-        "label": "Colsch (40g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (40g)",
+        "measure": "Colher de sopa cheia",
         "grams": 40.0
       },
       {
-        "label": "Colsr (250g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (250g)",
+        "measure": "Colher de sopa rasa",
         "grams": 250.0
       },
       {
@@ -697,13 +697,13 @@
         "grams": 1200.0
       },
       {
-        "label": "Ptr (400g)",
-        "measure": "Ptr",
+        "label": "Prato raso (400g)",
+        "measure": "Prato raso",
         "grams": 400.0
       },
       {
-        "label": "Pt Sob (280g)",
-        "measure": "Pt Sob",
+        "label": "Prato de sobremesa (280g)",
+        "measure": "Prato de sobremesa",
         "grams": 280.0
       }
     ],
@@ -714,8 +714,8 @@
         "grams": 117.0
       },
       {
-        "label": "Colach (630g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (630g)",
+        "measure": "Colher de arroz cheia",
         "grams": 630.0
       },
       {
@@ -724,8 +724,8 @@
         "grams": 59.0
       },
       {
-        "label": "Escmr (310g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (310g)",
+        "measure": "Escumadeira média rasa",
         "grams": 310.0
       }
     ],
@@ -743,8 +743,8 @@
         "grams": 160.0
       },
       {
-        "label": "Colsr (11g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (11g)",
+        "measure": "Colher de sopa rasa",
         "grams": 11.0
       },
       {
@@ -775,13 +775,13 @@
         "grams": 15.0
       },
       {
-        "label": "Colsch (15g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (15g)",
+        "measure": "Colher de sopa cheia",
         "grams": 15.0
       },
       {
-        "label": "Colsr (70g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (70g)",
+        "measure": "Colher de sopa rasa",
         "grams": 70.0
       },
       {
@@ -812,8 +812,8 @@
         "grams": 180.0
       },
       {
-        "label": "Colsr (80g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (80g)",
+        "measure": "Colher de sopa rasa",
         "grams": 80.0
       },
       {
@@ -1169,8 +1169,8 @@
         "grams": 75.0
       },
       {
-        "label": "Colar (60g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (60g)",
+        "measure": "Colher de arroz rasa",
         "grams": 60.0
       },
       {
@@ -1179,8 +1179,8 @@
         "grams": 25.0
       },
       {
-        "label": "Colsr (20g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (20g)",
+        "measure": "Colher de sopa rasa",
         "grams": 20.0
       },
       {
@@ -1189,8 +1189,8 @@
         "grams": 125.0
       },
       {
-        "label": "Escmr (75g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (75g)",
+        "measure": "Escumadeira média rasa",
         "grams": 75.0
       }
     ],
@@ -1226,8 +1226,8 @@
         "grams": 5.0
       },
       {
-        "label": "Colsch (250g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (250g)",
+        "measure": "Colher de sopa cheia",
         "grams": 250.0
       }
     ],
@@ -1566,8 +1566,8 @@
         "grams": 200.0
       },
       {
-        "label": "Colsr (1060g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (1060g)",
+        "measure": "Colher de sopa rasa",
         "grams": 1060.0
       },
       {
@@ -1627,18 +1627,18 @@
         "grams": 190.0
       },
       {
-        "label": "Colsch (28g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (28g)",
+        "measure": "Colher de sopa cheia",
         "grams": 28.0
       },
       {
-        "label": "Ptf (320g)",
-        "measure": "Ptf",
+        "label": "Prato fundo (320g)",
+        "measure": "Prato fundo",
         "grams": 320.0
       },
       {
-        "label": "Ptr (225g)",
-        "measure": "Ptr",
+        "label": "Prato raso (225g)",
+        "measure": "Prato raso",
         "grams": 225.0
       }
     ],
@@ -1720,8 +1720,8 @@
         "grams": 115.0
       },
       {
-        "label": "Colar (65g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (65g)",
+        "measure": "Colher de arroz rasa",
         "grams": 65.0
       },
       {
@@ -1759,8 +1759,8 @@
     ],
     "BOLO DE CENOURA": [
       {
-        "label": "Fg (1000g)",
-        "measure": "Fg",
+        "label": "Fatia grande (1000g)",
+        "measure": "Fatia grande",
         "grams": 1000.0
       },
       {
@@ -1821,8 +1821,8 @@
         "grams": 1650.0
       },
       {
-        "label": "Í Co Mch (130g)",
-        "measure": "Í Co Mch",
+        "label": "Í Concha média cheia (130g)",
+        "measure": "Í Concha média cheia",
         "grams": 130.0
       }
     ],
@@ -1835,13 +1835,13 @@
     ],
     "CAMARAO FRITO": [
       {
-        "label": "Colach (35g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (35g)",
+        "measure": "Colher de arroz cheia",
         "grams": 35.0
       },
       {
-        "label": "Colsch (20g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (20g)",
+        "measure": "Colher de sopa cheia",
         "grams": 20.0
       },
       {
@@ -1884,30 +1884,30 @@
     ],
     "CANJA": [
       {
-        "label": "Comch (130g)",
-        "measure": "Comch",
+        "label": "Concha média cheia (130g)",
+        "measure": "Concha média cheia",
         "grams": 130.0
       },
       {
-        "label": "Copch (60g)",
-        "measure": "Copch",
+        "label": "Concha pequena cheia (60g)",
+        "measure": "Concha pequena cheia",
         "grams": 60.0
       },
       {
-        "label": "Ptf (520g)",
-        "measure": "Ptf",
+        "label": "Prato fundo (520g)",
+        "measure": "Prato fundo",
         "grams": 520.0
       }
     ],
     "CANJICA": [
       {
-        "label": "Comch (120g)",
-        "measure": "Comch",
+        "label": "Concha média cheia (120g)",
+        "measure": "Concha média cheia",
         "grams": 120.0
       },
       {
-        "label": "Colsch (25g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (25g)",
+        "measure": "Colher de sopa cheia",
         "grams": 25.0
       },
       {
@@ -1921,13 +1921,13 @@
         "grams": 180.0
       },
       {
-        "label": "Ptf (460g)",
-        "measure": "Ptf",
+        "label": "Prato fundo (460g)",
+        "measure": "Prato fundo",
         "grams": 460.0
       },
       {
-        "label": "Ptr (300g)",
-        "measure": "Ptr",
+        "label": "Prato raso (300g)",
+        "measure": "Prato raso",
         "grams": 300.0
       }
     ],
@@ -1962,13 +1962,13 @@
     ],
     "CARNE ENSOPADA": [
       {
-        "label": "Colsch (30g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (30g)",
+        "measure": "Colher de sopa cheia",
         "grams": 30.0
       },
       {
-        "label": "Colsr (20g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (20g)",
+        "measure": "Colher de sopa rasa",
         "grams": 20.0
       },
       {
@@ -1984,25 +1984,25 @@
     ],
     "COM LEGUMES": [
       {
-        "label": "Colach (70g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (70g)",
+        "measure": "Colher de arroz cheia",
         "grams": 70.0
       },
       {
-        "label": "Colar (45g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (45g)",
+        "measure": "Colher de arroz rasa",
         "grams": 45.0
       },
       {
-        "label": "Colsch (35g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (35g)",
+        "measure": "Colher de sopa cheia",
         "grams": 35.0
       }
     ],
     "CARNE MOIDA": [
       {
-        "label": "Colach (60g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (60g)",
+        "measure": "Colher de arroz cheia",
         "grams": 60.0
       }
     ],
@@ -2278,13 +2278,13 @@
     ],
     "CHICORIA REFOGADA": [
       {
-        "label": "Colach (76g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (76g)",
+        "measure": "Colher de arroz cheia",
         "grams": 76.0
       },
       {
-        "label": "Colar (38g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (38g)",
+        "measure": "Colher de arroz rasa",
         "grams": 38.0
       },
       {
@@ -2293,8 +2293,8 @@
         "grams": 45.0
       },
       {
-        "label": "Colsr (20g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (20g)",
+        "measure": "Colher de sopa rasa",
         "grams": 20.0
       },
       {
@@ -2303,8 +2303,8 @@
         "grams": 136.0
       },
       {
-        "label": "Escmr (90g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (90g)",
+        "measure": "Escumadeira média rasa",
         "grams": 90.0
       }
     ],
@@ -2532,8 +2532,8 @@
         "grams": 150.0
       },
       {
-        "label": "Colsr (10g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (10g)",
+        "measure": "Colher de sopa rasa",
         "grams": 10.0
       },
       {
@@ -2645,13 +2645,13 @@
     ],
     "DE PANELA": [
       {
-        "label": "Colsch (250g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (250g)",
+        "measure": "Colher de sopa cheia",
         "grams": 250.0
       },
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       }
     ],
@@ -2713,8 +2713,8 @@
         "grams": 90.0
       },
       {
-        "label": "Colsr (60g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (60g)",
+        "measure": "Colher de sopa rasa",
         "grams": 60.0
       },
       {
@@ -2740,8 +2740,8 @@
         "grams": 40.0
       },
       {
-        "label": "Colar (33g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (33g)",
+        "measure": "Colher de arroz rasa",
         "grams": 33.0
       },
       {
@@ -2750,8 +2750,8 @@
         "grams": 270.0
       },
       {
-        "label": "Colsr (160g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (160g)",
+        "measure": "Colher de sopa rasa",
         "grams": 160.0
       },
       {
@@ -2760,8 +2760,8 @@
         "grams": 15.0
       },
       {
-        "label": "Escm (750g)",
-        "measure": "Escm",
+        "label": "Escumadeira média (750g)",
+        "measure": "Escumadeira média",
         "grams": 750.0
       },
       {
@@ -2864,8 +2864,8 @@
         "grams": 250.0
       },
       {
-        "label": "Colsr Picada (150g)",
-        "measure": "Colsr Picada",
+        "label": "Colher de sopa rasa Picada (150g)",
+        "measure": "Colher de sopa rasa Picada",
         "grams": 150.0
       }
     ],
@@ -3057,8 +3057,8 @@
         "grams": 250.0
       },
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       },
       {
@@ -3094,13 +3094,13 @@
         "grams": 700.0
       },
       {
-        "label": "Ptf (750g)",
-        "measure": "Ptf",
+        "label": "Prato fundo (750g)",
+        "measure": "Prato fundo",
         "grams": 750.0
       },
       {
-        "label": "Ptr (500g)",
-        "measure": "Ptr",
+        "label": "Prato raso (500g)",
+        "measure": "Prato raso",
         "grams": 500.0
       },
       {
@@ -3129,8 +3129,8 @@
         "grams": 37.0
       },
       {
-        "label": "Colsr (20g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (20g)",
+        "measure": "Colher de sopa rasa",
         "grams": 20.0
       },
       {
@@ -3196,23 +3196,23 @@
     ],
     "CREME DE ESPINAFRE": [
       {
-        "label": "Colach (760g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (760g)",
+        "measure": "Colher de arroz cheia",
         "grams": 760.0
       },
       {
-        "label": "Colar (600g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (600g)",
+        "measure": "Colher de arroz rasa",
         "grams": 600.0
       },
       {
-        "label": "Í Colsch (35g)",
-        "measure": "Í Colsch",
+        "label": "Í Colher de sopa cheia (35g)",
+        "measure": "Í Colher de sopa cheia",
         "grams": 35.0
       },
       {
-        "label": "Colsr (25g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (25g)",
+        "measure": "Colher de sopa rasa",
         "grams": 25.0
       },
       {
@@ -3221,8 +3221,8 @@
         "grams": 1140.0
       },
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       },
       {
@@ -3236,8 +3236,8 @@
         "grams": 670.0
       },
       {
-        "label": "Colsch (330g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (330g)",
+        "measure": "Colher de sopa cheia",
         "grams": 330.0
       }
     ],
@@ -3253,13 +3253,13 @@
         "grams": 25.0
       },
       {
-        "label": "Colsch (200g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (200g)",
+        "measure": "Colher de sopa cheia",
         "grams": 200.0
       },
       {
-        "label": "Colsr (1060g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (1060g)",
+        "measure": "Colher de sopa rasa",
         "grams": 1060.0
       },
       {
@@ -3295,8 +3295,8 @@
         "grams": 200.0
       },
       {
-        "label": "Colsr (1060g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (1060g)",
+        "measure": "Colher de sopa rasa",
         "grams": 1060.0
       },
       {
@@ -3443,8 +3443,8 @@
     ],
     "DOBRADINHA": [
       {
-        "label": "Colar (45g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (45g)",
+        "measure": "Colher de arroz rasa",
         "grams": 45.0
       },
       {
@@ -3475,13 +3475,13 @@
         "grams": 150.0
       },
       {
-        "label": "Colsch (50g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (50g)",
+        "measure": "Colher de sopa cheia",
         "grams": 50.0
       },
       {
-        "label": "Colsr (40g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (40g)",
+        "measure": "Colher de sopa rasa",
         "grams": 40.0
       }
     ],
@@ -3539,8 +3539,8 @@
         "grams": 400.0
       },
       {
-        "label": "Colsr (250g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (250g)",
+        "measure": "Colher de sopa rasa",
         "grams": 250.0
       },
       {
@@ -3581,8 +3581,8 @@
         "grams": 150.0
       },
       {
-        "label": "Pt Sob (250g)",
-        "measure": "Pt Sob",
+        "label": "Prato de sobremesa (250g)",
+        "measure": "Prato de sobremesa",
         "grams": 250.0
       }
     ],
@@ -3645,13 +3645,13 @@
     ],
     "COM CENOURA": [
       {
-        "label": "Colsch (25g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (25g)",
+        "measure": "Colher de sopa cheia",
         "grams": 25.0
       },
       {
-        "label": "Colsr (15g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (15g)",
+        "measure": "Colher de sopa rasa",
         "grams": 15.0
       }
     ],
@@ -3662,13 +3662,13 @@
         "grams": 38.0
       },
       {
-        "label": "Colar (27g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (27g)",
+        "measure": "Colher de arroz rasa",
         "grams": 27.0
       },
       {
-        "label": "Colsr (16g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (16g)",
+        "measure": "Colher de sopa rasa",
         "grams": 16.0
       },
       {
@@ -3677,29 +3677,29 @@
         "grams": 13.0
       },
       {
-        "label": "Colsobr (90g)",
-        "measure": "Colsobr",
+        "label": "Colher de sobremesa rasa (90g)",
+        "measure": "Colher de sobremesa rasa",
         "grams": 90.0
       }
     ],
     "ERVILHA VAGEM COZIDA": [
       {
-        "label": "Colsch (30g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (30g)",
+        "measure": "Colher de sopa cheia",
         "grams": 30.0
       }
     ],
     "REFOGADA": [
       {
-        "label": "Colach (60g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (60g)",
+        "measure": "Colher de arroz cheia",
         "grams": 60.0
       }
     ],
     "ESPINAFRE REFOGADO": [
       {
-        "label": "Colsch (25g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (25g)",
+        "measure": "Colher de sopa cheia",
         "grams": 25.0
       },
       {
@@ -3735,13 +3735,13 @@
         "grams": 20.0
       },
       {
-        "label": "Colsch Ú (90g)",
-        "measure": "Colsch Ú",
+        "label": "Colher de sopa cheia Ú (90g)",
+        "measure": "Colher de sopa cheia Ú",
         "grams": 90.0
       },
       {
-        "label": "Colsr (60g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (60g)",
+        "measure": "Colher de sopa rasa",
         "grams": 60.0
       },
       {
@@ -3772,8 +3772,8 @@
         "grams": 170.0
       },
       {
-        "label": "Colsr (100g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (100g)",
+        "measure": "Colher de sopa rasa",
         "grams": 100.0
       },
       {
@@ -3799,8 +3799,8 @@
         "grams": 160.0
       },
       {
-        "label": "Colsr (120g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (120g)",
+        "measure": "Colher de sopa rasa",
         "grams": 120.0
       },
       {
@@ -3821,8 +3821,8 @@
         "grams": 150.0
       },
       {
-        "label": "Colsr (10g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (10g)",
+        "measure": "Colher de sopa rasa",
         "grams": 10.0
       },
       {
@@ -3845,8 +3845,8 @@
     ],
     "FARINHA LACTEA": [
       {
-        "label": "Colsch (200g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (200g)",
+        "measure": "Colher de sopa cheia",
         "grams": 200.0
       },
       {
@@ -3855,8 +3855,8 @@
         "grams": 35.0
       },
       {
-        "label": "Colar (220g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (220g)",
+        "measure": "Colher de arroz rasa",
         "grams": 220.0
       },
       {
@@ -3870,8 +3870,8 @@
         "grams": 150.0
       },
       {
-        "label": "Colsr (100g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (100g)",
+        "measure": "Colher de sopa rasa",
         "grams": 100.0
       },
       {
@@ -3902,8 +3902,8 @@
         "grams": 150.0
       },
       {
-        "label": "Colsr (100g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (100g)",
+        "measure": "Colher de sopa rasa",
         "grams": 100.0
       }
     ],
@@ -3914,8 +3914,8 @@
         "grams": 140.0
       },
       {
-        "label": "Comr (800g)",
-        "measure": "Comr",
+        "label": "Concha média rasa (800g)",
+        "measure": "Concha média rasa",
         "grams": 800.0
       },
       {
@@ -3924,8 +3924,8 @@
         "grams": 65.0
       },
       {
-        "label": "Copr (40g)",
-        "measure": "Copr",
+        "label": "Concha pequena rasa (40g)",
+        "measure": "Concha pequena rasa",
         "grams": 40.0
       },
       {
@@ -3939,30 +3939,30 @@
         "grams": 17.0
       },
       {
-        "label": "Co Mch (140g)",
-        "measure": "Co Mch",
+        "label": "Concha média cheia (140g)",
+        "measure": "Concha média cheia",
         "grams": 140.0
       },
       {
-        "label": "Copch (65g)",
-        "measure": "Copch",
+        "label": "Concha pequena cheia (65g)",
+        "measure": "Concha pequena cheia",
         "grams": 65.0
       },
       {
-        "label": "Colach (35g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (35g)",
+        "measure": "Colher de arroz cheia",
         "grams": 35.0
       },
       {
-        "label": "Colsch (17g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (17g)",
+        "measure": "Colher de sopa cheia",
         "grams": 17.0
       }
     ],
     "FEIJOADA CASEIRA": [
       {
-        "label": "Co Mch (225g)",
-        "measure": "Co Mch",
+        "label": "Concha média cheia (225g)",
+        "measure": "Concha média cheia",
         "grams": 225.0
       }
     ],
@@ -3973,8 +3973,8 @@
         "grams": 30.0
       },
       {
-        "label": "Colsr (10g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (10g)",
+        "measure": "Colher de sopa rasa",
         "grams": 10.0
       }
     ],
@@ -4489,8 +4489,8 @@
         "grams": 340.0
       },
       {
-        "label": "Colsr (220g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (220g)",
+        "measure": "Colher de sopa rasa",
         "grams": 220.0
       },
       {
@@ -4584,8 +4584,8 @@
         "grams": 100.0
       },
       {
-        "label": "Colsr (60g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (60g)",
+        "measure": "Colher de sopa rasa",
         "grams": 60.0
       },
       {
@@ -4648,8 +4648,8 @@
         "grams": 40.0
       },
       {
-        "label": "Colsr (250g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (250g)",
+        "measure": "Colher de sopa rasa",
         "grams": 250.0
       }
     ],
@@ -4797,8 +4797,8 @@
     ],
     "DE PORCO": [
       {
-        "label": "Colsch (30g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (30g)",
+        "measure": "Colher de sopa cheia",
         "grams": 30.0
       },
       {
@@ -4821,13 +4821,13 @@
     ],
     "JILO COZIDO": [
       {
-        "label": "Colar (600g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (600g)",
+        "measure": "Colher de arroz rasa",
         "grams": 600.0
       },
       {
-        "label": "Escmr (800g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (800g)",
+        "measure": "Escumadeira média rasa",
         "grams": 800.0
       },
       {
@@ -4843,8 +4843,8 @@
         "grams": 600.0
       },
       {
-        "label": "Escmr (800g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (800g)",
+        "measure": "Escumadeira média rasa",
         "grams": 800.0
       },
       {
@@ -4870,8 +4870,8 @@
         "grams": 200.0
       },
       {
-        "label": "Colsr (11g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (11g)",
+        "measure": "Colher de sopa rasa",
         "grams": 11.0
       },
       {
@@ -4922,8 +4922,8 @@
         "grams": 50.0
       },
       {
-        "label": "Escmch (170g)",
-        "measure": "Escmch",
+        "label": "Escumadeira média cheia (170g)",
+        "measure": "Escumadeira média cheia",
         "grams": 170.0
       },
       {
@@ -4996,8 +4996,8 @@
         "grams": 140.0
       },
       {
-        "label": "Colsr (70g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (70g)",
+        "measure": "Colher de sopa rasa",
         "grams": 70.0
       },
       {
@@ -5030,13 +5030,13 @@
         "grams": 165.0
       },
       {
-        "label": "Colsch (16g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (16g)",
+        "measure": "Colher de sopa cheia",
         "grams": 16.0
       },
       {
-        "label": "Colsr (80g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (80g)",
+        "measure": "Colher de sopa rasa",
         "grams": 80.0
       },
       {
@@ -5066,8 +5066,8 @@
     ],
     "WDESENGORDURADO": [
       {
-        "label": "Colsr (80g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (80g)",
+        "measure": "Colher de sopa rasa",
         "grams": 80.0
       },
       {
@@ -5155,13 +5155,13 @@
         "grams": 165.0
       },
       {
-        "label": "Colsch (16g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (16g)",
+        "measure": "Colher de sopa cheia",
         "grams": 16.0
       },
       {
-        "label": "Colsr (80g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (80g)",
+        "measure": "Colher de sopa rasa",
         "grams": 80.0
       },
       {
@@ -5211,8 +5211,8 @@
         "grams": 3.0
       },
       {
-        "label": "Colsr (180g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (180g)",
+        "measure": "Colher de sopa rasa",
         "grams": 180.0
       },
       {
@@ -5326,8 +5326,8 @@
         "grams": 110.0
       },
       {
-        "label": "Escmr (75g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (75g)",
+        "measure": "Escumadeira média rasa",
         "grams": 75.0
       },
       {
@@ -5341,8 +5341,8 @@
         "grams": 1100.0
       },
       {
-        "label": "Pt F Ch (400g)",
-        "measure": "Pt F Ch",
+        "label": "Prato fundo Ch (400g)",
+        "measure": "Prato fundo Ch",
         "grams": 400.0
       },
       {
@@ -5361,13 +5361,13 @@
         "grams": 200.0
       },
       {
-        "label": "Colsch (250g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (250g)",
+        "measure": "Colher de sopa cheia",
         "grams": 250.0
       },
       {
-        "label": "Escmr (750g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (750g)",
+        "measure": "Escumadeira média rasa",
         "grams": 750.0
       },
       {
@@ -5388,8 +5388,8 @@
         "grams": 500.0
       },
       {
-        "label": "Colsch (25g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (25g)",
+        "measure": "Colher de sopa cheia",
         "grams": 25.0
       },
       {
@@ -5398,8 +5398,8 @@
         "grams": 1100.0
       },
       {
-        "label": "Escmr (750g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (750g)",
+        "measure": "Escumadeira média rasa",
         "grams": 750.0
       },
       {
@@ -5428,8 +5428,8 @@
         "grams": 320.0
       },
       {
-        "label": "Pt R Ch/Parafuso (320g)",
-        "measure": "Pt R Ch/Parafuso",
+        "label": "Prato raso Ch/Parafuso (320g)",
+        "measure": "Prato raso Ch/Parafuso",
         "grams": 320.0
       },
       {
@@ -5460,8 +5460,8 @@
         "grams": 27.0
       },
       {
-        "label": "Colsr (17g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (17g)",
+        "measure": "Colher de sopa rasa",
         "grams": 17.0
       },
       {
@@ -5527,8 +5527,8 @@
         "grams": 50.0
       },
       {
-        "label": "Colar (35g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (35g)",
+        "measure": "Colher de arroz rasa",
         "grams": 35.0
       },
       {
@@ -5547,8 +5547,8 @@
         "grams": 270.0
       },
       {
-        "label": "Colsr (170g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (170g)",
+        "measure": "Colher de sopa rasa",
         "grams": 170.0
       },
       {
@@ -5617,8 +5617,8 @@
         "grams": 20.0
       },
       {
-        "label": "Colsr (100g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (100g)",
+        "measure": "Colher de sopa rasa",
         "grams": 100.0
       },
       {
@@ -5695,8 +5695,8 @@
         "grams": 70.0
       },
       {
-        "label": "Colsr (19g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (19g)",
+        "measure": "Colher de sopa rasa",
         "grams": 19.0
       },
       {
@@ -5777,8 +5777,8 @@
         "grams": 70.0
       },
       {
-        "label": "Colsr (19g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (19g)",
+        "measure": "Colher de sopa rasa",
         "grams": 19.0
       },
       {
@@ -5856,8 +5856,8 @@
         "grams": 75.0
       },
       {
-        "label": "Colar (55g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (55g)",
+        "measure": "Colher de arroz rasa",
         "grams": 55.0
       },
       {
@@ -5866,8 +5866,8 @@
         "grams": 400.0
       },
       {
-        "label": "Colsr (25g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (25g)",
+        "measure": "Colher de sopa rasa",
         "grams": 25.0
       },
       {
@@ -5876,20 +5876,20 @@
         "grams": 130.0
       },
       {
-        "label": "Escmr (80g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (80g)",
+        "measure": "Escumadeira média rasa",
         "grams": 80.0
       }
     ],
     "MAXIXE REFOGADO": [
       {
-        "label": "Colach (75g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (75g)",
+        "measure": "Colher de arroz cheia",
         "grams": 75.0
       },
       {
-        "label": "Colsr (25g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (25g)",
+        "measure": "Colher de sopa rasa",
         "grams": 25.0
       }
     ],
@@ -5946,13 +5946,13 @@
     ],
     "MILHO VERDE ENLATADO": [
       {
-        "label": "Colsch (24g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (24g)",
+        "measure": "Colher de sopa cheia",
         "grams": 24.0
       },
       {
-        "label": "Colsr (14g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (14g)",
+        "measure": "Colher de sopa rasa",
         "grams": 14.0
       }
     ],
@@ -5983,13 +5983,13 @@
         "grams": 200.0
       },
       {
-        "label": "Ptr (195g)",
-        "measure": "Ptr",
+        "label": "Prato raso (195g)",
+        "measure": "Prato raso",
         "grams": 195.0
       },
       {
-        "label": "Ptsob (105g)",
-        "measure": "Ptsob",
+        "label": "Prato de sobremesa (105g)",
+        "measure": "Prato de sobremesa",
         "grams": 105.0
       }
     ],
@@ -6019,8 +6019,8 @@
     ],
     "MOLHO A BOLONHESA": [
       {
-        "label": "Copch (63g)",
-        "measure": "Copch",
+        "label": "Concha pequena cheia (63g)",
+        "measure": "Concha pequena cheia",
         "grams": 63.0
       },
       {
@@ -6041,13 +6041,13 @@
     ],
     "MOLHO A CAMPANHA": [
       {
-        "label": "Copch (80g)",
-        "measure": "Copch",
+        "label": "Concha pequena cheia (80g)",
+        "measure": "Concha pequena cheia",
         "grams": 80.0
       },
       {
-        "label": "Copr (45g)",
-        "measure": "Copr",
+        "label": "Concha pequena rasa (45g)",
+        "measure": "Concha pequena rasa",
         "grams": 45.0
       },
       {
@@ -6056,13 +6056,13 @@
         "grams": 65.0
       },
       {
-        "label": "Colar (40g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (40g)",
+        "measure": "Colher de arroz rasa",
         "grams": 40.0
       },
       {
-        "label": "Colsr (16g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (16g)",
+        "measure": "Colher de sopa rasa",
         "grams": 16.0
       },
       {
@@ -6105,20 +6105,20 @@
     ],
     "CONDIMENTO": [
       {
-        "label": "Colsch (20g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (20g)",
+        "measure": "Colher de sopa cheia",
         "grams": 20.0
       },
       {
-        "label": "Colsobr (90g)",
-        "measure": "Colsobr",
+        "label": "Colher de sobremesa rasa (90g)",
+        "measure": "Colher de sobremesa rasa",
         "grams": 90.0
       }
     ],
     "FOLHA COZIDA": [
       {
-        "label": "Colach (750g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (750g)",
+        "measure": "Colher de arroz cheia",
         "grams": 750.0
       },
       {
@@ -6326,8 +6326,8 @@
         "grams": 12.0
       },
       {
-        "label": "Colsr (7g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (7g)",
+        "measure": "Colher de sopa rasa",
         "grams": 7.0
       },
       {
@@ -6387,8 +6387,8 @@
         "grams": 60.0
       },
       {
-        "label": "Escmr (750g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (750g)",
+        "measure": "Escumadeira média rasa",
         "grams": 750.0
       },
       {
@@ -6538,8 +6538,8 @@
         "grams": 450.0
       },
       {
-        "label": "Colar (250g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (250g)",
+        "measure": "Colher de arroz rasa",
         "grams": 250.0
       },
       {
@@ -6548,13 +6548,13 @@
         "grams": 150.0
       },
       {
-        "label": "Colsr (1060g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (1060g)",
+        "measure": "Colher de sopa rasa",
         "grams": 1060.0
       },
       {
-        "label": "Escmr (450g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (450g)",
+        "measure": "Escumadeira média rasa",
         "grams": 450.0
       },
       {
@@ -6568,8 +6568,8 @@
         "grams": 140.0
       },
       {
-        "label": "Colsr (90g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (90g)",
+        "measure": "Colher de sopa rasa",
         "grams": 90.0
       },
       {
@@ -6583,8 +6583,8 @@
         "grams": 60.0
       },
       {
-        "label": "Colsch (140g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (140g)",
+        "measure": "Colher de sopa cheia",
         "grams": 140.0
       },
       {
@@ -6767,8 +6767,8 @@
         "grams": 260.0
       },
       {
-        "label": "Colsr (130g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (130g)",
+        "measure": "Colher de sopa rasa",
         "grams": 130.0
       },
       {
@@ -6831,8 +6831,8 @@
         "grams": 220.0
       },
       {
-        "label": "Colsr (170g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (170g)",
+        "measure": "Colher de sopa rasa",
         "grams": 170.0
       },
       {
@@ -6930,8 +6930,8 @@
         "grams": 250.0
       },
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       },
       {
@@ -7303,8 +7303,8 @@
         "grams": 165.0
       },
       {
-        "label": "Comr (1400g)",
-        "measure": "Comr",
+        "label": "Concha média rasa (1400g)",
+        "measure": "Concha média rasa",
         "grams": 1400.0
       },
       {
@@ -7313,23 +7313,23 @@
         "grams": 0.04
       },
       {
-        "label": "Colar (0.02g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (0.02g)",
+        "measure": "Colher de arroz rasa",
         "grams": 0.02
       },
       {
-        "label": "Colsch (0.03g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (0.03g)",
+        "measure": "Colher de sopa cheia",
         "grams": 0.03
       },
       {
-        "label": "Pt F (500g)",
-        "measure": "Pt F",
+        "label": "Prato fundo (500g)",
+        "measure": "Prato fundo",
         "grams": 500.0
       },
       {
-        "label": "Ptr (300g)",
-        "measure": "Ptr",
+        "label": "Prato raso (300g)",
+        "measure": "Prato raso",
         "grams": 300.0
       }
     ],
@@ -7452,8 +7452,8 @@
     ],
     "PURE DE BATATA": [
       {
-        "label": "Comr (140g)",
-        "measure": "Comr",
+        "label": "Concha média rasa (140g)",
+        "measure": "Concha média rasa",
         "grams": 140.0
       },
       {
@@ -7462,30 +7462,30 @@
         "grams": 80.0
       },
       {
-        "label": "Colsch (45g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (45g)",
+        "measure": "Colher de sopa cheia",
         "grams": 45.0
       },
       {
-        "label": "Colsr (25g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (25g)",
+        "measure": "Colher de sopa rasa",
         "grams": 25.0
       }
     ],
     "PURE DE INHAME": [
       {
-        "label": "Colach (650g)",
-        "measure": "Colach",
+        "label": "Colher de arroz cheia (650g)",
+        "measure": "Colher de arroz cheia",
         "grams": 650.0
       },
       {
-        "label": "Colsch (40g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (40g)",
+        "measure": "Colher de sopa cheia",
         "grams": 40.0
       },
       {
-        "label": "Colsr (20g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (20g)",
+        "measure": "Colher de sopa rasa",
         "grams": 20.0
       }
     ],
@@ -7562,15 +7562,15 @@
         "grams": 300.0
       },
       {
-        "label": "Ft (200g)",
-        "measure": "Ft",
+        "label": "Fatia (200g)",
+        "measure": "Fatia",
         "grams": 200.0
       }
     ],
     "QUEIJO PARMESAO": [
       {
-        "label": "Colsr (70g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (70g)",
+        "measure": "Colher de sopa rasa",
         "grams": 70.0
       },
       {
@@ -7605,8 +7605,8 @@
         "grams": 400.0
       },
       {
-        "label": "Colsr (200g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (200g)",
+        "measure": "Colher de sopa rasa",
         "grams": 200.0
       }
     ],
@@ -7629,8 +7629,8 @@
         "grams": 350.0
       },
       {
-        "label": "Colsr (200g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (200g)",
+        "measure": "Colher de sopa rasa",
         "grams": 200.0
       },
       {
@@ -7830,8 +7830,8 @@
     ],
     "REQUEIJAO": [
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       },
       {
@@ -7921,13 +7921,13 @@
     ],
     "RISOTO DE FRANGO": [
       {
-        "label": "Colsch (25g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (25g)",
+        "measure": "Colher de sopa cheia",
         "grams": 25.0
       },
       {
-        "label": "Colsr (15g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (15g)",
+        "measure": "Colher de sopa rasa",
         "grams": 15.0
       },
       {
@@ -7938,8 +7938,8 @@
     ],
     "C MAIONESE": [
       {
-        "label": "Colsch (38g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (38g)",
+        "measure": "Colher de sopa cheia",
         "grams": 38.0
       }
     ],
@@ -7950,8 +7950,8 @@
         "grams": 57.0
       },
       {
-        "label": "Colar (30g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (30g)",
+        "measure": "Colher de arroz rasa",
         "grams": 30.0
       },
       {
@@ -7960,8 +7960,8 @@
         "grams": 32.0
       },
       {
-        "label": "Colsr (20g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (20g)",
+        "measure": "Colher de sopa rasa",
         "grams": 20.0
       },
       {
@@ -7972,8 +7972,8 @@
     ],
     "SALADA DE FRUTAS": [
       {
-        "label": "Colsch (38g)",
-        "measure": "Colsch",
+        "label": "Colher de sopa cheia (38g)",
+        "measure": "Colher de sopa cheia",
         "grams": 38.0
       },
       {
@@ -7992,8 +7992,8 @@
         "grams": 55.0
       },
       {
-        "label": "Colar (40g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (40g)",
+        "measure": "Colher de arroz rasa",
         "grams": 40.0
       },
       {
@@ -8043,13 +8043,13 @@
         "grams": 400.0
       },
       {
-        "label": "Colar (250g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (250g)",
+        "measure": "Colher de arroz rasa",
         "grams": 250.0
       },
       {
-        "label": "Colsr (200g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (200g)",
+        "measure": "Colher de sopa rasa",
         "grams": 200.0
       },
       {
@@ -8058,13 +8058,13 @@
         "grams": 500.0
       },
       {
-        "label": "Escmr (300g)",
-        "measure": "Escmr",
+        "label": "Escumadeira média rasa (300g)",
+        "measure": "Escumadeira média rasa",
         "grams": 300.0
       },
       {
-        "label": "Pt Sob (140g)",
-        "measure": "Pt Sob",
+        "label": "Prato de sobremesa (140g)",
+        "measure": "Prato de sobremesa",
         "grams": 140.0
       }
     ],
@@ -8141,13 +8141,13 @@
         "grams": 60.0
       },
       {
-        "label": "Ptf (520g)",
-        "measure": "Ptf",
+        "label": "Prato fundo (520g)",
+        "measure": "Prato fundo",
         "grams": 520.0
       },
       {
-        "label": "Ptr (325g)",
-        "measure": "Ptr",
+        "label": "Prato raso (325g)",
+        "measure": "Prato raso",
         "grams": 325.0
       }
     ],
@@ -8163,8 +8163,8 @@
         "grams": 60.0
       },
       {
-        "label": "Ptr (325g)",
-        "measure": "Ptr",
+        "label": "Prato raso (325g)",
+        "measure": "Prato raso",
         "grams": 325.0
       }
     ],
@@ -8201,8 +8201,8 @@
     ],
     "SOYMILKE PO": [
       {
-        "label": "Colsr (70g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (70g)",
+        "measure": "Colher de sopa rasa",
         "grams": 70.0
       },
       {
@@ -8408,8 +8408,8 @@
     ],
     "PTF": [
       {
-        "label": "Ptr (80g)",
-        "measure": "Ptr",
+        "label": "Prato raso (80g)",
+        "measure": "Prato raso",
         "grams": 80.0
       },
       {
@@ -8542,8 +8542,8 @@
         "grams": 85.0
       },
       {
-        "label": "Fp (60g)",
-        "measure": "Fp",
+        "label": "Fatia pequena (60g)",
+        "measure": "Fatia pequena",
         "grams": 60.0
       }
     ],
@@ -8564,8 +8564,8 @@
         "grams": 85.0
       },
       {
-        "label": "Colar (50g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (50g)",
+        "measure": "Colher de arroz rasa",
         "grams": 50.0
       },
       {
@@ -8579,8 +8579,8 @@
         "grams": 140.0
       },
       {
-        "label": "Ptr (280g)",
-        "measure": "Ptr",
+        "label": "Prato raso (280g)",
+        "measure": "Prato raso",
         "grams": 280.0
       }
     ],
@@ -8630,8 +8630,8 @@
         "grams": 180.0
       },
       {
-        "label": "Colsr (1060g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (1060g)",
+        "measure": "Colher de sopa rasa",
         "grams": 1060.0
       },
       {
@@ -8657,8 +8657,8 @@
         "grams": 20.0
       },
       {
-        "label": "Colsr (15g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (15g)",
+        "measure": "Colher de sopa rasa",
         "grams": 15.0
       }
     ],
@@ -8669,8 +8669,8 @@
         "grams": 730.0
       },
       {
-        "label": "Colar (450g)",
-        "measure": "Colar",
+        "label": "Colher de arroz rasa (450g)",
+        "measure": "Colher de arroz rasa",
         "grams": 450.0
       },
       {
@@ -8679,8 +8679,8 @@
         "grams": 35.0
       },
       {
-        "label": "Colsr (150g)",
-        "measure": "Colsr",
+        "label": "Colher de sopa rasa (150g)",
+        "measure": "Colher de sopa rasa",
         "grams": 150.0
       }
     ],
@@ -8709,47 +8709,47 @@
   },
   "genericas": [
     {
-      "label": "1 Colher de sopa cheia (25g)",
+      "label": "Colher de sopa cheia (25g)",
       "measure": "Colher de sopa cheia",
       "grams": 25
     },
     {
-      "label": "1 Colher de sopa rasa (15g)",
+      "label": "Colher de sopa rasa (15g)",
       "measure": "Colher de sopa rasa",
       "grams": 15
     },
     {
-      "label": "1 Colher de sobremesa (10g)",
+      "label": "Colher de sobremesa (10g)",
       "measure": "Colher de sobremesa",
       "grams": 10
     },
     {
-      "label": "1 Colher de chá (5g)",
+      "label": "Colher de chá (5g)",
       "measure": "Colher de chá",
       "grams": 5
     },
     {
-      "label": "1 Xícara de chá (150g)",
+      "label": "Xícara de chá (150g)",
       "measure": "Xícara de chá",
       "grams": 150
     },
     {
-      "label": "1 Copo americano (200ml)",
+      "label": "Copo americano (200g)",
       "measure": "Copo americano",
       "grams": 200
     },
     {
-      "label": "1 Concha média (130g)",
+      "label": "Concha média (130g)",
       "measure": "Concha média",
       "grams": 130
     },
     {
-      "label": "1 Escumadeira média (100g)",
+      "label": "Escumadeira média (100g)",
       "measure": "Escumadeira média",
       "grams": 100
     },
     {
-      "label": "1 Porção média / Bife (100g)",
+      "label": "Porção média / Bife (100g)",
       "measure": "Porção média / Bife",
       "grams": 100
     }
