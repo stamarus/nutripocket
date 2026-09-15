@@ -966,7 +966,7 @@
       if (!str) return '';
       return String(str).toLowerCase()
                 .normalize('NFD')
-                .replace(/[̀-ͯ]/g, '')
+                .replace(/[\u0300-\u036f]/g, '')
                 .replace(/[,;\(\)\/\-\+\.]/g, ' ')
                 .trim();
     }
@@ -1054,6 +1054,7 @@
       const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? (f.protein_g ?? f.proteina).toFixed(1) : ((f.protein_g ?? f.proteina) || '-');
       const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? (f.carbohydrates_g ?? f.carboidrato).toFixed(1) : ((f.carbohydrates_g ?? f.carboidrato) || '-');
       const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? (f.lipids_g ?? f.lipideos).toFixed(1) : ((f.lipids_g ?? f.lipideos) || '-');
+      const bestM = calculateBestMeasure(f, 100);
 
       return `
         <div class="bg-white rounded-2xl p-4 border border-slate-200/80 hover:border-brand-500/50 hover:shadow-md transition-all flex flex-col justify-between group">
@@ -1065,6 +1066,7 @@
             <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-brand-700 transition-colors leading-snug cursor-pointer line-clamp-2" onclick="openModal('${f.id}')">
               ${f.name || f.nome}
             </h3>
+            ${bestM ? `<div class="mt-1.5 flex items-center gap-1 text-[10.5px] text-emerald-700 font-bold bg-emerald-50/70 px-2 py-0.5 rounded-md border border-emerald-100/70 truncate"><i data-lucide="scale" class="w-3 h-3 text-emerald-600 shrink-0"></i><span class="truncate">100g ≈ ${bestM.displayCount} ${bestM.rawMeasure}</span></div>` : ''}
           </div>
 
           <div class="mt-3 pt-3 border-t border-slate-100">
@@ -1088,8 +1090,9 @@
             </div>
 
             <div class="flex gap-1.5">
-              <button onclick="openModal('${f.id}')" class="flex-1 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] rounded-lg transition-colors">
-                Ficha Completa
+              <button onclick="openModal('${f.id}')" class="flex-1 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] rounded-lg transition-colors flex items-center justify-center gap-1">
+                <i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i>
+                <span>Ficha & Medidas</span>
               </button>
               <button onclick="addToMealQuick('${f.id}')" title="Adicionar 100g ao Prato" class="p-1.5 bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white rounded-lg transition-colors flex items-center justify-center">
                 <i data-lucide="plus" class="w-4 h-4"></i>
@@ -1155,43 +1158,104 @@
       filterFoods(false);
     }
 
+    function getMedidasDb() {
+      if (typeof MEDIDAS_CASEIRAS !== 'undefined' && MEDIDAS_CASEIRAS && MEDIDAS_CASEIRAS.alimentos) return MEDIDAS_CASEIRAS;
+      if (typeof MEDIDAS_CASEIRAS_DATA !== 'undefined' && MEDIDAS_CASEIRAS_DATA && MEDIDAS_CASEIRAS_DATA.alimentos) return MEDIDAS_CASEIRAS_DATA;
+      if (typeof window !== 'undefined' && window.MEDIDAS_CASEIRAS && window.MEDIDAS_CASEIRAS.alimentos) return window.MEDIDAS_CASEIRAS;
+      if (typeof window !== 'undefined' && window.MEDIDAS_CASEIRAS_DATA && window.MEDIDAS_CASEIRAS_DATA.alimentos) return window.MEDIDAS_CASEIRAS_DATA;
+      return null;
+    }
+
     // Helper de Medidas Caseiras (Pinheiro et al. - Para todas as tabelas)
     function findMedidasForFood(food) {
-      if (!food || typeof MEDIDAS_CASEIRAS === 'undefined') return [];
+      if (!food) return [];
+      const mDb = getMedidasDb();
+      const db = mDb ? (mDb.alimentos || {}) : {};
+      const genericas = (mDb && mDb.genericas && mDb.genericas.length > 0) ? mDb.genericas : [
+        { label: "Colher de sopa (15g)", measure: "Colher de sopa", grams: 15 },
+        { label: "Colher de arroz (45g)", measure: "Colher de arroz", grams: 45 },
+        { label: "Colher de sobremesa (10g)", measure: "Colher de sobremesa", grams: 10 },
+        { label: "Colher de chá (5g)", measure: "Colher de chá", grams: 5 },
+        { label: "Xícara de chá (150g)", measure: "Xícara de chá", grams: 150 },
+        { label: "Copo americano (200g)", measure: "Copo americano", grams: 200 },
+        { label: "Concha média (130g)", measure: "Concha média", grams: 130 },
+        { label: "Escumadeira média (100g)", measure: "Escumadeira média", grams: 100 },
+        { label: "Porção média / Bife (100g)", measure: "Porção média / Bife", grams: 100 }
+      ];
+
       const fName = normalizeSearchStr(food.name || food.nome || '');
-      const db = MEDIDAS_CASEIRAS.alimentos || {};
-      
-      // Match exato ou token match com as chaves do livro
+
+      // 1. Match exato ou prefixo
       for (const [key, measures] of Object.entries(db)) {
         const normKey = normalizeSearchStr(key);
-        if (fName.includes(normKey) || normKey.includes(fName)) {
+        if (normKey.length > 3 && (fName === normKey || fName.startsWith(normKey + ' ') || fName.includes(' ' + normKey + ' '))) {
           return measures;
         }
       }
-      
-      // Token match por palavras chave principais (ex: arroz, feijao, frango, bife, aveia, leite...)
-      const tokens = fName.split(/\s+/).filter(t => t.length >= 4);
+
+      // 2. Substring match
+      for (const [key, measures] of Object.entries(db)) {
+        const normKey = normalizeSearchStr(key);
+        if (normKey.length >= 4 && (fName.includes(normKey) || normKey.includes(fName))) {
+          return measures;
+        }
+      }
+
+      // 3. Token match
+      const stopWords = ['com', 'sem', 'para', 'tipo', 'puro', 'crua', 'frito', 'assado', 'cozido', 'grelhado', 'fresco', 'branco', 'verde', 'amarelo', 'preto', 'taco', 'tbca', 'ibge', 'usda', 'geral', 'industrializado', 'preparado'];
+      const tokens = fName.split(/\s+/).filter(t => t.length >= 4 && !stopWords.includes(t));
       for (const tok of tokens) {
         for (const [key, measures] of Object.entries(db)) {
           const normKey = normalizeSearchStr(key);
-          if (normKey.split(/\s+/).includes(tok)) {
+          const keyTokens = normKey.split(/\s+/);
+          if (keyTokens.includes(tok)) {
             return measures;
           }
         }
       }
 
-      // Fallback inteligente para alimentos não encontrados diretamente:
-      // se for bebida/suco/leite, sugere copos/xícaras
-      if (fName.includes('suco') || fName.includes('leite') || fName.includes('cha') || fName.includes('cafe') || fName.includes('vitamina') || fName.includes('refrigerante') || fName.includes('agua')) {
+      // 4. Bebidas / Líquidos
+      if (fName.includes('suco') || fName.includes('leite') || fName.includes('cha') || fName.includes('cafe') || fName.includes('vitamina') || fName.includes('refrigerante') || fName.includes('agua') || fName.includes('caldo') || fName.includes('iogurte') || fName.includes('cerveja') || fName.includes('vinho')) {
         return [
           { label: 'Copo americano (200ml) (200g)', measure: 'Copo americano', grams: 200 },
           { label: 'Copo duplo / grande (240ml) (240g)', measure: 'Copo duplo', grams: 240 },
-          { label: 'Xícara de chá (150ml) (150g)', measure: 'Xícara de chá', grams: 150 }
+          { label: 'Xícara de chá (150ml) (150g)', measure: 'Xícara de chá', grams: 150 },
+          { label: 'Colher de sopa (15g)', measure: 'Colher de sopa', grams: 15 }
+        ];
+      }
+
+      // 5. Frutas / Carnes / Pães
+      if (fName.includes('maca') || fName.includes('banana') || fName.includes('laranja') || fName.includes('pera') || fName.includes('mamao') || fName.includes('abacaxi') || fName.includes('manga') || fName.includes('pessego') || fName.includes('limao') || fName.includes('kiwi') || fName.includes('uva') || fName.includes('morango')) {
+        return [
+          { label: 'Unidade média (100g)', measure: 'Unidade média', grams: 100 },
+          { label: 'Unidade pequena (70g)', measure: 'Unidade pequena', grams: 70 },
+          { label: 'Unidade grande (150g)', measure: 'Unidade grande', grams: 150 },
+          { label: 'Fatia média (60g)', measure: 'Fatia média', grams: 60 },
+          { label: 'Pedaço médio (50g)', measure: 'Pedaço médio', grams: 50 }
+        ];
+      }
+
+      if (fName.includes('carne') || fName.includes('frango') || fName.includes('peixe') || fName.includes('bife') || fName.includes('porco') || fName.includes('file') || fName.includes('patinho') || fName.includes('alcatra') || fName.includes('costela') || fName.includes('lombo')) {
+        return [
+          { label: 'Bife / Filé médio (100g)', measure: 'Bife / Filé médio', grams: 100 },
+          { label: 'Bife / Filé pequeno (70g)', measure: 'Bife / Filé pequeno', grams: 70 },
+          { label: 'Bife / Filé grande (150g)', measure: 'Bife / Filé grande', grams: 150 },
+          { label: 'Colher de sopa cheia (30g)', measure: 'Colher de sopa cheia', grams: 30 },
+          { label: 'Pedaço médio (40g)', measure: 'Pedaço médio', grams: 40 }
+        ];
+      }
+
+      if (fName.includes('pao') || fName.includes('torrada') || fName.includes('biscoito') || fName.includes('bolo')) {
+        return [
+          { label: 'Fatia média (30g)', measure: 'Fatia média', grams: 30 },
+          { label: 'Unidade média (50g)', measure: 'Unidade média', grams: 50 },
+          { label: 'Unidade pequena (25g)', measure: 'Unidade pequena', grams: 25 },
+          { label: 'Fatia grossa (50g)', measure: 'Fatia grossa', grams: 50 }
         ];
       }
 
       // Fallback genérico padrão da literatura para qualquer tabela
-      return MEDIDAS_CASEIRAS.genericas || [];
+      return genericas;
     }
 
     // Formata o nome da medida tratando plural implicitamente e com elegância
@@ -1318,15 +1382,11 @@
       // Configuração de Medida Caseira: Disponível para todas as tabelas
       const mcRow = document.getElementById('modalMedidaCaseiraRow');
       const mcSelect = document.getElementById('modalMedidaSelect');
-      if (typeof MEDIDAS_CASEIRAS !== 'undefined') {
-        const measures = findMedidasForFood(food);
-        if (measures && measures.length > 0) {
-          mcSelect.innerHTML = `<option value="">-- Escolher Medida Caseira (Gabi & Pacientes) --</option>` +
-            measures.map(m => `<option value="${m.grams}">${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('');
-          mcRow.classList.remove('hidden');
-        } else {
-          mcRow.classList.add('hidden');
-        }
+      const measures = findMedidasForFood(food);
+      if (measures && measures.length > 0) {
+        mcSelect.innerHTML = `<option value="">-- Escolher Medida Caseira (Gabi & Pacientes) --</option>` +
+          measures.map(m => `<option value="${m.grams}">${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('');
+        mcRow.classList.remove('hidden');
       } else {
         mcRow.classList.add('hidden');
       }
