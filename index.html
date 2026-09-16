@@ -1285,10 +1285,10 @@
     }
 
     // Calcula a conversão inteligente mais natural para o paciente (para qualquer tabela)
-    // Ex: 200g de arroz -> ≈ 2 colher(es) de sopa cheia (90g)
+    // Ex: 125g de arroz -> ≈ 5 colher(es) de sopa cheia (25g cada)
     // 50g de tomate -> ≈ 2 a 3 fatias médias
     // 300g de carne -> 3 bifes médios / porções
-    function calculateBestMeasure(food, grams) {
+    function calculateBestMeasure(food, grams, preferredMeasureName = null) {
       if (!food) return null;
       const g = parseFloat(grams) || 0;
       if (g <= 0) return null;
@@ -1296,12 +1296,39 @@
       const measures = findMedidasForFood(food);
       if (!measures || measures.length === 0) return null;
 
+      // Se o usuário selecionou manualmente uma medida caseira específica
+      if (preferredMeasureName) {
+        const found = measures.find(m => m.measure === preferredMeasureName || m.label === preferredMeasureName);
+        if (found && found.grams > 0) {
+          const rawCount = g / found.grams;
+          const roundedCount = Math.round(rawCount * 2) / 2 || Math.round(rawCount) || 1;
+          let countDisplay = '';
+          if (roundedCount === 1) countDisplay = '1';
+          else if (roundedCount === 0.5) countDisplay = '1/2';
+          else if (roundedCount === 1.5) countDisplay = '1 e 1/2';
+          else if (roundedCount === 2.5) countDisplay = '2 e 1/2';
+          else countDisplay = String(roundedCount);
+
+          const friendlyName = formatFriendlyMeasureName(found.measure, roundedCount);
+          return {
+            text: `≈ ${countDisplay} ${friendlyName}`,
+            unitGrams: found.grams,
+            count: roundedCount,
+            rawMeasure: found.measure,
+            displayCount: countDisplay
+          };
+        }
+      }
+
       // Classifica medidas por afinidade com o alimento e por tamanho
       // Se tiver fatias para tomate, unidades/bife para carne, conchas para feijão, colher para arroz
       const fName = normalizeSearchStr(food.name || food.nome || '');
       
       let preferred = measures;
-      if (fName.includes('feijao') || fName.includes('sopa') || fName.includes('caldo')) {
+      if (fName.includes('arroz')) {
+        const sopas = measures.filter(m => m.measure.toLowerCase().includes('colher de sopa cheia') || m.measure.toLowerCase().includes('colher de sopa'));
+        if (sopas.length > 0) preferred = sopas;
+      } else if (fName.includes('feijao') || fName.includes('sopa') || fName.includes('caldo')) {
         const conchas = measures.filter(m => m.measure.toLowerCase().includes('concha'));
         if (conchas.length > 0) preferred = conchas;
       } else if (fName.includes('tomate') || fName.includes('queijo') || fName.includes('pao') || fName.includes('abacaxi') || fName.includes('melancia')) {
@@ -1324,19 +1351,19 @@
       preferred.forEach(m => {
         const count = g / m.grams;
         // Penaliza se o número de unidades for absurdo (ex: 25 colheres de café para 300g)
-        if (count < 0.2 || count > 12) return;
+        if (count < 0.2 || count > 15) return;
 
-        // Quão próximo de um número "bonito" (ex: 1, 1.5, 2, 2.5, 3, 4)
+        // Quão próximo de um número "bonito" (ex: 1, 1.5, 2, 2.5, 3, 4, 5)
         const remainder = Math.abs(count - Math.round(count * 2) / 2);
-        const countPenalty = Math.abs(count - 2.5); // favorece entre 1 e 4 medidas
-        const score = remainder * 10 + countPenalty * 0.5;
+        const countPenalty = Math.abs(count - 3.0); // favorece porções moderadas (1 a 5)
+        const score = remainder * 15 + countPenalty * 0.5;
 
         if (score < minScore) {
           minScore = score;
           best = {
             measure: m.measure,
             unitGrams: m.grams,
-            count: Math.round(count * 2) / 2 || 1,
+            count: Math.round(count * 2) / 2 || Math.round(count) || 1,
             label: m.label
           };
         }
@@ -1519,6 +1546,13 @@
       renderMeal();
     }
 
+    function updateMealPreferredMeasure(index, measureName) {
+      if (!myMeal[index]) return;
+      myMeal[index].preferredMeasure = measureName || null;
+      saveMeal();
+      renderMeal();
+    }
+
     function removeMealItem(index) {
       myMeal.splice(index, 1);
       saveMeal();
@@ -1595,7 +1629,7 @@
         if (typeof f.fibra === 'number') tFibra += f.fibra * factor;
         if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
 
-        const bestMeasure = calculateBestMeasure(f, item.grams);
+        const bestMeasure = calculateBestMeasure(f, item.grams, item.preferredMeasure);
 
         let mcOptionsHtml = '';
         const measures = findMedidasForFood(f);
@@ -1611,12 +1645,12 @@
                 </span>
               </div>
 
-              <!-- Seletor Alternativo de Medida -->
+              <!-- Seletor Alternativo de Medida (Altera a forma de visualização da medida caseira sem alterar o peso do prato) -->
               <div class="flex items-center gap-1.5 self-end sm:self-auto">
-                <span class="text-[10px] text-slate-400 font-bold">Trocar Medida:</span>
-                <select onchange="updateMealGrams(${idx}, this.value)" class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
-                  <option value="${item.grams}">Manual (${item.grams}g)</option>
-                  ${measures.map(m => `<option value="${m.grams}" ${Math.abs(m.grams - item.grams) < 0.1 ? 'selected' : ''}>${m.label || (m.measure + ' (' + m.grams + 'g)')}</option>`).join('')}
+                <span class="text-[10px] text-slate-400 font-bold">Ver como:</span>
+                <select onchange="updateMealPreferredMeasure(${idx}, this.value)" class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
+                  <option value="" ${!item.preferredMeasure ? 'selected' : ''}>Automático mais amigável</option>
+                  ${measures.map(m => `<option value="${m.measure}" ${item.preferredMeasure === m.measure ? 'selected' : ''}>${m.measure} (${m.grams}g)</option>`).join('')}
                 </select>
               </div>
             </div>
@@ -2441,7 +2475,7 @@
         const kcal = typeof (f.energy_kcal ?? f.energia_kcal) === 'number' ? Math.round((f.energy_kcal ?? f.energia_kcal) * factor) : 0;
         totalKcal += kcal;
 
-        const best = calculateBestMeasure(f, item.grams);
+        const best = calculateBestMeasure(f, item.grams, item.preferredMeasure);
         const measureDisplay = best ? best.text : `≈ ${item.grams}g (porção padrão)`;
 
         return `
@@ -2508,7 +2542,7 @@
         if (typeof f.fibra === 'number') tFibra += f.fibra * factor;
         if (typeof f.sodio === 'number') tSodio += f.sodio * factor;
 
-        const best = calculateBestMeasure(f, item.grams);
+        const best = calculateBestMeasure(f, item.grams, item.preferredMeasure);
         const measureDisplay = best ? best.text : `${item.grams}g`;
 
         return `
@@ -2581,7 +2615,7 @@
       ];
 
       myMeal.forEach((item, idx) => {
-        const best = calculateBestMeasure(item.food, item.grams);
+        const best = calculateBestMeasure(item.food, item.grams, item.preferredMeasure);
         const measure = best ? best.text : `${item.grams}g`;
         patientRows.push([
           idx + 1,
@@ -2614,7 +2648,7 @@
 
         totKcal += kcal; totProt += prot; totCarb += carb; totFat += fat; totFibra += fibra; totSodio += sodio;
 
-        const best = calculateBestMeasure(f, item.grams);
+        const best = calculateBestMeasure(f, item.grams, item.preferredMeasure);
         const measure = best ? best.text : `${item.grams}g`;
 
         nutriRows.push([
@@ -2688,7 +2722,7 @@
       // Itens para o Paciente
       const patientItemsHtml = myMeal.map((item, idx) => {
         const f = item.food;
-        const best = calculateBestMeasure(f, item.grams);
+        const best = calculateBestMeasure(f, item.grams, item.preferredMeasure);
         const measure = best ? best.text : `≈ ${item.grams}g`;
         return `
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:12px 16px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
@@ -2717,7 +2751,7 @@
         const prot = typeof (f.protein_g ?? f.proteina) === 'number' ? ((f.protein_g ?? f.proteina) * factor) : 0;
         const carb = typeof (f.carbohydrates_g ?? f.carboidrato) === 'number' ? ((f.carbohydrates_g ?? f.carboidrato) * factor) : 0;
         const fat = typeof (f.lipids_g ?? f.lipideos) === 'number' ? ((f.lipids_g ?? f.lipideos) * factor) : 0;
-        const best = calculateBestMeasure(f, item.grams);
+        const best = calculateBestMeasure(f, item.grams, item.preferredMeasure);
         const measure = best ? best.text : `${item.grams}g`;
 
         return `
