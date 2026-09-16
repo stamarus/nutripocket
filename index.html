@@ -919,6 +919,7 @@
 
   <script src="nutripocket_data.js"></script>
   <script src="medidas_caseiras.js"></script>
+  <script src="alimento_medida_map.js"></script>
 
   <script>
     const VALID_KEYS = ["gabi2026", "taco2026", "nutripro", "rafa123"];
@@ -1169,6 +1170,12 @@
     // Helper de Medidas Caseiras (Pinheiro et al. - Para todas as tabelas)
     function findMedidasForFood(food) {
       if (!food) return [];
+
+      // 1. Consulta $O(1)$ direta no Mapa Pré-Indexado de Fuzzy Mapping (10.771 alimentos associados)
+      if (food.id && typeof ALIMENTO_MEDIDAS_MAP !== 'undefined' && ALIMENTO_MEDIDAS_MAP && ALIMENTO_MEDIDAS_MAP[food.id]) {
+        return ALIMENTO_MEDIDAS_MAP[food.id];
+      }
+
       const mDb = getMedidasDb();
       const db = mDb ? (mDb.alimentos || {}) : {};
       const genericas = (mDb && mDb.genericas && mDb.genericas.length > 0) ? mDb.genericas : [
