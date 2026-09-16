@@ -623,7 +623,7 @@
                   </div>
 
                   <div>
-                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">E-mail do Paciente (Para Envio da Dieta)</label>
+                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">E-mail (Para Envio da Dieta)</label>
                     <input type="email" id="inputPatEmail" required placeholder="paciente@exemplo.com" 
                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:bg-white">
                   </div>
@@ -635,20 +635,35 @@
                   </div>
 
                   <div>
-                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Idade / Sexo</label>
-                    <input type="text" id="inputPatAge" placeholder="Ex: 28 anos • Masc" 
+                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Idade (anos)</label>
+                    <input type="number" id="inputPatAge" min="1" max="120" placeholder="Ex: 42" 
                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:bg-white">
                   </div>
 
                   <div>
-                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Peso (kg) / Altura (m)</label>
-                    <input type="text" id="inputPatBody" placeholder="Ex: 78kg • 1.76m" 
+                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Sexo Biológico</label>
+                    <select id="inputPatGender" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:bg-white">
+                      <option value="Masculino">Masculino</option>
+                      <option value="Feminino">Feminino</option>
+                      <option value="Outro">Outro</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Peso Atual (kg)</label>
+                    <input type="number" step="0.1" id="inputPatWeight" min="10" max="300" placeholder="Ex: 82.5" 
                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:bg-white">
                   </div>
 
-                  <div class="sm:col-span-2">
-                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Objetivo Nutricional / Restrições</label>
-                    <input type="text" id="inputPatGoal" placeholder="Ex: Hipertrofia limpa • Intolerante a lactose" 
+                  <div>
+                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Altura (m ou cm)</label>
+                    <input type="number" step="0.01" id="inputPatHeight" min="0.5" max="250" placeholder="Ex: 1.78 ou 178" 
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:bg-white">
+                  </div>
+
+                  <div class="sm:col-span-2 lg:col-span-4">
+                    <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Objetivo Nutricional / Restrições Clínicas</label>
+                    <input type="text" id="inputPatGoal" placeholder="Ex: Hipertrofia limpa • Sem lactose • Controle glicêmico" 
                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500 focus:bg-white">
                   </div>
 
@@ -2640,12 +2655,76 @@
       }
     }
 
+    function getPatientMetrics(pat) {
+      if (!pat) return { age: '-', gender: '-', weight: '-', height: '-', imc: '-', imcClass: '-' };
+
+      let age = pat.age ?? '-';
+      let gender = pat.gender ?? '-';
+      let weight = pat.weight ?? '-';
+      let height = pat.height ?? '-';
+
+      // Retrocompatibilidade se tiver formato legado com barras ("42 / Masc" ou "78kg • 1.76m")
+      if (typeof age === 'string' && (age.includes('/') || age.includes('•'))) {
+        const parts = age.replace(/•/g, '/').split('/').map(s => s.trim());
+        if (parts[0]) age = parts[0].replace(/anos?/gi, '').trim();
+        if (parts[1] && (!gender || gender === '-')) {
+          gender = parts[1].toLowerCase().startsWith('m') ? 'Masculino' : (parts[1].toLowerCase().startsWith('f') ? 'Feminino' : parts[1]);
+        }
+      }
+
+      if (pat.body && (weight === '-' || height === '-')) {
+        const parts = String(pat.body).replace(/•/g, '/').split('/').map(s => s.trim());
+        if (parts[0] && (weight === '-' || !weight)) weight = parts[0].replace(/kg/gi, '').trim();
+        if (parts[1] && (height === '-' || !height)) height = parts[1].replace(/m|cm/gi, '').trim();
+      }
+
+      let numW = null, numH = null;
+      try {
+        if (weight !== '-') numW = parseFloat(String(weight).replace(',', '.').replace(/kg/gi, '').trim());
+      } catch (e) {}
+      try {
+        if (height !== '-') numH = parseFloat(String(height).replace(',', '.').replace(/m|cm/gi, '').trim());
+      } catch (e) {}
+
+      let imc = '-';
+      let imcClass = '-';
+      if (numW && numH && numW > 0 && numH > 0) {
+        if (numH > 3) numH = numH / 100.0;
+        const val = numW / (numH * numH);
+        imc = `${val.toFixed(1)} kg/m²`;
+        if (val < 18.5) imcClass = 'Abaixo do peso';
+        else if (val < 25) imcClass = 'Eutrofia (Peso ideal)';
+        else if (val < 30) imcClass = 'Sobrepeso';
+        else if (val < 35) imcClass = 'Obesidade Grau I';
+        else if (val < 40) imcClass = 'Obesidade Grau II';
+        else imcClass = 'Obesidade Grau III';
+      }
+
+      const formattedAge = (age !== '-' && !String(age).includes('ano')) ? `${age} anos` : age;
+      const formattedWeight = (weight !== '-' && !String(weight).includes('kg')) ? `${weight} kg` : weight;
+      let formattedHeight = height;
+      if (height !== '-' && !String(height).includes('m') && !String(height).includes('cm')) {
+        formattedHeight = (parseFloat(height) > 3) ? `${height} cm` : `${height} m`;
+      }
+
+      return {
+        age: formattedAge,
+        gender: gender || '-',
+        weight: formattedWeight,
+        height: formattedHeight,
+        imc,
+        imcClass
+      };
+    }
+
     function savePatient() {
       const name = document.getElementById('inputPatName').value.trim();
       const email = document.getElementById('inputPatEmail').value.trim();
       const phone = document.getElementById('inputPatPhone').value.trim();
       const age = document.getElementById('inputPatAge').value.trim();
-      const body = document.getElementById('inputPatBody').value.trim();
+      const gender = document.getElementById('inputPatGender').value.trim();
+      const weight = document.getElementById('inputPatWeight').value.trim();
+      const height = document.getElementById('inputPatHeight').value.trim();
       const goal = document.getElementById('inputPatGoal').value.trim();
 
       if (!name || !email) return;
@@ -2656,7 +2735,9 @@
         email,
         phone: phone || '-',
         age: age || '-',
-        body: body || '-',
+        gender: gender || 'Masculino',
+        weight: weight || '-',
+        height: height || '-',
         goal: goal || 'Plano Alimentar Saudável'
       };
 
@@ -2749,15 +2830,22 @@
           let html = '';
           auditPatients.forEach(pat => {
             const isSel = (pat.id === currentSelectedPatient);
+            const m = getPatientMetrics(pat);
             html += `
-              <div class="p-3.5 rounded-2xl border ${isSel ? 'border-rose-500 bg-rose-50/60 shadow-xs' : 'border-slate-200/80 bg-slate-50/60'} flex flex-col justify-between gap-2 text-xs hover:border-rose-300 transition-colors">
+              <div class="p-3.5 rounded-2xl border ${isSel ? 'border-rose-500 bg-rose-50/60 shadow-xs' : 'border-slate-200/80 bg-slate-50/60'} flex flex-col justify-between gap-2.5 text-xs hover:border-rose-300 transition-colors">
                 <div>
                   <div class="flex items-center justify-between gap-2 mb-1">
                     <h5 class="font-black text-slate-900 text-xs">${pat.name}</h5>
-                    <span class="text-[9px] bg-rose-100 text-rose-800 font-extrabold px-1.5 py-0.2 rounded-md">${pat.age}</span>
+                    <span class="text-[10px] bg-rose-100 text-rose-800 font-extrabold px-2 py-0.5 rounded-md">${m.age}</span>
                   </div>
                   <p class="text-[11px] text-slate-500 font-semibold truncate">${pat.email}</p>
-                  <p class="text-[10px] text-slate-400 mt-1 font-medium">${pat.body} • ${pat.goal}</p>
+                  <div class="mt-2 flex flex-wrap gap-1 text-[10px] font-bold">
+                    <span class="bg-white text-slate-700 px-2 py-0.5 rounded-md border border-slate-200">${m.gender}</span>
+                    <span class="bg-white text-slate-700 px-2 py-0.5 rounded-md border border-slate-200">${m.weight}</span>
+                    <span class="bg-white text-slate-700 px-2 py-0.5 rounded-md border border-slate-200">${m.height}</span>
+                    ${m.imc !== '-' ? `<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md border border-emerald-200">IMC ${m.imc}</span>` : ''}
+                  </div>
+                  <p class="text-[10px] text-slate-500 mt-1.5 font-medium"><strong class="text-slate-700">Meta:</strong> ${pat.goal}</p>
                 </div>
                 <div class="pt-2 border-t border-slate-200/60 flex items-center justify-between gap-2">
                   <button onclick="selectPatientForDiet('${pat.id}')" class="px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white font-bold text-[10px] rounded-lg transition flex items-center gap-1">
@@ -2836,8 +2924,11 @@
       const pat = auditPatients.find(p => p.id === currentSelectedPatient);
 
       if (pat) {
+        const m = getPatientMetrics(pat);
         if (cardName) cardName.innerText = pat.name;
-        if (cardDetails) cardDetails.innerText = `${pat.email} • ${pat.phone} • ${pat.body} • ${pat.goal}`;
+        if (cardDetails) {
+          cardDetails.innerText = `${pat.email} • ${m.age} • ${m.gender} • ${m.weight} • ${m.height} (IMC: ${m.imc}) • ${pat.goal}`;
+        }
       } else {
         if (cardName) cardName.innerText = 'Nenhum paciente selecionado';
         if (cardDetails) cardDetails.innerText = 'Selecione ou cadastre um paciente na aba Cadastros';
@@ -3213,11 +3304,13 @@
       pHeader.alignment = { vertical: 'middle', horizontal: 'left', indent: 1 };
       wsCover.getRow(4).height = 22;
 
+      const m = getPatientMetrics(pat);
+
       const pData = [
-        ['Paciente:', pat.name || 'Paciente', '', 'Data da Prescrição:', new Date().toLocaleDateString('pt-BR'), '', 'Status: Ativo'],
-        ['E-mail:', pat.email || '-', '', 'Telefone / WhatsApp:', pat.phone || '-', '', 'Equipe: NutriPocket PRO'],
-        ['Idade:', pat.age ? pat.age + ' anos' : '-', 'Sexo:', pat.gender || '-', 'Peso:', pat.weight ? pat.weight + ' kg' : '-', 'Altura:', pat.height ? pat.height + ' cm' : '-'],
-        ['Objetivo Clínico:', pat.goal || 'Saúde & Reeducação Alimentar', '', 'Classificação IMC:', pat.imc ? pat.imc + ' kg/m²' : 'Eutrofia', '', '']
+        ['Paciente:', pat.name || 'Paciente', '', 'Data da Prescrição:', new Date().toLocaleDateString('pt-BR'), 'Status:', 'Em Acompanhamento'],
+        ['E-mail:', pat.email || '-', '', 'Telefone / WhatsApp:', pat.phone || '-', 'Equipe:', 'NutriPocket PRO'],
+        ['Idade:', m.age, 'Sexo Biológico:', m.gender, 'Peso Atual:', m.weight, ''],
+        ['Altura:', m.height, 'Classificação IMC:', `${m.imc} (${m.imcClass})`, 'Objetivo Clínico:', pat.goal || 'Saúde & Reeducação Alimentar', '']
       ];
 
       pData.forEach((rowVals, idx) => {
@@ -3229,12 +3322,20 @@
         for (let c = 1; c <= 7; c++) {
           const cell = wsCover.getCell(rNum, c);
           cell.border = thinBorder;
-          if (c % 2 === 1) {
+          if (c === 1 || c === 3 || c === 5) {
             cell.font = { name: 'Segoe UI', size: 9.5, bold: true, color: { argb: 'FF334155' } };
             cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF8FAFC' } };
           }
         }
       });
+
+      // Merge de células para estética impecável
+      try {
+        wsCover.mergeCells('B5:C5');
+        wsCover.mergeCells('B6:C6');
+        wsCover.mergeCells('F7:G7');
+        wsCover.mergeCells('F8:G8');
+      } catch (e) {}
 
       // Tabela de Distribuição Semanal
       wsCover.mergeCells('A10:G10');
