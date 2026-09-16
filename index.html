@@ -1472,11 +1472,111 @@
       return null;
     }
 
-    // Helper de Medidas Caseiras (Pinheiro et al. - Para todas as tabelas)
+    // Helper de Medidas Caseiras de Alta Precisão Clínica (Pinheiro et al. & Prática Nutricional)
     function findMedidasForFood(food) {
       if (!food) return [];
 
-      // 1. Consulta $O(1)$ direta no Mapa Pré-Indexado de Fuzzy Mapping (10.771 alimentos associados)
+      const fName = normalizeSearchStr(food.name || food.nome || '');
+
+      // 1. REGRAS CLÍNICAS PRIORITÁRIAS (Especialidade Nutricional 20 Anos):
+
+      // Pão de Queijo
+      if (fName.includes('pao de queijo') || fName.includes('pao, de queijo')) {
+        return [
+          { label: 'Unidade média (30g)', measure: 'Unidade média', grams: 30 },
+          { label: 'Unidade pequena (20g)', measure: 'Unidade pequena', grams: 20 },
+          { label: 'Unidade grande (50g)', measure: 'Unidade grande', grams: 50 },
+          { label: 'Porção (100g)', measure: 'Porção', grams: 100 }
+        ];
+      }
+
+      // Ovos (Mexidos, Cozidos, Omeletes)
+      if (fName.includes('ovo') || fName.includes('omelete')) {
+        return [
+          { label: 'Unidade / Ovo médio (50g)', measure: 'Unidade (ovo)', grams: 50 },
+          { label: 'Unidade / Ovo grande (60g)', measure: 'Unidade grande (ovo)', grams: 60 },
+          { label: 'Colher de sopa cheia (30g)', measure: 'Colher de sopa cheia', grams: 30 },
+          { label: 'Escumadeira média rasa (50g)', measure: 'Escumadeira média rasa', grams: 50 }
+        ];
+      }
+
+      // Café / Chá / Infusões (Bebidas Quentes)
+      if (fName.includes('cafe') || fName.includes('infusao') || fName.includes('cha')) {
+        return [
+          { label: 'Xícara de café (50ml) (50g)', measure: 'Xícara de café (50ml)', grams: 50 },
+          { label: 'Xícara de chá (150ml) (150g)', measure: 'Xícara de chá (150ml)', grams: 150 },
+          { label: 'Caneca (240ml) (240g)', measure: 'Caneca (240ml)', grams: 240 },
+          { label: 'Copo americano (200ml) (200g)', measure: 'Copo americano (200ml)', grams: 200 }
+        ];
+      }
+
+      // Massas / Macarronada / Lasanha / Escondidinho / Pratos Compostos
+      if (fName.includes('lasanha') || fName.includes('escondidinho') || fName.includes('torta')) {
+        return [
+          { label: 'Pedaço / Fatia grande (250g)', measure: 'Pedaço grande', grams: 250 },
+          { label: 'Pedaço / Fatia média (180g)', measure: 'Pedaço médio', grams: 180 },
+          { label: 'Pedaço / Fatia pequena (120g)', measure: 'Pedaço pequeno', grams: 120 },
+          { label: 'Prato raso (300g)', measure: 'Prato raso', grams: 300 }
+        ];
+      }
+
+      if (fName.includes('macarrao') || fName.includes('macarronada') || fName.includes('espaguete') || fName.includes('penne') || fName.includes('massa')) {
+        return [
+          { label: 'Prato fundo (300g)', measure: 'Prato fundo', grams: 300 },
+          { label: 'Prato raso (200g)', measure: 'Prato raso', grams: 200 },
+          { label: 'Escumadeira grande cheia (100g)', measure: 'Escumadeira grande cheia', grams: 100 },
+          { label: 'Pegador de massa (60g)', measure: 'Pegador de massa', grams: 60 },
+          { label: 'Colher de arroz cheia (50g)', measure: 'Colher de arroz cheia', grams: 50 }
+        ];
+      }
+
+      // Carnes / Bife / Parmegiana / Filés
+      if (fName.includes('parmegiana') || fName.includes('milanesa') || fName.includes('bife') || fName.includes('file')) {
+        return [
+          { label: 'Bife / Filé grande (180g)', measure: 'Bife / Filé grande', grams: 180 },
+          { label: 'Bife / Filé médio (120g)', measure: 'Bife / Filé médio', grams: 120 },
+          { label: 'Bife / Filé pequeno (80g)', measure: 'Bife / Filé pequeno', grams: 80 },
+          { label: 'Porção média (100g)', measure: 'Porção média', grams: 100 }
+        ];
+      }
+
+      // Salada de Frutas / Sobremesas Cremosas
+      if (fName.includes('salada de fruta') || fName.includes('salada de frutas') || fName.includes('compota') || fName.includes('creme')) {
+        return [
+          { label: 'Taça / Pote de sobremesa (150g)', measure: 'Taça de sobremesa', grams: 150 },
+          { label: 'Concha média cheia (130g)', measure: 'Concha média cheia', grams: 130 },
+          { label: 'Colher de sopa cheia (25g)', measure: 'Colher de sopa cheia', grams: 25 },
+          { label: 'Colher de arroz cheia (55g)', measure: 'Colher de arroz cheia', grams: 55 }
+        ];
+      }
+
+      // Arroz / Feijão / Carnes Moídas Canônicos
+      if (fName.includes('arroz integral')) {
+        return [
+          { label: 'Colher de sopa cheia (20g)', measure: 'Colher de sopa cheia', grams: 20 },
+          { label: 'Colher de sopa rasa (12g)', measure: 'Colher de sopa rasa', grams: 12 },
+          { label: 'Colher de arroz cheia (63g)', measure: 'Colher de arroz cheia', grams: 63 },
+          { label: 'Colher de arroz rasa (43g)', measure: 'Colher de arroz rasa', grams: 43 },
+          { label: 'Escumadeira média cheia (59g)', measure: 'Escumadeira média cheia', grams: 59 }
+        ];
+      } else if (fName.includes('arroz')) {
+        return [
+          { label: 'Colher de sopa cheia (25g)', measure: 'Colher de sopa cheia', grams: 25 },
+          { label: 'Colher de sopa rasa (15g)', measure: 'Colher de sopa rasa', grams: 15 },
+          { label: 'Colher de arroz cheia (45g)', measure: 'Colher de arroz cheia', grams: 45 },
+          { label: 'Colher de arroz rasa (30g)', measure: 'Colher de arroz rasa', grams: 30 },
+          { label: 'Escumadeira média cheia (85g)', measure: 'Escumadeira média cheia', grams: 85 }
+        ];
+      } else if (fName.includes('feijao')) {
+        return [
+          { label: 'Concha média cheia (140g)', measure: 'Concha média cheia', grams: 140 },
+          { label: 'Concha média rasa (85g)', measure: 'Concha média rasa', grams: 85 },
+          { label: 'Concha pequena cheia (90g)', measure: 'Concha pequena cheia', grams: 90 },
+          { label: 'Colher de sopa cheia (25g)', measure: 'Colher de sopa cheia', grams: 25 }
+        ];
+      }
+
+      // 2. Consulta no Mapa Pré-Indexado
       if (food.id && typeof ALIMENTO_MEDIDAS_MAP !== 'undefined' && ALIMENTO_MEDIDAS_MAP && ALIMENTO_MEDIDAS_MAP[food.id]) {
         return ALIMENTO_MEDIDAS_MAP[food.id];
       }
@@ -1488,8 +1588,6 @@
         { label: "Colher de sopa rasa (15g)", measure: "Colher de sopa rasa", grams: 15 },
         { label: "Colher de arroz cheia (45g)", measure: "Colher de arroz cheia", grams: 45 },
         { label: "Colher de arroz rasa (30g)", measure: "Colher de arroz rasa", grams: 30 },
-        { label: "Colher de sobremesa cheia (15g)", measure: "Colher de sobremesa cheia", grams: 15 },
-        { label: "Colher de chá cheia (8g)", measure: "Colher de chá cheia", grams: 8 },
         { label: "Concha média cheia (130g)", measure: "Concha média cheia", grams: 130 },
         { label: "Escumadeira média cheia (80g)", measure: "Escumadeira média cheia", grams: 80 },
         { label: "Xícara de chá (150ml) (150g)", measure: "Xícara de chá (150ml)", grams: 150 },
@@ -1497,22 +1595,7 @@
         { label: "Porção média / Bife (100g)", measure: "Porção média / Bife", grams: 100 }
       ];
 
-      const fName = normalizeSearchStr(food.name || food.nome || '');
-
-      // Casos canônicos imediatos:
-      if (fName.includes('arroz integral')) {
-        if (db['ARROZ INTEGRAL COZIDO']) return db['ARROZ INTEGRAL COZIDO'];
-      } else if (fName.includes('arroz')) {
-        if (db['ARROZ COZIDO']) return db['ARROZ COZIDO'];
-      } else if (fName.includes('feijao carioca') || fName.includes('feijao preto') || fName.includes('feijao')) {
-        if (db['FEIJAO COZIDO']) return db['FEIJAO COZIDO'];
-      } else if (fName.includes('patinho') || fName.includes('carne moida')) {
-        if (db['PATINHO MOIDO']) return db['PATINHO MOIDO'];
-      } else if (fName.includes('tomate')) {
-        if (db['TOMATE']) return db['TOMATE'];
-      }
-
-      // 1. Match exato ou de frase completa
+      // Match do Banco
       for (const [key, measures] of Object.entries(db)) {
         const normKey = normalizeSearchStr(key);
         if (normKey.length > 3 && (fName === normKey || fName.startsWith(normKey + ' ') || fName.includes(' ' + normKey + ' '))) {
@@ -1520,69 +1603,6 @@
         }
       }
 
-      // 2. Substring match com chaves compostas (>= 5 caracteres para evitar falsos positivos)
-      for (const [key, measures] of Object.entries(db)) {
-        const normKey = normalizeSearchStr(key);
-        if (normKey.length >= 5 && fName.includes(normKey)) {
-          return measures;
-        }
-      }
-
-      // 3. Token match pelo primeiro termo relevante (substantivo principal)
-      const stopWords = ['com', 'sem', 'para', 'tipo', 'puro', 'crua', 'frito', 'assado', 'cozido', 'grelhado', 'fresco', 'branco', 'verde', 'amarelo', 'preto', 'taco', 'tbca', 'ibge', 'usda', 'geral', 'industrializado', 'preparado'];
-      const tokens = fName.split(/\s+/).filter(t => t.length >= 4 && !stopWords.includes(t));
-      if (tokens.length > 0) {
-        const primaryToken = tokens[0];
-        for (const [key, measures] of Object.entries(db)) {
-          const normKey = normalizeSearchStr(key);
-          const keyTokens = normKey.split(/\s+/);
-          if (keyTokens[0] === primaryToken) {
-            return measures;
-          }
-        }
-      }
-
-      // 4. Bebidas / Líquidos
-      if (fName.includes('suco') || fName.includes('leite') || fName.includes('cha') || fName.includes('cafe') || fName.includes('vitamina') || fName.includes('refrigerante') || fName.includes('agua') || fName.includes('caldo') || fName.includes('iogurte') || fName.includes('cerveja') || fName.includes('vinho')) {
-        return [
-          { label: 'Copo americano (200ml) (200g)', measure: 'Copo americano (200ml)', grams: 200 },
-          { label: 'Copo duplo (240ml) (240g)', measure: 'Copo duplo (240ml)', grams: 240 },
-          { label: 'Xícara de chá (150ml) (150g)', measure: 'Xícara de chá (150ml)', grams: 150 },
-          { label: 'Colher de sopa cheia (15g)', measure: 'Colher de sopa cheia', grams: 15 }
-        ];
-      }
-
-      // 5. Frutas / Carnes / Pães
-      if (fName.includes('maca') || fName.includes('banana') || fName.includes('laranja') || fName.includes('pera') || fName.includes('mamao') || fName.includes('abacaxi') || fName.includes('manga') || fName.includes('pessego') || fName.includes('limao') || fName.includes('kiwi') || fName.includes('uva') || fName.includes('morango')) {
-        return [
-          { label: 'Unidade média (100g)', measure: 'Unidade média', grams: 100 },
-          { label: 'Unidade pequena (70g)', measure: 'Unidade pequena', grams: 70 },
-          { label: 'Unidade grande (150g)', measure: 'Unidade grande', grams: 150 },
-          { label: 'Fatia média (60g)', measure: 'Fatia média', grams: 60 },
-          { label: 'Pedaço médio (50g)', measure: 'Pedaço médio', grams: 50 }
-        ];
-      }
-
-      if (fName.includes('carne') || fName.includes('frango') || fName.includes('peixe') || fName.includes('bife') || fName.includes('porco') || fName.includes('file') || fName.includes('patinho') || fName.includes('alcatra') || fName.includes('costela') || fName.includes('lombo')) {
-        return [
-          { label: 'Bife / Filé médio (100g)', measure: 'Bife / Filé médio', grams: 100 },
-          { label: 'Bife / Filé pequeno (70g)', measure: 'Bife / Filé pequeno', grams: 70 },
-          { label: 'Bife / Filé grande (150g)', measure: 'Bife / Filé grande', grams: 150 },
-          { label: 'Colher de sopa cheia (30g)', measure: 'Colher de sopa cheia', grams: 30 },
-          { label: 'Pedaço médio (40g)', measure: 'Pedaço médio', grams: 40 }
-        ];
-      }
-
-      if (fName.includes('pao') || fName.includes('torrada') || fName.includes('biscoito') || fName.includes('bolo')) {
-        return [
-          { label: 'Fatia média (30g)', measure: 'Fatia média', grams: 30 },
-          { label: 'Unidade média (50g)', measure: 'Unidade média', grams: 50 },
-          { label: 'Unidade pequena (25g)', measure: 'Unidade pequena', grams: 25 },
-          { label: 'Fatia grossa (50g)', measure: 'Fatia grossa', grams: 50 }
-        ];
-      }
-
-      // Fallback genérico padrão da literatura para qualquer tabela
       return genericas;
     }
 
@@ -1590,12 +1610,12 @@
     function formatFriendlyMeasureName(rawMeasure, count) {
       if (!rawMeasure) return '';
       let m = rawMeasure.trim();
+      // Remove garbled characters like cháeia
+      m = m.replace(/cháeia/gi, 'cheia').replace(/mdia/gi, 'média');
 
-      // Deixa a indicação de plural com clareza em português natural:
-      // ex: 2 colher(es) de sopa cheia(s), 3 fatia(s), 2 concha(s)
       if (count > 1) {
         m = m.replace(/\bColher\b/gi, 'colher(es)')
-             .replace(/\bConcha\b/gi, 'concha(es)')
+             .replace(/\bConcha\b/gi, 'concha(s)')
              .replace(/\bFatia\b/gi, 'fatia(s)')
              .replace(/\bRodela\b/gi, 'rodela(s)')
              .replace(/\bUnidade\b/gi, 'unidade(s)')
@@ -1605,17 +1625,15 @@
              .replace(/\bXícara\b/gi, 'xícara(s)')
              .replace(/\bPorção\b/gi, 'porção(ões)')
              .replace(/\bBife\b/gi, 'bife(s)')
-             .replace(/\bPrato\b/gi, 'prato(s)');
+             .replace(/\bPrato\b/gi, 'prato(s)')
+             .replace(/\bTaça\b/gi, 'taça(s)');
       } else {
         m = m.toLowerCase();
       }
       return m;
     }
 
-    // Calcula a conversão inteligente mais natural para o paciente (para qualquer tabela)
-    // Ex: 125g de arroz -> ≈ 5 colher(es) de sopa cheia (25g cada)
-    // 50g de tomate -> ≈ 2 a 3 fatias médias
-    // 300g de carne -> 3 bifes médios / porções
+    // Calcula a conversão inteligente mais natural para o paciente (Visão Nutricionista Clínico)
     function calculateBestMeasure(food, grams, preferredMeasureName = null) {
       if (!food) return null;
       const g = parseFloat(grams) || 0;
@@ -1629,7 +1647,7 @@
         const found = measures.find(m => m.measure === preferredMeasureName || m.label === preferredMeasureName);
         if (found && found.grams > 0) {
           const rawCount = g / found.grams;
-          const roundedCount = Math.round(rawCount * 2) / 2 || Math.round(rawCount) || 1;
+          const roundedCount = rawCount < 5 ? (Math.round(rawCount * 2) / 2 || 1) : (Math.round(rawCount) || 1);
           let countDisplay = '';
           if (roundedCount === 1) countDisplay = '1';
           else if (roundedCount === 0.5) countDisplay = '1/2';
@@ -1648,53 +1666,22 @@
         }
       }
 
-      // Classifica medidas por afinidade com o alimento e por tamanho
-      // Se tiver fatias para tomate, unidades/bife para carne, conchas para feijão, colher para arroz
-      const fName = normalizeSearchStr(food.name || food.nome || '');
-      
-      let preferred = measures;
-      if (fName.includes('arroz')) {
-        const sopas = measures.filter(m => m.measure.toLowerCase().includes('colher de sopa cheia') || m.measure.toLowerCase().includes('colher de sopa'));
-        if (sopas.length > 0) preferred = sopas;
-      } else if (fName.includes('feijao') || fName.includes('sopa') || fName.includes('caldo')) {
-        const conchas = measures.filter(m => m.measure.toLowerCase().includes('concha'));
-        if (conchas.length > 0) preferred = conchas;
-      } else if (fName.includes('tomate') || fName.includes('queijo') || fName.includes('pao') || fName.includes('abacaxi') || fName.includes('melancia')) {
-        const fatias = measures.filter(m => m.measure.toLowerCase().includes('fatia') || m.measure.toLowerCase().includes('rodela'));
-        if (fatias.length > 0) preferred = fatias;
-      } else if (fName.includes('carne') || fName.includes('bife') || fName.includes('frango') || fName.includes('peixe') || fName.includes('hamburguer') || fName.includes('patinho')) {
-        const pedacos = measures.filter(m => m.measure.toLowerCase().includes('bife') || m.measure.toLowerCase().includes('pedaco') || m.measure.toLowerCase().includes('porcao') || m.measure.toLowerCase().includes('filé') || m.measure.toLowerCase().includes('unidade'));
-        if (pedacos.length > 0) preferred = pedacos;
-      } else if (fName.includes('sal') || fName.includes('acucar') || fName.includes('azeite') || fName.includes('oleo')) {
-        if (g <= 5) {
-          const chas = measures.filter(m => m.measure.toLowerCase().includes('chá') || m.measure.toLowerCase().includes('cafe') || m.measure.toLowerCase().includes('café'));
-          if (chas.length > 0) preferred = chas;
-        }
-      }
-
-      // Encontra a medida que resulta no número de porções mais amigável (próximo de inteiro ou meio)
+      // Encontra a melhor medida clínica
       let best = null;
       let minScore = 99999;
 
-      preferred.forEach(m => {
+      measures.forEach(m => {
         if (!m.grams || m.grams <= 0) return;
         const count = g / m.grams;
-        // Penaliza se o número de porções for irrealista na prática clínica (ex: > 12 colheres)
-        if (count < 0.2 || count > 12) return;
+        // Evita porções irreais (ex: 20 colheres para 300g de lasanha ou 0.05 prato)
+        if (count < 0.3 || count > 8) return;
 
-        // Arredondamento clínico padrão: meio em meio (0.5, 1, 1.5, 2, 2.5, 3, etc.) ou inteiro para > 5
-        let rounded = 1;
-        if (count < 5) {
-          rounded = Math.round(count * 2) / 2;
-        } else {
-          rounded = Math.round(count);
-        }
+        let rounded = (count < 5) ? (Math.round(count * 2) / 2 || 0.5) : Math.round(count);
         if (rounded <= 0) rounded = 0.5;
 
-        // Quão próximo de um número elegante
         const remainder = Math.abs(count - rounded);
-        const countPenalty = Math.abs(count - 2.5); // favorece porções normais (1 a 4)
-        const score = remainder * 20 + countPenalty * 0.8;
+        const countPenalty = Math.abs(count - 2.0); // favorece 1 a 3 porções (perfeitas para o paciente)
+        const score = remainder * 25 + countPenalty * 1.0;
 
         if (score < minScore) {
           minScore = score;
@@ -1708,7 +1695,6 @@
       });
 
       if (!best && measures.length > 0) {
-        // Encontra a medida de gramatura mais próxima do peso total
         let closest = measures[0];
         let diff = Math.abs(g - closest.grams);
         for (let i = 1; i < measures.length; i++) {
@@ -1730,7 +1716,6 @@
         else if (best.count === 1.5) countDisplay = '1 e 1/2';
         else if (best.count === 2.5) countDisplay = '2 e 1/2';
         else if (best.count === 3.5) countDisplay = '3 e 1/2';
-        else if (best.count === 4.5) countDisplay = '4 e 1/2';
         else countDisplay = String(best.count);
 
         const friendlyName = formatFriendlyMeasureName(best.measure, best.count);
