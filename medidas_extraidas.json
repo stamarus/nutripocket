@@ -1,0 +1,6906 @@
+{
+  "total_registros": 1380,
+  "total_alimentos": 369,
+  "tabela": [
+    {
+      "Alimento": "ABACAXI",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "ABACAXI",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "ABACAXI",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "ABACAXI",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 750.0
+    },
+    {
+      "Alimento": "ABACAXI",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 480.0
+    },
+    {
+      "Alimento": "ABACAXI EM CALDA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 64.0
+    },
+    {
+      "Alimento": "ABACAXI EM CALDA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "BOBORA COZIDA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "BOBORA COZIDA",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Escumadeira média rasa picado(a)",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Escumadeira média cháeia picado(a)",
+      "Peso (g)": 105.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "ESC M CH PICADA",
+      "Medida Caseira": "Colher de arroz rasa picado(a)",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "ABOBRINHAREFOGADA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "ABOBRINHAREFOGADA",
+      "Medida Caseira": "Colher de arroz rasa picado(a)",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "ABOBRINHAREFOGADA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "ABOBRINHAREFOGADA",
+      "Medida Caseira": "Colsrpicada",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "ABOBRINHAREFOGADA",
+      "Medida Caseira": "Escumadeira média rasa picado(a)",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "ACELGA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "ACELGA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 6.0
+    },
+    {
+      "Alimento": "ACELGA",
+      "Medida Caseira": "Folha grande",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "ACELGA",
+      "Medida Caseira": "Folha média",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "ACELGA",
+      "Medida Caseira": "Folha pequena",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "ACELGA",
+      "Medida Caseira": "Prato raso R Picada",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ACEROLA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 23.0
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "Col Caféé R",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 2.5
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 19.0
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 11.0
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 7.0
+    },
+    {
+      "Alimento": "ACUW MASCAVO",
+      "Medida Caseira": "X Caféé Ch",
+      "Peso (g)": 56.0
+    },
+    {
+      "Alimento": "ADES ORIGINAL",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "ADES ORIGINAL",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "ADES ORIGINAL",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "AGRIAO",
+      "Medida Caseira": "Pires Ch Picado",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "AGRIAO",
+      "Medida Caseira": "Prato de sobremesa Ch Picado",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "AGRIAO",
+      "Medida Caseira": "Ramo M",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "AGRIAO REFOGADO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "AGRIAO REFOGADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "AGRIAO REFOGADO",
+      "Medida Caseira": "Garfada",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "AGUA DE COCO",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "AGUARDENTE",
+      "Medida Caseira": "Dose",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "AIPIM COZIDO",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "AIPIM COZIDO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "AIPIM COZIDO",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "AIPIM FRITO",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "AIPIM FRITO",
+      "Medida Caseira": "Colher de arroz rasa picado(a)",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "AIPIM FRITO",
+      "Medida Caseira": "Escumadeira média cháeia picado(a)",
+      "Peso (g)": 95.0
+    },
+    {
+      "Alimento": "AIPIM FRITO",
+      "Medida Caseira": "Escumadeira média rasa picado(a)",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "AIPIM FRITO",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 155.0
+    },
+    {
+      "Alimento": "AIPIM FRITO",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Folha grande",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Folha média",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Pires Ch Picada",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Pt Rchá Picada",
+      "Peso (g)": 800.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "ALFACE",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "ALL BRAN KELLOGG S",
+      "Medida Caseira": "Caixa",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "ALL BRAN KELLOGG S",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 83.0
+    },
+    {
+      "Alimento": "AI MONDIGA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 500.0
+    },
+    {
+      "Alimento": "AI MONDIGA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "LIGHT SADIA",
+      "Medida Caseira": "Caixa Com",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "LIGHT SADIA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "LIGHT SADIA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 520.0
+    },
+    {
+      "Alimento": "LIGHT SADIA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 42.0
+    },
+    {
+      "Alimento": "LIGHT SADIA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 34.0
+    },
+    {
+      "Alimento": "AMEIXA SECA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "AMEIXA VERMELHA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "AMENDOA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "CARAMELIZADO",
+      "Medida Caseira": "Pacote P",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "TORRADO COM SAL",
+      "Medida Caseira": "Canudo",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "TORRADO COM SAL",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "TORRADO COM SAL",
+      "Medida Caseira": "Pacote P",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "TORRADO COM SAL",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "TORRADO COM SAL",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 8.0
+    },
+    {
+      "Alimento": "ANGU",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "ANGU",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ANGU",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "ANGU",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "ANGU",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 1500.0
+    },
+    {
+      "Alimento": "ARROZ A GREGA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "ARROZ A GREGA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "ARROZ A GREGA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "ARROZ A GREGA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "ARROZ A GREGA",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "ARROZ A GREGA",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "CO M CH",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "CO M CH",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CO M CH",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CO M CH",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "CO M CH",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "CO M CH",
+      "Medida Caseira": "Ptfchá",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Pires",
+      "Peso (g)": 1200.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "ARROZ DOCE",
+      "Medida Caseira": "Prato de sobremesa",
+      "Peso (g)": 280.0
+    },
+    {
+      "Alimento": "ARROZ INTEGRAL COZIDO",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "ARROZ INTEGRAL COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "ARROZ INTEGRAL COZIDO",
+      "Medida Caseira": "Colher de arroz cheia",
+      "Peso (g)": 63.0
+    },
+    {
+      "Alimento": "ARROZ INTEGRAL COZIDO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 43.0
+    },
+    {
+      "Alimento": "ARROZ INTEGRAL COZIDO",
+      "Medida Caseira": "Escumadeira média cheia",
+      "Peso (g)": 59.0
+    },
+    {
+      "Alimento": "ARROZ INTEGRAL COZIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 31.0
+    },
+    {
+      "Alimento": "ARROZ INTEGRAL COZIDO",
+      "Medida Caseira": "Concha média cheia",
+      "Peso (g)": 117.0
+    },
+    {
+      "Alimento": "ASPARGO EM CONSERVA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "ATUM EM CONSERVA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "ATUM EM CONSERVA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 11.0
+    },
+    {
+      "Alimento": "ATUM EM CONSERVA",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "AVEIA EM FLOCOS",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "AVEIA EM FLOCOS",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "AVEIA EM FLOCOS",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "AVEIA EM FLOCOS",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "AVEIA EM FLOCOS",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "AVEIA FARINHA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "AVEIA FARINHA",
+      "Medida Caseira": "Colcháár V",
+      "Peso (g)": 673.0
+    },
+    {
+      "Alimento": "AVEIA FARINHA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "AVEIA FARINHA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "AVEIA FARINHA",
+      "Medida Caseira": "Colher de sobremesa cháeia",
+      "Peso (g)": 8.0
+    },
+    {
+      "Alimento": "AVELA",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "AVELA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "AZEITE DE DENDE",
+      "Medida Caseira": "Col Chá",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "AZEITE DE DENDE",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "AZEITE DE DENDE",
+      "Medida Caseira": "Col Sob",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "AZEITONA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "BABA DE MOCA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "BABA DE MOCA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "BABA DE MOCA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "BABA DE MOCA",
+      "Medida Caseira": "Porção",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 48.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 220.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 1350.0
+    },
+    {
+      "Alimento": "BACALHAU COZIDO",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "BACON",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "BACON",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "BACON",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 1500.0
+    },
+    {
+      "Alimento": "BANANA D AGUA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "BANANA D AGUA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 700.0
+    },
+    {
+      "Alimento": "BANANA D AGUA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "BANANA DA TERRA FRITA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 42.0
+    },
+    {
+      "Alimento": "BANANA DA TERRA FRITA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 310.0
+    },
+    {
+      "Alimento": "BANANA DA TERRA FRITA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "FRITA C AC",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 48.0
+    },
+    {
+      "Alimento": "FRITA C AC",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "FRITA C AC",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "BANANA PRATA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "BANANA PRATA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "BANANA PRATA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "BANANADA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "BANANADA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "BARQUETE DE LEGUMES",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Colher de arroz rasa picado(a)",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 580.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "BATATA BAROA COZIDA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Fig",
+      "Peso (g)": 840.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Pacote M",
+      "Peso (g)": 135.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Pacotep",
+      "Peso (g)": 720.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 12.8
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "BATATA DOCE FRITA",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "I PORCQO P",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "I PORCQO P",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "I PORCQO P",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "I PORCQO P",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "I PORCQO P",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 125.0
+    },
+    {
+      "Alimento": "I PORCQO P",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "BERINJELA FRITA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "BERINJELA FRITA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "BERINJELA FRITA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "BERINJELA FRITA",
+      "Medida Caseira": "Rodela grande",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "BERINJELA FRITA",
+      "Medida Caseira": "Rodela média",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "BERINJELA FRITA",
+      "Medida Caseira": "Rodela pequena",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "BERINJELA FRITA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "BETERRABA",
+      "Medida Caseira": "Colher de sopa cháeia ralado(a)",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "BETERRABA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "BETERRABA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 800.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 38.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 14.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Escumadeira média rasa picado(a)",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 260.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 335.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 1250.0
+    },
+    {
+      "Alimento": "BETERRABA COZIDA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 750.0
+    },
+    {
+      "Alimento": "BIFE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "BIFE A MILANESA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 1100.0
+    },
+    {
+      "Alimento": "BIFE A MILANESA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "BIFE A MILANESA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "BIFE DE FIGADO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "BIFE ROLE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 1500.0
+    },
+    {
+      "Alimento": "BIFE ROLE",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "BIFE ROLE",
+      "Medida Caseira": "Cxa",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "BIFE ROLE",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 7.5
+    },
+    {
+      "Alimento": "BIFE ROLE",
+      "Medida Caseira": "Pacote",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "BISCOITO AMANTEIGADO",
+      "Medida Caseira": "Pacote",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "BISCOITO AMANTEIGADO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "SAO LUIZ",
+      "Medida Caseira": "Pacote",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "SAO LUIZ",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "SAO LUIZ",
+      "Medida Caseira": "Pacote M",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "SAO LUIZ",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "BOLA",
+      "Medida Caseira": "Pacoteg",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "BOLA",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "PRESUNTO",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "QUEIJO",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "QUEIJO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 3.0
+    },
+    {
+      "Alimento": "QUEIJO",
+      "Medida Caseira": "Pacote",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "PACOTE BOLINHA PALITO",
+      "Medida Caseira": "Pacote Rosca",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "PACOTE BOLINHA PALITO",
+      "Medida Caseira": "Punhado Bolinha",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "CHOCOLATE",
+      "Medida Caseira": "Pacote",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "CHOCOLATE",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "CHOCOLATE",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "CHOCOLATE",
+      "Medida Caseira": "Colcháár",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CHOCOLATE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CHOCOLATE",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "DE LEITE TOSTINES",
+      "Medida Caseira": "Pacote",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "DE LEITE TOSTINES",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 7.0
+    },
+    {
+      "Alimento": "PARMALAT CHOCOLATE",
+      "Medida Caseira": "Pacoteg",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "PARMALAT CHOCOLATE",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "PARMALAT CHOCOLATE",
+      "Medida Caseira": "Pacote G",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "BOBO DE CAMARAO",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "BOBO DE CAMARAO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 28.0
+    },
+    {
+      "Alimento": "BOBO DE CAMARAO",
+      "Medida Caseira": "Prato fundo",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "BOBO DE CAMARAO",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 225.0
+    },
+    {
+      "Alimento": "BOLINHA DE QUEIJO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "CARNE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "BOLINHO DE ARROZ",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "BOLINHO DE ARROZ",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "BOLINHO DE BACALHAU",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "IOI INNO DE VAGEM",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "BOLO SIMPLES",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "BOLO DE BANANA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "BOLO DE BANANA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "BOLO DE BANANA",
+      "Medida Caseira": "P",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "BOLO DE CENOURA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "BOLO DE CENOURA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "DE CHOCOLATE",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 175.0
+    },
+    {
+      "Alimento": "BRIGADEIRO",
+      "Medida Caseira": "Copo Caféezinho",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "CAFE SOLUVEL",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "CAJA MANGA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "CAJA MANGA",
+      "Medida Caseira": "Í Concháa média cháeia",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "CAMARAO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CAMARAO FRITO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "CAMARAO FRITO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CAMARAO FRITO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "CAMARAO FRITO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "CAMARAO FRITO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "CANELONE DE RICOTA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "CANELONE DE RICOTA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CANELONE DE RICOTA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CANJA",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "CANJA",
+      "Medida Caseira": "Concháa pequena cháeia",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "CANJA",
+      "Medida Caseira": "Prato fundo",
+      "Peso (g)": 520.0
+    },
+    {
+      "Alimento": "CANJICA",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "CANJICA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CANJICA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "CANJICA",
+      "Medida Caseira": "Copopchá",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "CANJICA",
+      "Medida Caseira": "Prato fundo",
+      "Peso (g)": 460.0
+    },
+    {
+      "Alimento": "CANJICA",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "CAQUI",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "CAQUI",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "CAQUI",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "CARNE ASSADA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 135.0
+    },
+    {
+      "Alimento": "CARNE ASSADA",
+      "Medida Caseira": "Fitp",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "CARNE ENSOPADA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CARNE ENSOPADA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CARNE ENSOPADA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "CARNE ENSOPADA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "COM LEGUMES",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "COM LEGUMES",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "COM LEGUMES",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "CARNE MOIDA",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CARNE MOIDA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CARNE MOIDA",
+      "Medida Caseira": "Colher de arroz cheia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "CARNE MOIDA",
+      "Medida Caseira": "Porção média",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "CARNE MOIDA",
+      "Medida Caseira": "Porção grande",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "CARNE SECA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 28.0
+    },
+    {
+      "Alimento": "CARNE SECA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "CARNE SECA",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "CARNE SECA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "CARNE SECA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CARRE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "CARRE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "CARRE",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "TORRADA",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "TORRADA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "TORRADA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "CASTANHA DO PARA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "CEBOLA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "CEBOLA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "CEBOLA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 6.0
+    },
+    {
+      "Alimento": "CEBOLA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "CEBOLA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "CEBOLA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "CEBOLA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Colher de sopa cháeia ralado(a)",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Colsrpicada",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "CENOURA",
+      "Medida Caseira": "Escumadeira média rasa picado(a)",
+      "Peso (g)": 48.0
+    },
+    {
+      "Alimento": "CENOURA REFOGADA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CENOURA REFOGADA",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "TOSTADO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "AVEIA E MEL",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "BANANA NUTRY",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "AVEIA BANANA E MEL",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "TRIO LIGHT FRUTAS",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "TRIO LIGHT FRUTAS",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "TRIO LIGHT FRUTAS",
+      "Medida Caseira": "Garrafa G",
+      "Peso (g)": 600.0
+    },
+    {
+      "Alimento": "TRIO LIGHT FRUTAS",
+      "Medida Caseira": "Lata",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "TRIO LIGHT FRUTAS",
+      "Medida Caseira": "Tulipa",
+      "Peso (g)": 290.0
+    },
+    {
+      "Alimento": "CHEESEBURGUER",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "CHICKEN MCNUGGETS",
+      "Medida Caseira": "Cxa",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "CHICKEN MCNUGGETS",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "CHICORIA",
+      "Medida Caseira": "Folhag",
+      "Peso (g)": 17.0
+    },
+    {
+      "Alimento": "CHICORIA",
+      "Medida Caseira": "Folha média",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "CHICORIA",
+      "Medida Caseira": "Folhap",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "CHICORIA REFOGADA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 76.0
+    },
+    {
+      "Alimento": "CHICORIA REFOGADA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 38.0
+    },
+    {
+      "Alimento": "CHICORIA REFOGADA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CHICORIA REFOGADA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CHICORIA REFOGADA",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 136.0
+    },
+    {
+      "Alimento": "CHICORIA REFOGADA",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "CHOCO CROC SUPERBOM",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 5.5
+    },
+    {
+      "Alimento": "CHOCO CROC SUPERBOM",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 47.0
+    },
+    {
+      "Alimento": "CHOCO CROC SUPERBOM",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 36.0
+    },
+    {
+      "Alimento": "CHOCO CROC SUPERBOM",
+      "Medida Caseira": "Pacoteg",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "CHOCO CROC SUPERBOM",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Pacote G",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Ptrchá",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Bombom",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 51.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Pacotep",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Pacoteg",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Pacote P",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "KELLOGG S",
+      "Medida Caseira": "Medida",
+      "Peso (g)": 44.0
+    },
+    {
+      "Alimento": "AMARGO NESTLE",
+      "Medida Caseira": "Barra G",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "E CAJU NESTLE",
+      "Medida Caseira": "Barrag",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "E CAJU NESTLE",
+      "Medida Caseira": "Barra P",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "E CAJU NESTLE",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "CHOCOLATE COM LEITE E",
+      "Medida Caseira": "Barra P",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "CHOCOLATE COM LEITE E",
+      "Medida Caseira": "Barra G",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "CHOCOLATE COM LEITE E",
+      "Medida Caseira": "Bombom",
+      "Peso (g)": 95.0
+    },
+    {
+      "Alimento": "NEGRO",
+      "Medida Caseira": "Barra P",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Pote",
+      "Peso (g)": 210.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Barra G",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "CHOCOLATE EM PO",
+      "Medida Caseira": "Barra P",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CHOCOLATE LAKA",
+      "Medida Caseira": "Barra G",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "CHOCOLATE LAKA",
+      "Medida Caseira": "Barra P",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "CHOCOLATE LAKA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "BRANCO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "BRANCO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "BRANCO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "BRANCO",
+      "Medida Caseira": "Escumadeira média cháeia picado(a)",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "BRANCO",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "BRANCO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 310.0
+    },
+    {
+      "Alimento": "BRANCO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 145.0
+    },
+    {
+      "Alimento": "CHUCHU REFOGADO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "DE PANELA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "DE PANELA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "COCA COLA",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "COCA COLA",
+      "Medida Caseira": "Lata",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "COCADA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "COCO DA BAIA",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "COCO DA BAIA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "COCO DA BAIA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "COCO DA BAIA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 325.0
+    },
+    {
+      "Alimento": "COCO RALADO INDUSTR",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "COCO RALADO INDUSTR",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "COCO RALADO INDUSTR",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "COCO RALADO INDUSTR",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "COCO RALADO INDUSTR",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "COCO RALADO INDUSTR",
+      "Medida Caseira": "Pacote",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "CONSERVA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "CONSERVA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 33.0
+    },
+    {
+      "Alimento": "CONSERVA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "CONSERVA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "CONSERVA",
+      "Medida Caseira": "Escumadeira média",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "CONSERVA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "CONSERVA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Pacoteg",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Pacotep",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Colsrpicada",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Folha média",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "COM NUTRIFERRO",
+      "Medida Caseira": "Folhap",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "COUVE FLOR A MILANESA",
+      "Medida Caseira": "Ramo G",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "COUVE FLOR A MILANESA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "COUVE FLOR A MILANESA",
+      "Medida Caseira": "Colher de sopa rasa Picada",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "RAMO G",
+      "Medida Caseira": "Ramo M",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "RAMO G",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 800.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Gqipão De Forma",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "COXINHA DE GALINHA",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Pote",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Col",
+      "Peso (g)": 3.0
+    },
+    {
+      "Alimento": "DANUBIO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "CASEIRO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "CASEIRO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CASEIRO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Copo Sorvete Ch",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Copo Sorvete R",
+      "Peso (g)": 700.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Prato fundo",
+      "Peso (g)": 750.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 500.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Col Caféé R",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 8.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Embalagem Comercial",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 270.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "CREME DE ABACATE",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 1060.0
+    },
+    {
+      "Alimento": "CREME DE ESPINAFRE",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 76.0
+    },
+    {
+      "Alimento": "CREME DE ESPINAFRE",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "CREME DE ESPINAFRE",
+      "Medida Caseira": "Í Colher de sopa cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "CREME DE ESPINAFRE",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CREME DE ESPINAFRE",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 114.0
+    },
+    {
+      "Alimento": "CREME DE ESPINAFRE",
+      "Medida Caseira": "Lata",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "CREME DE ESPINAFRE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 33.0
+    },
+    {
+      "Alimento": "MORANGO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "MORANGO",
+      "Medida Caseira": "Colcháár",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "MORANGO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "MORANGO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "MORANGO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 1040.0
+    },
+    {
+      "Alimento": "TRADICIONAL",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "TRADICIONAL",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "TRADICIONAL",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "TRADICIONAL",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "TRADICIONAL",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 670.0
+    },
+    {
+      "Alimento": "TRADICIONAL",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "CROQUETE DE CARNE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "CROQUETE DE CARNE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "CROQUETE DE CARNE",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "CURRY",
+      "Medida Caseira": "Col Chá",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CURRY",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "CUSCUZ DE MILHO",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "CUSCUZ DE MILHO",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 135.0
+    },
+    {
+      "Alimento": "CUSCUZ DE MILHO",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "COM LEITE",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 270.0
+    },
+    {
+      "Alimento": "COM LEITE",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "COM LEITE",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 115.0
+    },
+    {
+      "Alimento": "CUSCUZ DE TAPIOCA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "CUSCUZ DE TAPIOCA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 7.0
+    },
+    {
+      "Alimento": "DANONINHO",
+      "Medida Caseira": "Potinho",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "DANONINHO",
+      "Medida Caseira": "Pote Maxi",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "DANONINHO",
+      "Medida Caseira": "Potinho Maxi",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "NUTRICEREAIS",
+      "Medida Caseira": "Potinho",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "NUTRICEREAIS",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "DIET SHAKE BAUNILHA",
+      "Medida Caseira": "Porção",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "DOBRADINHA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "DOBRADINHA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "CALDA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CALDA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "CALDA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "CALDA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "EM CALDA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "EM CALDA",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "EM CALDA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Barra M",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 8.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 270.0
+    },
+    {
+      "Alimento": "DOCE DE LEITE",
+      "Medida Caseira": "Porção M",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "DOCE DE MAMAO VERDE",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "DOCE DE MAMAO VERDE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "DOCE DE MAMAO VERDE",
+      "Medida Caseira": "Pires",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "DOCE DE MAMAO VERDE",
+      "Medida Caseira": "Prato de sobremesa",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "DOCE DE NOZES",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "DOCE DE NOZES",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "EGGBURGUER",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 175.0
+    },
+    {
+      "Alimento": "EGGCHEESEBURGUER",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "EMPADA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "EMPADAO",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "DE SALSICHA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "DE SALSICHA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "COM CENOURA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "COM CENOURA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "ERVILHA ENLATADA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 38.0
+    },
+    {
+      "Alimento": "ERVILHA ENLATADA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "ERVILHA ENLATADA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "ERVILHA ENLATADA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "ERVILHA ENLATADA",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 9.0
+    },
+    {
+      "Alimento": "ERVILHA VAGEM COZIDA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "REFOGADA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ESPINAFRE REFOGADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "ESPINAFRE REFOGADO",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "ESPINAFRE REFOGADO",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "ESPINAFRE REFOGADO",
+      "Medida Caseira": "Garrafa M",
+      "Peso (g)": 290.0
+    },
+    {
+      "Alimento": "ESPINAFRE REFOGADO",
+      "Medida Caseira": "Lata",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "FARELO DE TRIGO",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FARELO DE TRIGO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "FARELO DE TRIGO",
+      "Medida Caseira": "Colher de sopa cháeia Ú",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FARELO DE TRIGO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FARELO DE TRIGO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FARINHA DE ARROZ",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "FARINHA DE ARROZ",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "FARINHA DE ARROZ",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 17.0
+    },
+    {
+      "Alimento": "FARINHA DE ARROZ",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FARINHA DE MANDIOCA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "FARINHA DE MANDIOCA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "FARINHA DE MANDIOCA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "FARINHA DE ROSCA",
+      "Medida Caseira": "Coes Ch",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "FARINHA DE ROSCA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FARINHA DE ROSCA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FARINHA DE TRIGO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "FARINHA LACTEA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "FARINHA LACTEA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "FARINHA LACTEA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "FARINHA LACTEA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "FARINHA LACTEA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FARINHA LACTEA",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 58.0
+    },
+    {
+      "Alimento": "FARINHA LACTEA",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "FAROFA COM LINGUICA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "FAROFA COM LINGUICA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FEIJAO BRANCO COZIDO",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "FEIJAO BRANCO COZIDO",
+      "Medida Caseira": "Concháa média rasa",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "FEIJAO BRANCO COZIDO",
+      "Medida Caseira": "Concháa pequena cháeia",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "FEIJAO BRANCO COZIDO",
+      "Medida Caseira": "Concháa pequena rasa",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "FEIJAO BRANCO COZIDO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "FEIJAO BRANCO COZIDO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 17.0
+    },
+    {
+      "Alimento": "FEIJOADA CASEIRA",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 225.0
+    },
+    {
+      "Alimento": "FERMENTO EM PO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "FERMENTO EM PO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FLA DE CHOCOLATE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "FLA DE CHOCOLATE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "FLA DE CHOCOLATE",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "FIGO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "FIGO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "FIGO",
+      "Medida Caseira": "Filég",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "FIGO",
+      "Medida Caseira": "Filé M",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "FILEP",
+      "Medida Caseira": "Postag",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "FILEP",
+      "Medida Caseira": "Posta M",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "FILEP",
+      "Medida Caseira": "Postap",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Asag",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Asam",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Asap",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Costelag",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Costela M",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Costelap",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Coxag",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Coxa M",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Coxap",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Peitog",
+      "Peso (g)": 270.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Peito M",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Peito P",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Pescoço G",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Pescoço M",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Pescoço P",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Sobrecoxa G",
+      "Peso (g)": 95.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Sobrecoxa M",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "PARDO",
+      "Medida Caseira": "Sobrecoxa P",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Asag",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Asam",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Asap",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Costelag",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Costela M",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Costelap",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Coxa G",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Coxa M",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Coxap",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Peito G",
+      "Peso (g)": 270.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Peito M",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Peito P",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Pescoço G",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Pescoço M",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Pescoço P",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Sobrecoxa G",
+      "Peso (g)": 95.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Sobrecoxa M",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Sobrecoxa P",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "FRANGO ASSADO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Asag",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Asam",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Asap",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Costelag",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Costela M",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Costelap",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Coxa G",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Coxam",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Coxap",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Peito G",
+      "Peso (g)": 270.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Peito M",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Peitop",
+      "Peso (g)": 1400.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Pescoço G",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Pescoço M",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Pescoço P",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Sobrecoxa G",
+      "Peso (g)": 95.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Sobrecoxa M",
+      "Peso (g)": 650.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Sobrecoxa P",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "JFRANGO ENSOPADO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Asag",
+      "Peso (g)": 550.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Asam",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Asap",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Costela G",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Costela M",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Costelap",
+      "Peso (g)": 500.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Coxa G",
+      "Peso (g)": 550.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Coxa M",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Coxap",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "FRANGO FRITO",
+      "Medida Caseira": "Filêg",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Filép",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Peito M",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Pescoço G",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Pescoço M",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Pescoço P",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Sobrecoxa G",
+      "Peso (g)": 95.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Sobrecoxa M",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Sobrecoxa P",
+      "Peso (g)": 500.0
+    },
+    {
+      "Alimento": "FILE M",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "FRUTA DE CONDE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "FRUTA DE CONDE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 600.0
+    },
+    {
+      "Alimento": "FUBA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "GELATINA EM FOLHA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 166.0
+    },
+    {
+      "Alimento": "GELATINA PREPARADA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "GELATINA PREPARADA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 1100.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 34.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 220.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 9.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Gqi/Cream Cracker Ex",
+      "Peso (g)": 8.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 11.0
+    },
+    {
+      "Alimento": "DIET LINEA",
+      "Medida Caseira": "Mqi/Pão Francês",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Gqicream Cracker",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "GELEIA DE FRUTA",
+      "Medida Caseira": "Potinho",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "GELEIA DE MOCOTO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "GELEIA DE MOCOTO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "GOIABA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "GOIABADA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "GOIABADA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "GOIABADA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "GOIABADA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "GOIABADA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "GRAO DE BICO COZIDO",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "GRAO DE BICO COZIDO",
+      "Medida Caseira": "Col Aà Ch",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "GRAO DE BICO COZIDO",
+      "Medida Caseira": "Lata",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "SANDUICHE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 125.0
+    },
+    {
+      "Alimento": "SANDUICHE",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 62.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Colher de arroz rasa picado(a)",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Escumadeira média cháeia picado(a)",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Escumadeira média rasa picado(a)",
+      "Peso (g)": 72.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 600.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 125.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "INHAME COZIDO",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 17.0
+    },
+    {
+      "Alimento": "IOGURTE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "IOGURTE",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "DE PORCO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "JACA",
+      "Medida Caseira": "Bago",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "JACA",
+      "Medida Caseira": "Lptr",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "JILO COZIDO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "JILO COZIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "JILO COZIDO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "JILO REFOGADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "JILO REFOGADO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "JILO REFOGADO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "JILO REFOGADO",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "JILO REFOGADO",
+      "Medida Caseira": "Col Sob",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "KETCHUP",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "KETCHUP",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 11.0
+    },
+    {
+      "Alimento": "KETCHUP",
+      "Medida Caseira": "Kw",
+      "Peso (g)": 1000.0
+    },
+    {
+      "Alimento": "KETCHUP",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 760.0
+    },
+    {
+      "Alimento": "KETCHUP",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 290.0
+    },
+    {
+      "Alimento": "KETCHUP",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 1200.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Porção",
+      "Peso (g)": 500.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "LASANHA A BOLONHESA",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "LEITE CONDENSADO",
+      "Medida Caseira": "Cola",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "LEITE CONDENSADO",
+      "Medida Caseira": "Col Caféé",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "LEITE CONDENSADO",
+      "Medida Caseira": "Col Chá",
+      "Peso (g)": 2.0
+    },
+    {
+      "Alimento": "LEITE CONDENSADO",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "LEITE CONDENSADO",
+      "Medida Caseira": "Col Sob",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "LEITE CONDENSADO",
+      "Medida Caseira": "Lata",
+      "Peso (g)": 395.0
+    },
+    {
+      "Alimento": "FRIALP",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 14.0
+    },
+    {
+      "Alimento": "FRIALP",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "EM PO SCABRA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 14.0
+    },
+    {
+      "Alimento": "EM PO SCABRA",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "INDUSTR",
+      "Medida Caseira": "Garrafa P",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "DESNATADO",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "WDESENGORDURADO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PASTEURIZADO",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "PASTEURIZADO",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "COM ABACATE",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "COM BANANA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "COM BANANA",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "COM FRUTA E CEREAL",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "COMMACAEBANANA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "COMMACAEBANANA",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "COM MAMAO",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "COM MAMAO",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "LENTILHA COZIDA",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "COMR",
+      "Medida Caseira": "Cola",
+      "Peso (g)": 32.0
+    },
+    {
+      "Alimento": "COMR",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "LEVEDO DE CERVEJA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 6.0
+    },
+    {
+      "Alimento": "LEVEDO DE CERVEJA",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 3.0
+    },
+    {
+      "Alimento": "LEVEDO DE CERVEJA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "LICOR",
+      "Medida Caseira": "Cálice",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "LIMONADA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "ENSOPADA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "ENSOPADA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "ENSOPADA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 36.0
+    },
+    {
+      "Alimento": "ENSOPADA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "ENSOPADA",
+      "Medida Caseira": "Gomo",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ENSOPADA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "ENSOPADA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 1300.0
+    },
+    {
+      "Alimento": "BOLONHESA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "BOLONHESA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "BOLONHESA",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "BOLONHESA",
+      "Medida Caseira": "Pegador",
+      "Peso (g)": 1100.0
+    },
+    {
+      "Alimento": "BOLONHESA",
+      "Medida Caseira": "Pt Fchá",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "BOLONHESA",
+      "Medida Caseira": "Ptfr",
+      "Peso (g)": 280.0
+    },
+    {
+      "Alimento": "BOLONHESA",
+      "Medida Caseira": "Ptrr",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Garfada",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Pegador",
+      "Peso (g)": 1100.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Prato fundo Ch",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Ptfr",
+      "Peso (g)": 280.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Ptrchá",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Ptrr",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "E OLEO",
+      "Medida Caseira": "Ptfchá",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Garfada",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Pegador",
+      "Peso (g)": 1100.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Pt Fchá",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Ptfr",
+      "Peso (g)": 280.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Ptrchá",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Prato raso Ch/Parafuso",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "MACARRAO COZIDO",
+      "Medida Caseira": "Ptrr",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 6.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 17.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Gq/Pão Forma",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 14.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "MAIONESE CASEIRA",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 6.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 17.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 24.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Mqi/Pão De Forma",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Mqipão Francês",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Pqi/Cream Cracker",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "INDUSTRIALIZADA",
+      "Medida Caseira": "Cols Cii",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "MAMAO",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 290.0
+    },
+    {
+      "Alimento": "MAMAO",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "MAMAO PAPAYA",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "MAMAO PAPAYA",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "MAMAO PAPAYA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 530.0
+    },
+    {
+      "Alimento": "MANGA",
+      "Medida Caseira": "Espada M",
+      "Peso (g)": 1400.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 8.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Col Chá N",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Colsn",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 19.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 23.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Col Sob N",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Cq/Pão De Forma",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 220.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "MANTEIGA COM SAL",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 8.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Col Chá N",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 33.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Colsn",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 19.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Col Sob N",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Gqi/Cream Cracker",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 220.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Mqi/Cream Cracker",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "UNDP",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "MASSA DE PASTEL FRITA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "MAXIXE COZIDO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "MAXIXE COZIDO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "MAXIXE COZIDO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "MAXIXE COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "MAXIXE COZIDO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "MAXIXE COZIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "MAXIXE REFOGADO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "MAXIXE REFOGADO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "MEL DE ABELHA",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "MEL DE ABELHA",
+      "Medida Caseira": "Col Caféé",
+      "Peso (g)": 2.0
+    },
+    {
+      "Alimento": "MEL DE ABELHA",
+      "Medida Caseira": "Col Chá",
+      "Peso (g)": 3.0
+    },
+    {
+      "Alimento": "MEL DE ABELHA",
+      "Medida Caseira": "Col Sob",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "IMELANCIA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "MELAO",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 115.0
+    },
+    {
+      "Alimento": "MELAO",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "MELAO",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "MELAO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 660.0
+    },
+    {
+      "Alimento": "MILHO VERDE ENLATADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 24.0
+    },
+    {
+      "Alimento": "MILHO VERDE ENLATADO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 14.0
+    },
+    {
+      "Alimento": "MINGAU",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 37.0
+    },
+    {
+      "Alimento": "MINGAU",
+      "Medida Caseira": "Col Sob",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "MINGAU",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 230.0
+    },
+    {
+      "Alimento": "MINGAU",
+      "Medida Caseira": "Ptfçh",
+      "Peso (g)": 375.0
+    },
+    {
+      "Alimento": "MINGAU",
+      "Medida Caseira": "Ptfr",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "MINGAU",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 195.0
+    },
+    {
+      "Alimento": "MINGAU",
+      "Medida Caseira": "Prato de sobremesa",
+      "Peso (g)": 105.0
+    },
+    {
+      "Alimento": "MISTO QUENTE",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "MIUDOS DE GALINHA",
+      "Medida Caseira": "Moelag",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "MIUDOS DE GALINHA",
+      "Medida Caseira": "Moela M",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "MIUDOS DE GALINHA",
+      "Medida Caseira": "Moelap",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "MOLHO A BOLONHESA",
+      "Medida Caseira": "Concháa pequena cháeia",
+      "Peso (g)": 63.0
+    },
+    {
+      "Alimento": "MOLHO A BOLONHESA",
+      "Medida Caseira": "Cola",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "MOLHO A BOLONHESA",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "MOLHO A BOLONHESA",
+      "Medida Caseira": "Col Sob",
+      "Peso (g)": 14.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Concháa pequena cháeia",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Concháa pequena rasa",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Cola",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "MOLHO A CAMPANHA",
+      "Medida Caseira": "Col Chá",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "MOLHO ROQUEFORT",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "MOLHO ROQUEFORT",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "MOLHO ROQUEFORT",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CONDIMENTO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "CONDIMENTO",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 9.0
+    },
+    {
+      "Alimento": "FOLHA COZIDA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 75.0
+    },
+    {
+      "Alimento": "FOLHA COZIDA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FOLHA COZIDA",
+      "Medida Caseira": "Colher de sobremesa cháeia",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "PORCAO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "PORCAO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "PORCAO",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "NESCAU",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "NESCAU",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "NESCAU",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "NESCAU",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 11.0
+    },
+    {
+      "Alimento": "NESCAU BEBIDA LACTEA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "NESCAU BEBIDA LACTEA",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "NESCAU BEBIDA LACTEA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "NESCAU BEBIDA LACTEA",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "NESCAU BEBIDA LACTEA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "NESCAU BEBIDA LACTEA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 11.0
+    },
+    {
+      "Alimento": "ALPINO BEBIDA LACTEA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "ALPINO BEBIDA LACTEA",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "ALPINO BEBIDA LACTEA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 4.0
+    },
+    {
+      "Alimento": "ALPINO BEBIDA LACTEA",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "ALPINO BEBIDA LACTEA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "ALPINO BEBIDA LACTEA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 11.0
+    },
+    {
+      "Alimento": "NESPERA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "NESPERA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 27.0
+    },
+    {
+      "Alimento": "NESPERA",
+      "Medida Caseira": "Medida",
+      "Peso (g)": 48.0
+    },
+    {
+      "Alimento": "SOJA PO",
+      "Medida Caseira": "Medida",
+      "Peso (g)": 48.0
+    },
+    {
+      "Alimento": "RECONSTITUIDO",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "RECONSTITUIDO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "RECONSTITUIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 7.0
+    },
+    {
+      "Alimento": "NESTON",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "NESTON",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "NESTON",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "NESTON",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "NESTON",
+      "Medida Caseira": "Colher de sobremesa cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "NHOQUE",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "NHOQUE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "NHOQUE",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "ESC M CH",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ESC M CH",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 1200.0
+    },
+    {
+      "Alimento": "ESC M CH",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "ESC M CH",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 700.0
+    },
+    {
+      "Alimento": "BEBIDA LACTEA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "BEBIDA LACTEA",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "BEBIDA LACTEA",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "BEBIDA LACTEA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "BEBIDA LACTEA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CHOCOLATE PO",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "CHOCOLATE PO",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "CHOCOLATE PO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "CHOCOLATE PO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "CHOCOLATE PO",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "OLEO VEGETAL",
+      "Medida Caseira": "Col Caféé",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "OLEO VEGETAL",
+      "Medida Caseira": "Col Chá",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "OLEO VEGETAL",
+      "Medida Caseira": "Cols",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "OLEO VEGETAL",
+      "Medida Caseira": "Col Sob",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "OVO DE CODORNA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "CLARA COZIDA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "CLARA COZIDA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 450.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA FRITO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "GEMA COZIDA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA MEXIDO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA MEXIDO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA MEXIDO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA MEXIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA MEXIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA MEXIDO",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "OVO DE GALINHA MEXIDO",
+      "Medida Caseira": "Colher de sobremesa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "PACOCA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "PACOCA",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "PAMONHA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "PAMONHA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "PANQUECA DE CARNE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PAO ARABE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PAO DE HAMBURGUER",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "PAO DE MILHO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "JFAO DE QUEIJO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "JFAO DE QUEIJO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "JFAO DE QUEIJO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "JFAO DE QUEIJO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "PAO DE SAL",
+      "Medida Caseira": "Bisnaga",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "AVEIA NESTLE BABY",
+      "Medida Caseira": "Pote",
+      "Peso (g)": 155.0
+    },
+    {
+      "Alimento": "NESTLE BABY",
+      "Medida Caseira": "Pote",
+      "Peso (g)": 155.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 9.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 23.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 580.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 66.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "PASTA DE ATUM",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 260.0
+    },
+    {
+      "Alimento": "PASTA TOFU",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "PASTA TOFU",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 26.0
+    },
+    {
+      "Alimento": "PASTA TOFU",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "PASTA TOFU",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 320.0
+    },
+    {
+      "Alimento": "PASTA TOFU",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PASTEL DE FORNO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "PASTEL DE FORNO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Col Caféé Ch",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 17.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Mq/Cream Cracker",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Mq/Pão Francês",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "PASTEL DE QUEIJO",
+      "Medida Caseira": "Pqi/Pão Francês",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PAVE DE AMENDOIM",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "PAVE DE AMENDOIM",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "PAVE DE AMENDOIM",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 1100.0
+    },
+    {
+      "Alimento": "PAVE DE AMENDOIM",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "PAVE DE FRUTA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PAVE DE FRUTA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "PAVE DE FRUTA",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 1300.0
+    },
+    {
+      "Alimento": "PAVE DE FRUTA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PAVE DE FRUTA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "PE DE MOLEQUE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "EIXEAESCAIECHE",
+      "Medida Caseira": "Filé G",
+      "Peso (g)": 155.0
+    },
+    {
+      "Alimento": "EIXEAESCAIECHE",
+      "Medida Caseira": "Filé M",
+      "Peso (g)": 1200.0
+    },
+    {
+      "Alimento": "PEIXE A MILANESA",
+      "Medida Caseira": "Filég",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "PEIXE A MILANESA",
+      "Medida Caseira": "Filé M",
+      "Peso (g)": 1150.0
+    },
+    {
+      "Alimento": "PEIXE A MILANESA",
+      "Medida Caseira": "Filép",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "PEIXE COZIDO",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "PEIXE COZIDO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PEIXE COZIDO",
+      "Medida Caseira": "Filé M",
+      "Peso (g)": 1200.0
+    },
+    {
+      "Alimento": "FILE P",
+      "Medida Caseira": "Posta G",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "FILE P",
+      "Medida Caseira": "Posta M",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "FILE P",
+      "Medida Caseira": "Postap",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "FILE P",
+      "Medida Caseira": "Posta P",
+      "Peso (g)": 1500.0
+    },
+    {
+      "Alimento": "FILE P",
+      "Medida Caseira": "W Postap",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "PEIXE ENSOPADO",
+      "Medida Caseira": "Filé G",
+      "Peso (g)": 155.0
+    },
+    {
+      "Alimento": "PEIXE ENSOPADO",
+      "Medida Caseira": "Filé M",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "PEIXE FRITO",
+      "Medida Caseira": "Filég",
+      "Peso (g)": 155.0
+    },
+    {
+      "Alimento": "PEPINO",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "PEPINO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "PEPINO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "PERU",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "PESSEGO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "PESSEGO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "PESSEGO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 32.0
+    },
+    {
+      "Alimento": "PICOLE ABACAXI KIBON",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 59.0
+    },
+    {
+      "Alimento": "PICOLE CHICABON",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 63.0
+    },
+    {
+      "Alimento": "PICOLE CHOKITO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "PICOLE CRUNCH",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 58.0
+    },
+    {
+      "Alimento": "NEGRO KIBON",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "KIPOLPA MANGA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 61.0
+    },
+    {
+      "Alimento": "TABLITO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "PICOLE MEGA CLASSICO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 710.0
+    },
+    {
+      "Alimento": "AMARELAS",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 730.0
+    },
+    {
+      "Alimento": "PICOLE PRESTIGIO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 13.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 87.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 550.0
+    },
+    {
+      "Alimento": "PIMENTAO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 380.0
+    },
+    {
+      "Alimento": "PIPOCA COM SAL",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "PIPOCA COM SAL",
+      "Medida Caseira": "Saco G",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "PIPOCA COM SAL",
+      "Medida Caseira": "Saco M",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "PIPOCA COM SAL",
+      "Medida Caseira": "Saco P",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "PIPOCA DOCE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "PIPOCA DOCE",
+      "Medida Caseira": "Saco G",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "PIPOCA DOCE",
+      "Medida Caseira": "Saco M",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "PIPOCA DOCE",
+      "Medida Caseira": "Saco P",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "PIRAO",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "PIRAO",
+      "Medida Caseira": "Concháa média rasa",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "PIRAO",
+      "Medida Caseira": "Prato fundo",
+      "Peso (g)": 500.0
+    },
+    {
+      "Alimento": "PIRAO",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "PIZZA CALABREZA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "PIZZA CALABREZA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "PIZZA CALABREZA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "PIZZA DE PRESUNTO",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 145.0
+    },
+    {
+      "Alimento": "PIZZA DE PRESUNTO",
+      "Medida Caseira": "Frm",
+      "Peso (g)": 110.0
+    },
+    {
+      "Alimento": "PIZZA DE PRESUNTO",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "PIZZA PORTUGUESA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "PIZZA PORTUGUESA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 125.0
+    },
+    {
+      "Alimento": "PIZZA PORTUGUESA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "POLVO REFOGADO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "POLVO REFOGADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "POLVO REFOGADO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "PRESUNTADA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "PUDIM DE LEITE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PUDIM DE LEITE",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 260.0
+    },
+    {
+      "Alimento": "PUDIM DE LEITE",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "PUDIM DE LEITE",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 9.0
+    },
+    {
+      "Alimento": "PURE DE BATATA",
+      "Medida Caseira": "Concháa média rasa",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "PURE DE BATATA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "PURE DE BATATA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PURE DE BATATA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PURE DE INHAME",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 65.0
+    },
+    {
+      "Alimento": "PURE DE INHAME",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "PURE DE INHAME",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "QUEIJADINHA",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "QUEIJADINHA",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "QUEIJO DESOJATOFU",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 280.0
+    },
+    {
+      "Alimento": "QUEISO GORGONZOLA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "QUEISO GORGONZOLA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 380.0
+    },
+    {
+      "Alimento": "QUEISO GORGONZOLA",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "QUEISO GORGONZOLA",
+      "Medida Caseira": "Peça Triangular",
+      "Peso (g)": 235.0
+    },
+    {
+      "Alimento": "QUEISO GORGONZOLA",
+      "Medida Caseira": "Tg",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "FRESCO",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "FRESCO",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "FRESCO",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "FRESCO",
+      "Medida Caseira": "Fatia",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "QUEIJO PARMESAO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "QUEIJO PARMESAO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "QUEIJO PARMESAO",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "QUEIJO POLENGUINHO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "QUEIJO PRATO",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "QUIABO REFOGADO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "QUIABO REFOGADO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "IQUIBE FRITO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "IQUIBE FRITO",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "QUIBEBE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "QUIBEBE",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "QUINDIM",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "QUINDIM",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "RABADA",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "RABADA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "RABADA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "RAPADURA",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "RAPADURA",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "INDUSTR C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "LARANJA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "LARANJA C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Colher de arroz rasa picado(a)",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Cols Eh Picado",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Escumadeira média cháeia picado(a)",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Escumadeira média rasa picado(a)",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Folhag",
+      "Peso (g)": 400.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Folha média",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "REPOLHO",
+      "Medida Caseira": "Folha pequena",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Colher de arroz cháeia picado(a)",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Colher de arroz rasa picado(a)",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Colher de sopa cháeia picado(a)",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Colher de sopa rasa picado(a)",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Escumadeira média cháeia picado(a)",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Folhag",
+      "Peso (g)": 340.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Folha média",
+      "Peso (g)": 26.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Folha pequena",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "REPOLHO COZIDO",
+      "Medida Caseira": "Folhap",
+      "Peso (g)": 180.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Gq/Cream Cracker",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Gq/Pão De Forma",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Gq/Pão Francês",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Gq/Torradacomercial",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Mq/Pão De Forma",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Mqipão Francês",
+      "Peso (g)": 22.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Mq/Torrada Com",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Pq/Cream Cracker",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Pq/Pão De Forma",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Pq/Pão Francês",
+      "Peso (g)": 14.0
+    },
+    {
+      "Alimento": "REQUEIJAO",
+      "Medida Caseira": "Pq/Torrada Com",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "RICOTA",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "RICOTA",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "RISOLE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "RISOLE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "RISOLE",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 12.0
+    },
+    {
+      "Alimento": "RISOTO DE FRANGO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "RISOTO DE FRANGO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "RISOTO DE FRANGO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "C MAIONESE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FRADINHO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 57.0
+    },
+    {
+      "Alimento": "FRADINHO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "FRADINHO",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 32.0
+    },
+    {
+      "Alimento": "FRADINHO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "FRADINHO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "SALADA DE FRUTAS",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "SALADA DE FRUTAS",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 210.0
+    },
+    {
+      "Alimento": "SALADA DE FRUTAS",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "SALADA DE FRUTAS",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 55.0
+    },
+    {
+      "Alimento": "SALADA DE FRUTAS",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "SALADA DE FRUTAS",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "SALADA DE FRUTAS",
+      "Medida Caseira": "Lesc Mr",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "COM MAIONESE",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 70.0
+    },
+    {
+      "Alimento": "COM MAIONESE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "SALAME",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 200.0
+    },
+    {
+      "Alimento": "SALAMINHO",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "SALAMINHO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "SALAMINHO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "SALAMINHO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "SALAMINHO",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "SALAMINHO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "SALAMINHO",
+      "Medida Caseira": "Prato de sobremesa",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "SALSICHA EM LATA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 350.0
+    },
+    {
+      "Alimento": "SANDUICHE DE FRANGO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 1200.0
+    },
+    {
+      "Alimento": "LATAP",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 330.0
+    },
+    {
+      "Alimento": "LATAP",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "LATAP",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "SIRI",
+      "Medida Caseira": "Poá P",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "SIRI",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 160.0
+    },
+    {
+      "Alimento": "SIRI",
+      "Medida Caseira": "Pote",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "SIRI",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "SIRI",
+      "Medida Caseira": "Concháa pequena cháeia",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "SIRI",
+      "Medida Caseira": "Prato fundo",
+      "Peso (g)": 520.0
+    },
+    {
+      "Alimento": "SIRI",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 325.0
+    },
+    {
+      "Alimento": "IVCOM CARNE",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 130.0
+    },
+    {
+      "Alimento": "IVCOM CARNE",
+      "Medida Caseira": "Concháa pequena cháeia",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "IVCOM CARNE",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 325.0
+    },
+    {
+      "Alimento": "BOLA G",
+      "Medida Caseira": "Bola M",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "BOLA G",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "SORVETE ESKIBON",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 48.0
+    },
+    {
+      "Alimento": "CROCANTE E BAUNILHA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 710.0
+    },
+    {
+      "Alimento": "SOYMILKE PO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "STROGONOFF DE CARNE",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "STROGONOFF DE CARNE",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "STROGONOFF DE CARNE",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FRANGO",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 170.0
+    },
+    {
+      "Alimento": "FRANGO",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 40.0
+    },
+    {
+      "Alimento": "SUCO DE ABACAXI C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE ABACAXI C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE ACEROLA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE ACEROLA C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE BETERRABA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE BETERRABA C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE CUPUACU C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE CUPUACU C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE CUPUACU C AC",
+      "Medida Caseira": "Copop Ch",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE LARANJA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE LARANJA C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "BANANA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "BETERRABA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "E CENOURA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "CENOURA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "CENOURA C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "E BETERRABA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "E BETERRABA C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE MAMAO C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE MAMAO C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE MANGA C AC",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE MANGA C AC",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUCO DE MARACUJA",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "SUCO DE MARACUJA",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "SUFLE DE LEGUMES",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "SUFLE DE LEGUMES",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "SUFLE DE QUEIJO",
+      "Medida Caseira": "Pedaço grande",
+      "Peso (g)": 1200.0
+    },
+    {
+      "Alimento": "SUFLE DE QUEIJO",
+      "Medida Caseira": "Pedaço médio",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "SUFLE DE QUEIJO",
+      "Medida Caseira": "Pedaço pequeno",
+      "Peso (g)": 700.0
+    },
+    {
+      "Alimento": "SUSPIRO",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "SUSPIRO",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 1060.0
+    },
+    {
+      "Alimento": "SUSTAGEN",
+      "Medida Caseira": "Colher de cháá cháeia",
+      "Peso (g)": 7.0
+    },
+    {
+      "Alimento": "SUSTAGEN",
+      "Medida Caseira": "Colher de cháá rasa",
+      "Peso (g)": 5.0
+    },
+    {
+      "Alimento": "SUSTAGEN",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "SUSTAGEN",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "TANGERINA",
+      "Medida Caseira": "Gomo M",
+      "Peso (g)": 1060.0
+    },
+    {
+      "Alimento": "TANGERINA",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 1350.0
+    },
+    {
+      "Alimento": "TOMATE",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "TOMATE",
+      "Medida Caseira": "Fatia fina",
+      "Peso (g)": 10.0
+    },
+    {
+      "Alimento": "TOMATE",
+      "Medida Caseira": "Fatia grossa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "TOMATE",
+      "Medida Caseira": "Unidade média",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "TOMATE",
+      "Medida Caseira": "Unidade pequena",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "TOMATE",
+      "Medida Caseira": "Unidade grande",
+      "Peso (g)": 150.0
+    },
+    {
+      "Alimento": "TOMATE",
+      "Medida Caseira": "Rodela média",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "TORTA DE LIMAO",
+      "Medida Caseira": "Fatia grande",
+      "Peso (g)": 120.0
+    },
+    {
+      "Alimento": "TORTA DE LIMAO",
+      "Medida Caseira": "Fatia média",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "TORTA DE LIMAO",
+      "Medida Caseira": "Fatia pequena",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "MCDONALD S",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "MCDONALD S",
+      "Medida Caseira": "Concháa média cháeia",
+      "Peso (g)": 190.0
+    },
+    {
+      "Alimento": "MCDONALD S",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "MCDONALD S",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "MCDONALD S",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "MCDONALD S",
+      "Medida Caseira": "Escumadeira média cháeia",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "MCDONALD S",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 280.0
+    },
+    {
+      "Alimento": "UISQUE",
+      "Medida Caseira": "Dose",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "UVA PASSA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 18.0
+    },
+    {
+      "Alimento": "UVA PASSA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "UVA PASSA",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 1250.0
+    },
+    {
+      "Alimento": "UVA PASSA",
+      "Medida Caseira": "Punhado",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "UVA PASSA",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 3.0
+    },
+    {
+      "Alimento": "VAGEM COZIDA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "VAGEM COZIDA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "VAGEM REFOGADA",
+      "Medida Caseira": "Colher de arroz cháeia",
+      "Peso (g)": 73.0
+    },
+    {
+      "Alimento": "VAGEM REFOGADA",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "VAGEM REFOGADA",
+      "Medida Caseira": "Colher de sopa cháeia",
+      "Peso (g)": 35.0
+    },
+    {
+      "Alimento": "VAGEM REFOGADA",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "VINHO",
+      "Medida Caseira": "Copo duplo (240ml) (240ml)",
+      "Peso (g)": 240.0
+    },
+    {
+      "Alimento": "VINHO",
+      "Medida Caseira": "Copo pequeno (165ml)",
+      "Peso (g)": 165.0
+    },
+    {
+      "Alimento": "VINHO",
+      "Medida Caseira": "Caneca",
+      "Peso (g)": 300.0
+    },
+    {
+      "Alimento": "VINHO",
+      "Medida Caseira": "Unidade",
+      "Peso (g)": 80.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Colher de arroz cheia",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Escumadeira média cheia",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "1/2 Concha média",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Concha média cheia",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "ARROZ COZIDO",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 15.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Colher de arroz cheia",
+      "Peso (g)": 45.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Colher de arroz rasa",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Escumadeira média cheia",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Escumadeira média rasa",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "1/2 Concha média",
+      "Peso (g)": 60.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Concha média cheia",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "ARROZ BRANCO COZIDO",
+      "Medida Caseira": "Prato raso",
+      "Peso (g)": 250.0
+    },
+    {
+      "Alimento": "FEIJAO COZIDO",
+      "Medida Caseira": "Concha média cheia",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "FEIJAO COZIDO",
+      "Medida Caseira": "Concha média rasa",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "FEIJAO COZIDO",
+      "Medida Caseira": "Concha pequena cheia",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "FEIJAO COZIDO",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FEIJAO COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "FEIJAO CARIOCA COZIDO",
+      "Medida Caseira": "Concha média cheia",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "FEIJAO CARIOCA COZIDO",
+      "Medida Caseira": "Concha média rasa",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "FEIJAO CARIOCA COZIDO",
+      "Medida Caseira": "Concha pequena cheia",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "FEIJAO CARIOCA COZIDO",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FEIJAO CARIOCA COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "FEIJAO PRETO COZIDO",
+      "Medida Caseira": "Concha média cheia",
+      "Peso (g)": 140.0
+    },
+    {
+      "Alimento": "FEIJAO PRETO COZIDO",
+      "Medida Caseira": "Concha média rasa",
+      "Peso (g)": 85.0
+    },
+    {
+      "Alimento": "FEIJAO PRETO COZIDO",
+      "Medida Caseira": "Concha pequena cheia",
+      "Peso (g)": 90.0
+    },
+    {
+      "Alimento": "FEIJAO PRETO COZIDO",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 25.0
+    },
+    {
+      "Alimento": "FEIJAO PRETO COZIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 16.0
+    },
+    {
+      "Alimento": "PATINHO MOIDO",
+      "Medida Caseira": "Colher de sopa cheia",
+      "Peso (g)": 30.0
+    },
+    {
+      "Alimento": "PATINHO MOIDO",
+      "Medida Caseira": "Colher de sopa rasa",
+      "Peso (g)": 20.0
+    },
+    {
+      "Alimento": "PATINHO MOIDO",
+      "Medida Caseira": "Colher de arroz cheia",
+      "Peso (g)": 50.0
+    },
+    {
+      "Alimento": "PATINHO MOIDO",
+      "Medida Caseira": "Porção média",
+      "Peso (g)": 100.0
+    },
+    {
+      "Alimento": "PATINHO MOIDO",
+      "Medida Caseira": "Porção grande",
+      "Peso (g)": 150.0
+    }
+  ]
+}

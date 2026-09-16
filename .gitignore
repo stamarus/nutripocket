@@ -4,3 +4,4 @@ raw_data/
 *.xlsx
 __pycache__/
 *.pyc
+processed_pages/
