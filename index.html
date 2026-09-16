@@ -634,6 +634,44 @@
       </div>
     </footer>
 
+    <!-- MODAL: SELETOR DE MEDIDA CASEIRA PARA O NUTRI -->
+    <div id="measurePickerModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden no-print">
+      <div class="bg-white rounded-3xl p-6 sm:p-7 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150 space-y-4">
+        <div class="flex items-start justify-between border-b border-slate-100 pb-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-black border border-emerald-200/60">
+              <i data-lucide="utensils" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded-full">Prescrição Nutricional</span>
+              <h3 class="text-base font-black text-slate-900 mt-0.5" id="mpModalFoodName">Escolher Medida Caseira</h3>
+            </div>
+          </div>
+          <button onclick="closeMeasurePickerModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-xl hover:bg-slate-100 transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3 text-xs text-slate-600 flex items-center justify-between">
+          <span class="font-bold text-slate-500">Peso prescrito no prato:</span>
+          <span class="font-black text-slate-900 bg-white px-2.5 py-1 rounded-lg border border-slate-200 text-sm" id="mpModalWeightBadge">100g</span>
+        </div>
+
+        <div>
+          <label class="text-[11px] font-black uppercase tracking-wider text-slate-700 block mb-2">Selecione a perspectiva de medida:</label>
+          <div id="mpModalOptionsList" class="space-y-2 max-h-64 overflow-y-auto pr-1">
+            <!-- Opções geradas via JS -->
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-slate-100 flex gap-2">
+          <button onclick="closeMeasurePickerModal()" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- MODAL: VISÃO DO PACIENTE (Dieta Prática com Medidas Caseiras) -->
     <div id="dietPatientModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden no-print">
       <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150 space-y-5">
@@ -1372,30 +1410,50 @@
       let minScore = 99999;
 
       preferred.forEach(m => {
+        if (!m.grams || m.grams <= 0) return;
         const count = g / m.grams;
-        // Penaliza se o número de unidades for absurdo (ex: 25 colheres de café para 300g)
-        if (count < 0.2 || count > 15) return;
+        // Penaliza se o número de porções for irrealista na prática clínica (ex: > 12 colheres)
+        if (count < 0.2 || count > 12) return;
 
-        // Quão próximo de um número "bonito" (ex: 1, 1.5, 2, 2.5, 3, 4, 5)
-        const remainder = Math.abs(count - Math.round(count * 2) / 2);
-        const countPenalty = Math.abs(count - 3.0); // favorece porções moderadas (1 a 5)
-        const score = remainder * 15 + countPenalty * 0.5;
+        // Arredondamento clínico padrão: meio em meio (0.5, 1, 1.5, 2, 2.5, 3, etc.) ou inteiro para > 5
+        let rounded = 1;
+        if (count < 5) {
+          rounded = Math.round(count * 2) / 2;
+        } else {
+          rounded = Math.round(count);
+        }
+        if (rounded <= 0) rounded = 0.5;
+
+        // Quão próximo de um número elegante
+        const remainder = Math.abs(count - rounded);
+        const countPenalty = Math.abs(count - 2.5); // favorece porções normais (1 a 4)
+        const score = remainder * 20 + countPenalty * 0.8;
 
         if (score < minScore) {
           minScore = score;
           best = {
             measure: m.measure,
             unitGrams: m.grams,
-            count: Math.round(count * 2) / 2 || Math.round(count) || 1,
+            count: rounded,
             label: m.label
           };
         }
       });
 
       if (!best && measures.length > 0) {
-        const first = measures[0];
-        const count = Math.max(1, Math.round(g / first.grams));
-        best = { measure: first.measure, unitGrams: first.grams, count };
+        // Encontra a medida de gramatura mais próxima do peso total
+        let closest = measures[0];
+        let diff = Math.abs(g - closest.grams);
+        for (let i = 1; i < measures.length; i++) {
+          const d = Math.abs(g - measures[i].grams);
+          if (d < diff) {
+            diff = d;
+            closest = measures[i];
+          }
+        }
+        let rawC = g / closest.grams;
+        let rCount = rawC < 5 ? (Math.round(rawC * 2) / 2 || 1) : (Math.round(rawC) || 1);
+        best = { measure: closest.measure, unitGrams: closest.grams, count: rCount };
       }
 
       if (best) {
@@ -1404,6 +1462,8 @@
         else if (best.count === 0.5) countDisplay = '1/2';
         else if (best.count === 1.5) countDisplay = '1 e 1/2';
         else if (best.count === 2.5) countDisplay = '2 e 1/2';
+        else if (best.count === 3.5) countDisplay = '3 e 1/2';
+        else if (best.count === 4.5) countDisplay = '4 e 1/2';
         else countDisplay = String(best.count);
 
         const friendlyName = formatFriendlyMeasureName(best.measure, best.count);
@@ -1576,6 +1636,96 @@
       renderMeal();
     }
 
+    let currentEditingMealIndex = null;
+
+    function openMeasurePickerModal(index) {
+      const item = myMeal[index];
+      if (!item) return;
+      currentEditingMealIndex = index;
+      const f = item.food;
+      const measures = findMedidasForFood(f);
+
+      const nameEl = document.getElementById('mpModalFoodName');
+      const weightEl = document.getElementById('mpModalWeightBadge');
+      const listEl = document.getElementById('mpModalOptionsList');
+
+      if (nameEl) nameEl.innerText = f.name || f.nome;
+      if (weightEl) weightEl.innerText = `${item.grams}g`;
+
+      if (!measures || measures.length === 0) {
+        listEl.innerHTML = `<p class="text-xs text-slate-400 p-4 text-center">Nenhuma medida caseira específica encontrada para este alimento.</p>`;
+      } else {
+        const autoBest = calculateBestMeasure(f, item.grams, null);
+        
+        let html = `
+          <!-- Opção Automática Inteligente -->
+          <button onclick="selectMealMeasure(null)" class="w-full text-left p-3 rounded-2xl border ${!item.preferredMeasure ? 'border-emerald-500 bg-emerald-50/80 shadow-xs' : 'border-slate-200 bg-slate-50 hover:bg-slate-100'} transition-all flex items-center justify-between gap-3 group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-xl ${!item.preferredMeasure ? 'bg-emerald-600 text-white' : 'bg-slate-200 text-slate-600 group-hover:bg-slate-300'} flex items-center justify-center font-bold text-xs shrink-0">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+                  <span>Automático Recomendado</span>
+                  <span class="text-[9px] bg-emerald-100 text-emerald-800 font-extrabold px-1.5 py-0.2 rounded-md">Expert</span>
+                </div>
+                <div class="text-[11px] text-emerald-800 font-bold mt-0.5">
+                  ${autoBest ? autoBest.text : 'Calculado clinicamente'}
+                </div>
+              </div>
+            </div>
+            ${!item.preferredMeasure ? '<i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>' : ''}
+          </button>
+        `;
+
+        measures.forEach(m => {
+          const calc = calculateBestMeasure(f, item.grams, m.measure);
+          const isSelected = item.preferredMeasure === m.measure;
+          
+          html += `
+            <button onclick="selectMealMeasure('${m.measure.replace(/'/g, "\\'")}')" class="w-full text-left p-3 rounded-2xl border ${isSelected ? 'border-emerald-500 bg-emerald-50/80 shadow-xs' : 'border-slate-200 bg-white hover:bg-slate-50'} transition-all flex items-center justify-between gap-3 group">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl ${isSelected ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200'} flex items-center justify-center font-bold text-xs shrink-0">
+                  <i data-lucide="utensils" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-black text-slate-900">
+                    ${m.measure} <span class="text-slate-400 font-normal">(${m.grams}g por porção)</span>
+                  </div>
+                  <div class="text-[11px] font-bold text-emerald-800 mt-0.5">
+                    ${calc ? calc.text : `≈ ${(item.grams / m.grams).toFixed(1)} ${m.measure}`}
+                  </div>
+                </div>
+              </div>
+              ${isSelected ? '<i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>' : ''}
+            </button>
+          `;
+        });
+
+        listEl.innerHTML = html;
+      }
+
+      const modal = document.getElementById('measurePickerModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        lucide.createIcons({ root: modal });
+      }
+    }
+
+    function selectMealMeasure(measureName) {
+      if (currentEditingMealIndex !== null) {
+        updateMealPreferredMeasure(currentEditingMealIndex, measureName);
+        closeMeasurePickerModal();
+        showToast('Medida caseira prescrita com sucesso!');
+      }
+    }
+
+    function closeMeasurePickerModal() {
+      const modal = document.getElementById('measurePickerModal');
+      if (modal) modal.classList.add('hidden');
+      currentEditingMealIndex = null;
+    }
+
     function removeMealItem(index) {
       myMeal.splice(index, 1);
       saveMeal();
@@ -1659,20 +1809,25 @@
         if (measures && measures.length > 0) {
           mcOptionsHtml = `
             <div class="mt-2.5 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <!-- Visão do Paciente: Medida Amigável Automática com Plural Implícito -->
+              <!-- Medida Caseira: Botão Interativo para Prescrição Nutricional -->
               <div class="flex items-center gap-2">
-                <span class="text-[11px] font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/70 flex items-center gap-1.5 shadow-2xs">
-                  <i data-lucide="utensils" class="w-3.5 h-3.5 text-emerald-600"></i>
-                  <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Visão do Paciente:</span>
-                  <b class="text-emerald-950 font-black">${bestMeasure ? bestMeasure.text : 'Calculado'}</b>
-                </span>
+                <button onclick="openMeasurePickerModal(${idx})" type="button" class="text-[11px] font-extrabold text-emerald-900 bg-emerald-50/90 hover:bg-emerald-100 px-3 py-1.5 rounded-xl border border-emerald-200/80 flex items-center gap-2 shadow-2xs transition-all active:scale-[0.98] cursor-pointer group text-left">
+                  <span class="w-5 h-5 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-emerald-700 transition-colors">
+                    <i data-lucide="utensils" class="w-3 h-3"></i>
+                  </span>
+                  <div class="flex flex-col sm:flex-row sm:items-center sm:gap-1.5">
+                    <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Medida caseira:</span>
+                    <b class="text-emerald-950 font-black">${bestMeasure ? bestMeasure.text : 'Configurar'}</b>
+                  </div>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-500 group-hover:translate-x-0.5 transition-transform ml-1"></i>
+                </button>
               </div>
 
-              <!-- Seletor Alternativo de Medida (Altera a forma de visualização da medida caseira sem alterar o peso do prato) -->
+              <!-- Atalho Rápido de Alteração de Perspectiva -->
               <div class="flex items-center gap-1.5 self-end sm:self-auto">
                 <span class="text-[10px] text-slate-400 font-bold">Ver como:</span>
                 <select onchange="updateMealPreferredMeasure(${idx}, this.value)" class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500 shadow-xs">
-                  <option value="" ${!item.preferredMeasure ? 'selected' : ''}>Automático mais amigável</option>
+                  <option value="" ${!item.preferredMeasure ? 'selected' : ''}>Automático sugerido</option>
                   ${measures.map(m => `<option value="${m.measure}" ${item.preferredMeasure === m.measure ? 'selected' : ''}>${m.measure} (${m.grams}g)</option>`).join('')}
                 </select>
               </div>
