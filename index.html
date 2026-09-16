@@ -1172,20 +1172,35 @@
       const mDb = getMedidasDb();
       const db = mDb ? (mDb.alimentos || {}) : {};
       const genericas = (mDb && mDb.genericas && mDb.genericas.length > 0) ? mDb.genericas : [
-        { label: "Colher de sopa (15g)", measure: "Colher de sopa", grams: 15 },
-        { label: "Colher de arroz (45g)", measure: "Colher de arroz", grams: 45 },
-        { label: "Colher de sobremesa (10g)", measure: "Colher de sobremesa", grams: 10 },
-        { label: "Colher de chá (5g)", measure: "Colher de chá", grams: 5 },
-        { label: "Xícara de chá (150g)", measure: "Xícara de chá", grams: 150 },
-        { label: "Copo americano (200g)", measure: "Copo americano", grams: 200 },
-        { label: "Concha média (130g)", measure: "Concha média", grams: 130 },
-        { label: "Escumadeira média (100g)", measure: "Escumadeira média", grams: 100 },
+        { label: "Colher de sopa cheia (25g)", measure: "Colher de sopa cheia", grams: 25 },
+        { label: "Colher de sopa rasa (15g)", measure: "Colher de sopa rasa", grams: 15 },
+        { label: "Colher de arroz cheia (45g)", measure: "Colher de arroz cheia", grams: 45 },
+        { label: "Colher de arroz rasa (30g)", measure: "Colher de arroz rasa", grams: 30 },
+        { label: "Colher de sobremesa cheia (15g)", measure: "Colher de sobremesa cheia", grams: 15 },
+        { label: "Colher de chá cheia (8g)", measure: "Colher de chá cheia", grams: 8 },
+        { label: "Concha média cheia (130g)", measure: "Concha média cheia", grams: 130 },
+        { label: "Escumadeira média cheia (80g)", measure: "Escumadeira média cheia", grams: 80 },
+        { label: "Xícara de chá (150ml) (150g)", measure: "Xícara de chá (150ml)", grams: 150 },
+        { label: "Copo americano (200ml) (200g)", measure: "Copo americano (200ml)", grams: 200 },
         { label: "Porção média / Bife (100g)", measure: "Porção média / Bife", grams: 100 }
       ];
 
       const fName = normalizeSearchStr(food.name || food.nome || '');
 
-      // 1. Match exato ou prefixo
+      // Casos canônicos imediatos:
+      if (fName.includes('arroz integral')) {
+        if (db['ARROZ INTEGRAL COZIDO']) return db['ARROZ INTEGRAL COZIDO'];
+      } else if (fName.includes('arroz')) {
+        if (db['ARROZ COZIDO']) return db['ARROZ COZIDO'];
+      } else if (fName.includes('feijao carioca') || fName.includes('feijao preto') || fName.includes('feijao')) {
+        if (db['FEIJAO COZIDO']) return db['FEIJAO COZIDO'];
+      } else if (fName.includes('patinho') || fName.includes('carne moida')) {
+        if (db['PATINHO MOIDO']) return db['PATINHO MOIDO'];
+      } else if (fName.includes('tomate')) {
+        if (db['TOMATE']) return db['TOMATE'];
+      }
+
+      // 1. Match exato ou de frase completa
       for (const [key, measures] of Object.entries(db)) {
         const normKey = normalizeSearchStr(key);
         if (normKey.length > 3 && (fName === normKey || fName.startsWith(normKey + ' ') || fName.includes(' ' + normKey + ' '))) {
@@ -1193,22 +1208,23 @@
         }
       }
 
-      // 2. Substring match
+      // 2. Substring match com chaves compostas (>= 5 caracteres para evitar falsos positivos)
       for (const [key, measures] of Object.entries(db)) {
         const normKey = normalizeSearchStr(key);
-        if (normKey.length >= 4 && (fName.includes(normKey) || normKey.includes(fName))) {
+        if (normKey.length >= 5 && fName.includes(normKey)) {
           return measures;
         }
       }
 
-      // 3. Token match
+      // 3. Token match pelo primeiro termo relevante (substantivo principal)
       const stopWords = ['com', 'sem', 'para', 'tipo', 'puro', 'crua', 'frito', 'assado', 'cozido', 'grelhado', 'fresco', 'branco', 'verde', 'amarelo', 'preto', 'taco', 'tbca', 'ibge', 'usda', 'geral', 'industrializado', 'preparado'];
       const tokens = fName.split(/\s+/).filter(t => t.length >= 4 && !stopWords.includes(t));
-      for (const tok of tokens) {
+      if (tokens.length > 0) {
+        const primaryToken = tokens[0];
         for (const [key, measures] of Object.entries(db)) {
           const normKey = normalizeSearchStr(key);
           const keyTokens = normKey.split(/\s+/);
-          if (keyTokens.includes(tok)) {
+          if (keyTokens[0] === primaryToken) {
             return measures;
           }
         }
@@ -1217,10 +1233,10 @@
       // 4. Bebidas / Líquidos
       if (fName.includes('suco') || fName.includes('leite') || fName.includes('cha') || fName.includes('cafe') || fName.includes('vitamina') || fName.includes('refrigerante') || fName.includes('agua') || fName.includes('caldo') || fName.includes('iogurte') || fName.includes('cerveja') || fName.includes('vinho')) {
         return [
-          { label: 'Copo americano (200ml) (200g)', measure: 'Copo americano', grams: 200 },
-          { label: 'Copo duplo / grande (240ml) (240g)', measure: 'Copo duplo', grams: 240 },
-          { label: 'Xícara de chá (150ml) (150g)', measure: 'Xícara de chá', grams: 150 },
-          { label: 'Colher de sopa (15g)', measure: 'Colher de sopa', grams: 15 }
+          { label: 'Copo americano (200ml) (200g)', measure: 'Copo americano (200ml)', grams: 200 },
+          { label: 'Copo duplo (240ml) (240g)', measure: 'Copo duplo (240ml)', grams: 240 },
+          { label: 'Xícara de chá (150ml) (150g)', measure: 'Xícara de chá (150ml)', grams: 150 },
+          { label: 'Colher de sopa cheia (15g)', measure: 'Colher de sopa cheia', grams: 15 }
         ];
       }
 
